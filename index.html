@@ -27,7 +27,7 @@
 body {
   font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
   color: #111; overflow-x: hidden;
-  background: #110800;
+  background: #fff8f0;
   min-height: 100vh;
 }
 
@@ -35,14 +35,14 @@ body {
 nav {
   position:fixed; top:0; left:0; right:0; z-index:300;
   display:flex; align-items:center; justify-content:space-between;
-  padding:13px 52px;
-  background: rgba(255,255,255,.22);
+  padding:10px 52px;
+  background: rgba(255,252,248,.82);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border-bottom: 0.8px solid rgba(255,255,255,.42);
+  border-bottom: 0.8px solid rgba(200,140,60,.18);
 }
 .nav-logo { display:flex; align-items:center; }
-.nav-logo-img { height:38px; width:auto; display:block; filter:brightness(0) invert(1); }
+.nav-logo-img { height:114px; width:auto; display:block; }
 .nav-links { display:flex; gap:36px; }
 nav a { color:rgba(0,0,0,.58); text-decoration:none; font-size:.82rem; font-weight:500;
         letter-spacing:.02em; transition:color .2s; }
@@ -59,13 +59,9 @@ nav a:hover { color:#111; }
   position:relative; z-index:1; min-height:100vh;
   display:flex; flex-direction:column;
   align-items:center; justify-content:center; text-align:center;
-  padding:120px 32px 80px; gap:0;
+  padding:160px 32px 80px; gap:0;
   overflow:hidden;
 }
-/* Large centered logo */
-.hero-logo-wrap { margin-bottom:28px; animation:up .7s ease both; }
-.hero-logo-big  { height:90px; width:auto; display:block; filter:brightness(0) invert(1); }
-
 /* Remove floating card column on left */
 .hero-cards { display:none; }
 
@@ -74,9 +70,9 @@ nav a:hover { color:#111; }
 .hero-badge {
   display:inline-flex; align-items:center; gap:7px;
   padding:5px 16px; margin-bottom:22px;
-  background: rgba(255,255,255,.22) padding-box, var(--rb) border-box;
+  background: rgba(255,255,255,.70) padding-box, var(--rb) border-box;
   font-size:.68rem; letter-spacing:.15em; text-transform:uppercase;
-  color:rgba(255,255,255,.88); animation:up .8s ease both;
+  color:rgba(80,40,0,.70); animation:up .8s ease both;
 }
 .pulse { width:6px; height:6px; border-radius:50%; background:#fff;
          box-shadow:0 0 6px rgba(30,111,232,.8); animation:blink 2s infinite; }
@@ -90,7 +86,7 @@ nav a:hover { color:#111; }
   animation:up .8s .08s ease both;
 }
 .hero-desc {
-  font-size:1rem; font-weight:400; color:rgba(255,255,255,.72);
+  font-size:1rem; font-weight:400; color:rgba(60,30,0,.62);
   line-height:1.78; margin-bottom:28px; animation:up .8s .16s ease both;
 }
 
@@ -125,9 +121,9 @@ nav a:hover { color:#111; }
 .store-row { display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; animation:up .8s .32s ease both; }
 .store-btn {
   display:flex; align-items:center; gap:9px; padding:10px 16px;
-  background: rgba(255,255,255,.22) padding-box, var(--rb) border-box;
+  background: rgba(255,255,255,.65) padding-box, var(--rb) border-box;
   border:0.8px solid transparent; border-radius:14px;
-  color:rgba(255,255,255,.78); opacity:.55; cursor:not-allowed; position:relative;
+  color:rgba(60,30,0,.65); opacity:.65; cursor:not-allowed; position:relative;
 }
 .store-btn svg { width:16px; height:16px; }
 .store-btn small { font-size:.54rem; display:block; opacity:.7; letter-spacing:.06em; }
@@ -143,38 +139,38 @@ nav a:hover { color:#111; }
 .stats {
   position:relative; z-index:1; display:flex; justify-content:center;
   gap:60px; flex-wrap:wrap; padding:46px 24px;
-  background:rgba(20,8,0,.55);
+  background:rgba(255,248,235,.75);
   backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px);
-  border-top:0.8px solid rgba(255,200,80,.18);
-  border-bottom:0.8px solid rgba(255,200,80,.18);
+  border-top:0.8px solid rgba(200,140,60,.18);
+  border-bottom:0.8px solid rgba(200,140,60,.18);
 }
 .stat-n {
   font-size:2.6rem; font-weight:800; line-height:1;
   background: var(--gold-txt);
   -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
 }
-.stat-l { font-size:.66rem; color:rgba(255,255,255,.5); letter-spacing:.16em; text-transform:uppercase; margin-top:5px; }
+.stat-l { font-size:.66rem; color:rgba(80,40,0,.50); letter-spacing:.16em; text-transform:uppercase; margin-top:5px; }
 
 /* ══ FAMILY TREE ═════════════════════════════════════════════════════ */
 .tree-sec {
   position:relative; z-index:1; padding:80px 24px 100px;
   text-align:center; overflow:hidden;
-  background:rgba(15,6,0,.60);
-  backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+  background:rgba(255,248,235,.72);
+  backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
 }
 .sec-label {
   display:block; font-size:.64rem; letter-spacing:.24em; text-transform:uppercase;
-  color:rgba(255,255,255,.42); margin-bottom:10px;
+  color:rgba(80,40,0,.42); margin-bottom:10px;
 }
 .sec-title {
   font-size:clamp(2rem,5vw,3.2rem); font-weight:800; line-height:1.1; margin-bottom:10px;
   background: var(--gold-txt);
   -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
 }
-.sec-sub { font-size:.82rem; color:rgba(255,255,255,.36); margin-bottom:52px; letter-spacing:.05em; }
+.sec-sub { font-size:.82rem; color:rgba(80,40,0,.38); margin-bottom:52px; letter-spacing:.05em; }
 
 .legend { display:flex; justify-content:center; gap:26px; flex-wrap:wrap; margin-bottom:44px; }
-.leg { display:flex; align-items:center; gap:8px; font-size:.66rem; color:rgba(255,255,255,.42); letter-spacing:.06em; }
+.leg { display:flex; align-items:center; gap:8px; font-size:.66rem; color:rgba(80,40,0,.45); letter-spacing:.06em; }
 .leg-ln { width:30px; height:2px; border-radius:1px; }
 
 /* Tree wrapper */
@@ -353,10 +349,10 @@ footer span {
 .bg-memories {
   position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden;
 }
-/* Warm dark vignette overlay so content is readable */
+/* Warm LIGHT vignette — keeps cards visible but readable */
 .bg-memories::after {
   content:''; position:absolute; inset:0;
-  background:radial-gradient(ellipse 80% 80% at 50% 50%, rgba(17,8,0,.35) 0%, rgba(17,8,0,.82) 100%);
+  background:radial-gradient(ellipse 100% 100% at 50% 50%, rgba(255,248,235,.55) 0%, rgba(255,240,210,.80) 100%);
   z-index:20;
 }
 .mc {
@@ -494,12 +490,7 @@ footer { background:#fff3e0; border-top:0.8px solid rgba(180,100,0,.12); }
 <!-- ══ HERO ══════════════════════════════════════════════════════════ -->
 <section class="hero" id="waitlist">
 
-  <!-- Big centered logo -->
-  <div class="hero-logo-wrap">
-    <img src="logo.svg" class="hero-logo-big" alt="myDynasty">
-  </div>
-
-  <!-- Hidden floating cards column (kept for mobile-hidden) -->
+  <!-- Hidden floating cards column -->
   <div class="hero-cards">
     <!-- SVG lines connecting hero demo cards -->
     <svg class="hero-tree-svg" id="heroSvg" viewBox="0 0 400 520">

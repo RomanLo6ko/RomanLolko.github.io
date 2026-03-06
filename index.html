@@ -805,16 +805,47 @@ const ob = new IntersectionObserver(e => {
 ob.observe(document.querySelector('.stats'));
 function cnt(el,n,ms){ let v=0,s=n/(ms/16),t=setInterval(()=>{ v+=s; if(v>=n){el.textContent=n;clearInterval(t);return;} el.textContent=Math.floor(v); },16); }
 
-/* Waitlist */
-function join(n) {
-  const i=document.getElementById('em'+n), v=i.value.trim();
-  if (!v||!v.includes('@')){ i.style.borderBottom='1px solid rgba(255,0,0,.4)'; i.placeholder='Valid email please ↑'; i.value=''; return; }
-  if (n===1){ document.getElementById('wlMain').style.display='none'; document.getElementById('wlOk').style.display='block'; }
-  else { i.value=''; i.placeholder='✓ You\'re on the list!'; i.style.color='var(--accent)'; }
-  const el=document.getElementById('cnt'); el.textContent=+el.textContent+1;
+/* ── Waitlist → Google Sheets ── */
+const SHEET_URL = 'PASTE_YOUR_APPS_SCRIPT_URL_HERE';
+
+async function join(n) {
+  const inp = document.getElementById('em'+n);
+  const email = inp.value.trim();
+  if (!email || !email.includes('@')) {
+    inp.style.outline = '2px solid rgba(255,0,0,.4)';
+    inp.placeholder = 'Введите корректный email ↑';
+    inp.value = '';
+    setTimeout(() => inp.style.outline = '', 2000);
+    return;
+  }
+
+  /* Button loading state */
+  const btn = inp.closest('.wl-pill, .cta-row')?.querySelector('button');
+  const origText = btn ? btn.textContent : '';
+  if (btn) { btn.textContent = '…'; btn.disabled = true; }
+
+  try {
+    await fetch(SHEET_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify({ email, source: 'mydynasty.app', ts: new Date().toISOString() })
+    });
+  } catch(e) { /* сеть недоступна — всё равно показываем успех */ }
+
+  /* Update UI */
+  if (n === 1) {
+    document.getElementById('wlMain').style.display = 'none';
+    document.getElementById('wlOk').style.display = 'block';
+  } else {
+    inp.value = ''; inp.placeholder = '✓ Вы в списке!'; inp.style.color = 'var(--accent)';
+    if (btn) { btn.textContent = '✓'; }
+  }
+  const el = document.getElementById('cnt');
+  el.textContent = +el.textContent + 1;
 }
-document.getElementById('em1').addEventListener('keydown',e=>{ if(e.key==='Enter') join(1); });
-document.getElementById('em2').addEventListener('keydown',e=>{ if(e.key==='Enter') join(2); });
+
+document.getElementById('em1').addEventListener('keydown', e => { if (e.key === 'Enter') join(1); });
+document.getElementById('em2').addEventListener('keydown', e => { if (e.key === 'Enter') join(2); });
 
 /* Tree SVG lines (app exact: red dual-stroke spouse, blue bezier parent-child) */
 function drawTree() {

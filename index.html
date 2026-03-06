@@ -357,6 +357,9 @@ footer span {
   -webkit-text-fill-color:transparent; background-clip:text;
 }
 
+/* Honeypot — скрыто от людей, боты заполняют */
+.hp-trap { position:absolute; left:-9999px; opacity:0; pointer-events:none; }
+
 @keyframes up { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
 @keyframes drift { 0%,100%{transform:var(--r) translateY(0)} 50%{transform:var(--r) translateY(-12px)} }
 
@@ -584,6 +587,7 @@ footer { background:#fff3e0; border-top:0.8px solid rgba(180,100,0,.12); }
       <div id="wlMain">
         <div class="wl-pill">
           <input class="wl-input" type="email" id="em1" placeholder="Enter your email address…"/>
+          <input class="hp-trap" type="text" name="website" tabindex="-1" autocomplete="off"/>
           <button class="wl-btn" onclick="join(1)">Join Waitlist →</button>
         </div>
         <div class="wl-note">🔒 No spam, ever · Unsubscribe anytime</div>
@@ -807,10 +811,13 @@ function cnt(el,n,ms){ let v=0,s=n/(ms/16),t=setInterval(()=>{ v+=s; if(v>=n){el
 
 /* ── Waitlist → Google Sheets ── */
 const SHEET_URL = 'https://script.google.com/macros/s/AKfycbw8AHz3V0CvLf-L-iF9UMuIww2_cbxuwnCLWCPXfgUunOpTNtG2F5za1unFu9J4fVog/exec';
+const _pageBorn = Date.now(); // таймер загрузки страницы
 
 async function join(n) {
   const inp = document.getElementById('em'+n);
   const email = inp.value.trim();
+
+  // 1. Валидация email
   if (!email || !email.includes('@')) {
     inp.style.outline = '2px solid rgba(255,0,0,.4)';
     inp.placeholder = 'Введите корректный email ↑';
@@ -819,9 +826,15 @@ async function join(n) {
     return;
   }
 
+  // 2. Honeypot — если заполнено, это бот
+  const hp = inp.closest('form, .wl-pill')?.querySelector('.hp-trap');
+  if (hp && hp.value) return;
+
+  // 3. Таймер — форма должна быть открыта хотя бы 2 секунды
+  if (Date.now() - _pageBorn < 2000) return;
+
   /* Button loading state */
   const btn = inp.closest('.wl-pill, .cta-row')?.querySelector('button');
-  const origText = btn ? btn.textContent : '';
   if (btn) { btn.textContent = '…'; btn.disabled = true; }
 
   try {
@@ -829,7 +842,7 @@ async function join(n) {
       method: 'POST',
       mode: 'no-cors',
       headers: { 'Content-Type': 'text/plain' },
-      body: JSON.stringify({ email, source: 'mydynasty.app', ts: new Date().toISOString() })
+      body: JSON.stringify({ email, hp: hp ? hp.value : '', source: 'mydynasty.app', ts: new Date().toISOString() })
     });
   } catch(e) { /* сеть недоступна — всё равно показываем успех */ }
 

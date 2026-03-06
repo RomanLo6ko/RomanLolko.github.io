@@ -81,42 +81,57 @@ nav a:hover { color:#111; }
 .hero h1 {
   font-size:clamp(2.6rem,5vw,4.8rem); font-weight:800; line-height:1.07;
   margin-bottom:18px; letter-spacing:-.02em;
-  background: var(--gold-txt);
+  background: linear-gradient(135deg, #2a0f00 0%, #7a3200 45%, #c4690a 100%);
   -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
   animation:up .8s .08s ease both;
 }
 .hero-desc {
-  font-size:1rem; font-weight:400; color:rgba(60,30,0,.62);
+  font-size:1rem; font-weight:500; color:rgba(40,15,0,.70);
   line-height:1.78; margin-bottom:28px; animation:up .8s .16s ease both;
 }
 
-/* Waitlist form — settings card style */
-.wl-wrap { animation:up .8s .24s ease both; }
-.wl-card {
-  border-radius:20px; overflow:hidden;
-  background: rgba(255,255,255,.90) padding-box, var(--rb) border-box;
-  border: 0.8px solid transparent;
-  box-shadow: 0 4px 24px rgba(0,0,0,.12);
+/* ── Waitlist form — modern pill ── */
+.wl-wrap { animation:up .8s .24s ease both; width:100%; max-width:480px; }
+.wl-pill {
+  display:flex; align-items:center;
+  background:#fff; border-radius:100px;
+  border:0.8px solid transparent;
+  background: #fff padding-box, var(--rb) border-box;
+  box-shadow: 0 6px 32px rgba(150,60,0,.14), 0 1px 4px rgba(0,0,0,.06);
+  padding:6px 6px 6px 22px;
+  gap:8px;
 }
-.wl-row { display:flex; border-bottom:0.8px solid rgba(0,0,0,.07); }
 .wl-input {
-  flex:1; padding:15px 20px; background:transparent; border:none; outline:none;
-  font-family:'Nunito',sans-serif; font-size:.92rem; color:#222;
+  flex:1; background:transparent; border:none; outline:none;
+  font-family:'Nunito',sans-serif; font-size:.95rem; font-weight:500; color:#1a0a00;
+  min-width:0;
 }
-.wl-input::placeholder { color:rgba(0,0,0,.28); }
+.wl-input::placeholder { color:rgba(0,0,0,.32); font-weight:400; }
 .wl-btn {
-  padding:15px 22px; background:transparent; border:none;
-  border-left:0.8px solid rgba(0,0,0,.07);
-  font-family:'Nunito',sans-serif; font-size:.83rem; font-weight:700;
-  color:var(--accent); cursor:pointer; white-space:nowrap; transition:background .2s;
+  flex-shrink:0;
+  padding:12px 24px; border:none; border-radius:100px; cursor:pointer;
+  font-family:'Nunito',sans-serif; font-size:.85rem; font-weight:800;
+  letter-spacing:.02em; white-space:nowrap;
+  background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #c2410c 100%);
+  color:#fff;
+  box-shadow: 0 3px 12px rgba(234,88,12,.40);
+  transition: transform .18s, box-shadow .18s;
 }
-.wl-btn:hover { background:rgba(30,111,232,.06); }
-.wl-note { padding:9px 20px; font-size:.68rem; color:rgba(0,0,0,.36); text-align:center; }
+.wl-btn:hover {
+  transform:translateY(-1px);
+  box-shadow: 0 6px 20px rgba(234,88,12,.50);
+}
+.wl-btn:active { transform:translateY(0); }
+.wl-note { margin-top:10px; font-size:.68rem; color:rgba(40,15,0,.42); text-align:center; letter-spacing:.01em; }
 .wl-success {
   display:none; padding:22px 20px; text-align:center;
+  background:#fff; border-radius:20px;
+  border:0.8px solid transparent;
+  background:#fff padding-box, var(--rb) border-box;
+  box-shadow:0 4px 24px rgba(0,0,0,.10);
 }
-.wl-success h3 { font-size:1rem; font-weight:700; color:#222; margin:8px 0 4px; }
-.wl-success p  { font-size:.8rem; color:rgba(0,0,0,.48); }
+.wl-success h3 { font-size:1rem; font-weight:700; color:#1a0a00; margin:8px 0 4px; }
+.wl-success p  { font-size:.8rem; color:rgba(40,15,0,.50); }
 
 .store-row { display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; animation:up .8s .32s ease both; }
 .store-btn {
@@ -567,15 +582,13 @@ footer { background:#fff3e0; border-top:0.8px solid rgba(180,100,0,.12); }
 
     <div class="wl-wrap">
       <div id="wlMain">
-        <div class="wl-card">
-          <div class="wl-row">
-            <input class="wl-input" type="email" id="em1" placeholder="Enter your email address…"/>
-            <button class="wl-btn" onclick="join(1)">Join Waitlist →</button>
-          </div>
-          <div class="wl-note">🔒 No spam, ever · Unsubscribe anytime</div>
+        <div class="wl-pill">
+          <input class="wl-input" type="email" id="em1" placeholder="Enter your email address…"/>
+          <button class="wl-btn" onclick="join(1)">Join Waitlist →</button>
         </div>
+        <div class="wl-note">🔒 No spam, ever · Unsubscribe anytime</div>
       </div>
-      <div id="wlOk" class="wl-card wl-success">
+      <div id="wlOk" class="wl-success">
         <div style="font-size:2rem">🎉</div>
         <h3>You're on the list!</h3>
         <p>We'll notify you the moment myDynasty launches.</p>

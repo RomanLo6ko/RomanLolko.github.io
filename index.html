@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>myDynasty — Your Family Tree, Reimagined</title>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 /* ══ EXACT rainbow from PersonCard.xaml ══════════════════════════════
    Red 0% · Orange 16.7% · Yellow 33.3% · Green 50% · #1E6FE8 66.6% · Indigo 83.3% · Violet 100%
@@ -25,23 +25,10 @@
 
 * { margin:0; padding:0; box-sizing:border-box; }
 body {
-  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
   color: #111; overflow-x: hidden;
-  /* Sky gradient */
-  background: linear-gradient(180deg,
-    #5496c0 0%, #78aed0 16%, #a2c8e2 34%,
-    #c8dff0 52%, #e0eff8 68%, #f2f8fc 84%, #ffffff 100%);
+  background: #110800;
   min-height: 100vh;
-}
-/* Cloud blobs */
-body::before {
-  content:''; position:fixed; inset:0; pointer-events:none; z-index:0;
-  background:
-    radial-gradient(ellipse 54% 40% at 10% 30%, rgba(255,255,255,.62) 0%, transparent 60%),
-    radial-gradient(ellipse 46% 32% at 80% 16%, rgba(255,255,255,.58) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 44% at 46% 60%, rgba(255,255,255,.50) 0%, transparent 60%),
-    radial-gradient(ellipse 40% 30% at 90% 68%, rgba(255,255,255,.46) 0%, transparent 60%),
-    radial-gradient(ellipse 48% 36% at 26% 84%, rgba(255,255,255,.42) 0%, transparent 60%);
 }
 
 /* ══ NAV ═════════════════════════════════════════════════════════════ */
@@ -55,7 +42,7 @@ nav {
   border-bottom: 0.8px solid rgba(255,255,255,.42);
 }
 .nav-logo { display:flex; align-items:center; }
-.nav-logo-img { height:38px; width:auto; display:block; }
+.nav-logo-img { height:38px; width:auto; display:block; filter:brightness(0) invert(1); }
 .nav-links { display:flex; gap:36px; }
 nav a { color:rgba(0,0,0,.58); text-decoration:none; font-size:.82rem; font-weight:500;
         letter-spacing:.02em; transition:color .2s; }
@@ -70,24 +57,20 @@ nav a:hover { color:#111; }
 /* ══ HERO ════════════════════════════════════════════════════════════ */
 .hero {
   position:relative; z-index:1; min-height:100vh;
-  display:grid; grid-template-columns:1fr 1fr;
-  align-items:center; gap:40px; padding:120px 64px 80px;
+  display:flex; flex-direction:column;
+  align-items:center; justify-content:center; text-align:center;
+  padding:120px 32px 80px; gap:0;
   overflow:hidden;
 }
+/* Large centered logo */
+.hero-logo-wrap { margin-bottom:28px; animation:up .7s ease both; }
+.hero-logo-big  { height:90px; width:auto; display:block; filter:brightness(0) invert(1); }
 
-/* Left: floating demo cards */
-.hero-cards { position:relative; height:520px; }
-.hc { position:absolute; }
-.hc1 { top:0; left:10px; transform:rotate(-4deg) translateZ(0); }
-.hc2 { top:18px; left:200px; transform:rotate(3deg) translateZ(0); }
-.hc3 { top:250px; left:105px; transform:rotate(-1.5deg) translateZ(0); }
-.hero-tree-svg {
-  position:absolute; inset:0; width:100%; height:100%;
-  pointer-events:none; overflow:visible; z-index:5;
-}
+/* Remove floating card column on left */
+.hero-cards { display:none; }
 
-/* Right: text */
-.hero-text {}
+/* Text */
+.hero-text { max-width:620px; }
 .hero-badge {
   display:inline-flex; align-items:center; gap:7px;
   padding:5px 16px; margin-bottom:22px;
@@ -122,13 +105,13 @@ nav a:hover { color:#111; }
 .wl-row { display:flex; border-bottom:0.8px solid rgba(0,0,0,.07); }
 .wl-input {
   flex:1; padding:15px 20px; background:transparent; border:none; outline:none;
-  font-family:'DM Sans',sans-serif; font-size:.92rem; color:#222;
+  font-family:'Nunito',sans-serif; font-size:.92rem; color:#222;
 }
 .wl-input::placeholder { color:rgba(0,0,0,.28); }
 .wl-btn {
   padding:15px 22px; background:transparent; border:none;
   border-left:0.8px solid rgba(0,0,0,.07);
-  font-family:'DM Sans',sans-serif; font-size:.83rem; font-weight:700;
+  font-family:'Nunito',sans-serif; font-size:.83rem; font-weight:700;
   color:var(--accent); cursor:pointer; white-space:nowrap; transition:background .2s;
 }
 .wl-btn:hover { background:rgba(30,111,232,.06); }
@@ -160,10 +143,10 @@ nav a:hover { color:#111; }
 .stats {
   position:relative; z-index:1; display:flex; justify-content:center;
   gap:60px; flex-wrap:wrap; padding:46px 24px;
-  background:rgba(255,255,255,.18);
-  backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
-  border-top:0.8px solid rgba(255,255,255,.35);
-  border-bottom:0.8px solid rgba(255,255,255,.35);
+  background:rgba(20,8,0,.55);
+  backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px);
+  border-top:0.8px solid rgba(255,200,80,.18);
+  border-bottom:0.8px solid rgba(255,200,80,.18);
 }
 .stat-n {
   font-size:2.6rem; font-weight:800; line-height:1;
@@ -176,6 +159,8 @@ nav a:hover { color:#111; }
 .tree-sec {
   position:relative; z-index:1; padding:80px 24px 100px;
   text-align:center; overflow:hidden;
+  background:rgba(15,6,0,.60);
+  backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
 }
 .sec-label {
   display:block; font-size:.64rem; letter-spacing:.24em; text-transform:uppercase;
@@ -302,13 +287,13 @@ nav a:hover { color:#111; }
 .cta-row { display:flex; }
 .cta-input {
   flex:1; padding:15px 18px; background:transparent; border:none; outline:none;
-  font-family:'DM Sans',sans-serif; font-size:.9rem; color:#222;
+  font-family:'Nunito',sans-serif; font-size:.9rem; color:#222;
 }
 .cta-input::placeholder { color:rgba(0,0,0,.28); }
 .cta-btn {
   padding:15px 20px; background:transparent; border:none;
   border-left:0.8px solid rgba(0,0,0,.08);
-  font-family:'DM Sans',sans-serif; font-size:.82rem; font-weight:700;
+  font-family:'Nunito',sans-serif; font-size:.82rem; font-weight:700;
   color:var(--accent); cursor:pointer; white-space:nowrap; transition:background .2s;
 }
 .cta-btn:hover { background:rgba(30,111,232,.05); }
@@ -339,13 +324,13 @@ nav a:hover { color:#111; }
 .cf-row input, .cf-row textarea {
   display:block; width:100%; padding:2px 20px 13px;
   background:transparent; border:none; outline:none;
-  font-family:'DM Sans',sans-serif; font-size:.9rem; color:#222;
+  font-family:'Nunito',sans-serif; font-size:.9rem; color:#222;
 }
 .cf-row textarea { resize:vertical; min-height:98px; }
 .cf-btn {
   display:block; width:100%; padding:16px;
   background:transparent; border:none; cursor:pointer;
-  font-family:'DM Sans',sans-serif; font-size:.9rem; font-weight:700;
+  font-family:'Nunito',sans-serif; font-size:.9rem; font-weight:700;
   color:var(--accent); letter-spacing:.04em; transition:background .2s;
 }
 .cf-btn:hover { background:rgba(30,111,232,.04); }
@@ -362,10 +347,52 @@ footer span {
 }
 
 @keyframes up { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
+@keyframes drift { 0%,100%{transform:var(--r) translateY(0)} 50%{transform:var(--r) translateY(-12px)} }
+
+/* ══ WARM MEMORY CARDS BACKGROUND ═══════════════════════════════════ */
+.bg-memories {
+  position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden;
+}
+/* Warm dark vignette overlay so content is readable */
+.bg-memories::after {
+  content:''; position:absolute; inset:0;
+  background:radial-gradient(ellipse 80% 80% at 50% 50%, rgba(17,8,0,.35) 0%, rgba(17,8,0,.82) 100%);
+  z-index:20;
+}
+.mc {
+  position:absolute; border-radius:22px; overflow:hidden;
+  box-shadow:0 8px 40px rgba(0,0,0,.55), 0 2px 8px rgba(0,0,0,.35);
+  animation:drift var(--d,9s) ease-in-out var(--dl,0s) infinite;
+}
+.mc img { width:100%; height:100%; object-fit:cover; display:block; }
+/* Warm tint overlay on each card */
+.mc::before {
+  content:''; position:absolute; inset:0; z-index:1;
+  background: var(--tint, linear-gradient(135deg,rgba(251,146,60,.28),rgba(245,158,11,.22)));
+  mix-blend-mode:multiply;
+}
+.mc-cap {
+  position:absolute; bottom:0; left:0; right:0; z-index:2;
+  padding:14px 14px 12px;
+  background:linear-gradient(transparent 0%, rgba(0,0,0,.68) 100%);
+}
+.mc-place { font-family:'Nunito',sans-serif; font-size:.82rem; font-weight:800; color:#fff; display:block; }
+.mc-date  { font-family:'Nunito',sans-serif; font-size:.62rem; color:rgba(255,255,255,.68); display:block; margin-top:1px; }
+
+/* Sections above background */
+.stats, .tree-sec, .feat-sec, .cta-sec, .contact-sec, footer { position:relative; z-index:1; }
+.tree-sec, .feat-sec, .cta-sec, .contact-sec {
+  background:rgba(17,8,0,.0);
+}
+.feat-sec {
+  background:linear-gradient(180deg, rgba(255,240,220,.0) 0%, rgba(255,248,238,.88) 30%, #fdf6ec 100%);
+}
+.cta-sec { background:#fdf6ec; }
+.contact-sec { background:#fdf6ec; }
+footer { background:#fff3e0; border-top:0.8px solid rgba(180,100,0,.12); }
 
 @media(max-width:800px){
-  .hero { grid-template-columns:1fr; padding:108px 22px 60px; }
-  .hero-cards { display:none; }
+  .hero { padding:108px 22px 60px; }
   nav { padding:12px 18px; } .nav-links { display:none; } .nav-cta { display:none; }
   .stats { gap:28px; }
   .tree-gen { gap:8px; flex-wrap:wrap; }
@@ -375,6 +402,81 @@ footer span {
 </style>
 </head>
 <body>
+
+<!-- ══ WARM MEMORY CARDS BACKGROUND ════════════════════════════════ -->
+<div class="bg-memories" aria-hidden="true">
+
+  <!-- Row 1 — top-left cluster -->
+  <div class="mc" style="--r:rotate(-8deg);--d:11s;--dl:0s;--tint:linear-gradient(135deg,rgba(234,88,12,.32),rgba(251,191,36,.22));
+       width:200px;height:260px;top:-20px;left:-30px">
+    <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&h=520&fit=crop&auto=format" alt="">
+    <div class="mc-cap"><span class="mc-place">Sunset Valley</span><span class="mc-date">July 14 7:12 PM</span></div>
+  </div>
+
+  <div class="mc" style="--r:rotate(5deg);--d:14s;--dl:2s;--tint:linear-gradient(135deg,rgba(245,158,11,.30),rgba(239,68,68,.18));
+       width:230px;height:290px;top:60px;left:180px">
+    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=460&h=580&fit=crop&auto=format" alt="">
+    <div class="mc-cap"><span class="mc-place">Golden Fields</span><span class="mc-date">Aug 3 6:45 PM</span></div>
+  </div>
+
+  <div class="mc" style="--r:rotate(-3deg);--d:10s;--dl:1s;--tint:linear-gradient(135deg,rgba(251,146,60,.25),rgba(253,224,71,.20));
+       width:180px;height:230px;top:10px;right:340px">
+    <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=360&h=460&fit=crop&auto=format" alt="">
+    <div class="mc-cap"><span class="mc-place">Amber Forest</span><span class="mc-date">Oct 8 4:30 PM</span></div>
+  </div>
+
+  <!-- Top-right cluster -->
+  <div class="mc" style="--r:rotate(9deg);--d:13s;--dl:3s;--tint:linear-gradient(135deg,rgba(249,115,22,.28),rgba(250,204,21,.22));
+       width:220px;height:275px;top:-15px;right:120px">
+    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=440&h=550&fit=crop&crop=faces&auto=format" alt="">
+    <div class="mc-cap"><span class="mc-place">City Park</span><span class="mc-date">June 8 3:00 PM</span></div>
+  </div>
+
+  <div class="mc" style="--r:rotate(-6deg);--d:12s;--dl:0.5s;--tint:linear-gradient(135deg,rgba(239,68,68,.22),rgba(251,146,60,.30));
+       width:190px;height:245px;top:50px;right:-20px">
+    <img src="https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=380&h=490&fit=crop&auto=format" alt="">
+    <div class="mc-cap"><span class="mc-place">Harvest Glow</span><span class="mc-date">Sep 21 5:50 PM</span></div>
+  </div>
+
+  <!-- Middle strip -->
+  <div class="mc" style="--r:rotate(4deg);--d:16s;--dl:4s;--tint:linear-gradient(135deg,rgba(234,88,12,.26),rgba(253,224,71,.24));
+       width:210px;height:265px;top:calc(50vh - 200px);left:-25px">
+    <img src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=420&h=530&fit=crop&auto=format" alt="">
+    <div class="mc-cap"><span class="mc-place">Sunflower Path</span><span class="mc-date">July 28 6:10 PM</span></div>
+  </div>
+
+  <div class="mc" style="--r:rotate(-5deg);--d:15s;--dl:2.5s;--tint:linear-gradient(135deg,rgba(245,158,11,.30),rgba(249,115,22,.26));
+       width:200px;height:250px;top:calc(50vh - 80px);right:-15px">
+    <img src="https://images.unsplash.com/photo-1490750967868-88df5691cc99?w=400&h=500&fit=crop&auto=format" alt="">
+    <div class="mc-cap"><span class="mc-place">Desert Bloom</span><span class="mc-date">Apr 19 5:00 PM</span></div>
+  </div>
+
+  <!-- Bottom cluster -->
+  <div class="mc" style="--r:rotate(7deg);--d:11s;--dl:1.5s;--tint:linear-gradient(135deg,rgba(251,191,36,.28),rgba(234,88,12,.24));
+       width:235px;height:295px;bottom:-10px;left:50px">
+    <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=470&h=590&fit=crop&auto=format" alt="">
+    <div class="mc-cap"><span class="mc-place">Evening Light</span><span class="mc-date">Aug 15 8:20 PM</span></div>
+  </div>
+
+  <div class="mc" style="--r:rotate(-4deg);--d:13s;--dl:3.5s;--tint:linear-gradient(135deg,rgba(239,68,68,.20),rgba(251,146,60,.28));
+       width:205px;height:255px;bottom:20px;left:310px">
+    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=410&h=510&fit=crop&auto=format" alt="">
+    <div class="mc-cap"><span class="mc-place">Mountain Glow</span><span class="mc-date">Sep 5 7:45 PM</span></div>
+  </div>
+
+  <div class="mc" style="--r:rotate(6deg);--d:12s;--dl:0.8s;--tint:linear-gradient(135deg,rgba(249,115,22,.30),rgba(253,224,71,.20));
+       width:215px;height:270px;bottom:-5px;right:140px">
+    <img src="https://images.unsplash.com/photo-1473073761808-ba75eb16de8a?w=430&h=540&fit=crop&auto=format" alt="">
+    <div class="mc-cap"><span class="mc-place">Autumn Walk</span><span class="mc-date">Oct 22 4:15 PM</span></div>
+  </div>
+
+  <div class="mc" style="--r:rotate(-9deg);--d:14s;--dl:5s;--tint:linear-gradient(135deg,rgba(245,158,11,.28),rgba(239,68,68,.22));
+       width:185px;height:235px;bottom:30px;right:-10px">
+    <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=370&h=470&fit=crop&auto=format" alt="">
+    <div class="mc-cap"><span class="mc-place">Warm Horizon</span><span class="mc-date">June 30 8:05 PM</span></div>
+  </div>
+
+</div>
 
 <!-- ══ NAV ══════════════════════════════════════════════════════════ -->
 <nav>
@@ -392,7 +494,12 @@ footer span {
 <!-- ══ HERO ══════════════════════════════════════════════════════════ -->
 <section class="hero" id="waitlist">
 
-  <!-- Left: floating preview cards (exact app PersonCard style) -->
+  <!-- Big centered logo -->
+  <div class="hero-logo-wrap">
+    <img src="logo.svg" class="hero-logo-big" alt="myDynasty">
+  </div>
+
+  <!-- Hidden floating cards column (kept for mobile-hidden) -->
   <div class="hero-cards">
     <!-- SVG lines connecting hero demo cards -->
     <svg class="hero-tree-svg" id="heroSvg" viewBox="0 0 400 520">
@@ -461,7 +568,7 @@ footer span {
     </div>
   </div>
 
-  <!-- Right: text + form -->
+  <!-- Centered text + form -->
   <div class="hero-text">
     <div class="hero-badge rb rb-100"><div class="pulse"></div> Coming Soon · 2025</div>
     <h1>Your Family's<br>Story Lives Here</h1>

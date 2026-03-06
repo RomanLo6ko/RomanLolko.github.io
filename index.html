@@ -810,7 +810,7 @@ ob.observe(document.querySelector('.stats'));
 function cnt(el,n,ms){ let v=0,s=n/(ms/16),t=setInterval(()=>{ v+=s; if(v>=n){el.textContent=n;clearInterval(t);return;} el.textContent=Math.floor(v); },16); }
 
 /* ── Waitlist → Google Sheets ── */
-const SHEET_URL = 'https://script.google.com/macros/s/AKfycbw8AHz3V0CvLf-L-iF9UMuIww2_cbxuwnCLWCPXfgUunOpTNtG2F5za1unFu9J4fVog/exec';
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbxUw51ItHlXSJNJ5_ctsNM359_0JMInojKODJx4EXgvFQCuDU0_-lGnlbW_S9z-dTMj/exec';
 const _pageBorn = Date.now(); // таймер загрузки страницы
 
 async function join(n) {

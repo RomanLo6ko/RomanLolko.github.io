@@ -806,7 +806,7 @@ ob.observe(document.querySelector('.stats'));
 function cnt(el,n,ms){ let v=0,s=n/(ms/16),t=setInterval(()=>{ v+=s; if(v>=n){el.textContent=n;clearInterval(t);return;} el.textContent=Math.floor(v); },16); }
 
 /* ── Waitlist → Google Sheets ── */
-const SHEET_URL = 'PASTE_YOUR_APPS_SCRIPT_URL_HERE';
+const SHEET_URL = 'https://script.google.com/macros/s/AKfycbw8AHz3V0CvLf-L-iF9UMuIww2_cbxuwnCLWCPXfgUunOpTNtG2F5za1unFu9J4fVog/exec';
 
 async function join(n) {
   const inp = document.getElementById('em'+n);

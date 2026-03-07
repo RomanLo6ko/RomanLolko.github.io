@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>myDynasty — Your Family Tree, Reimagined</title>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 /* ══ EXACT rainbow from PersonCard.xaml ══════════════════════════════
@@ -66,7 +67,7 @@ nav a:hover { color:#111; }
 .hero-cards { display:none; }
 
 /* Text */
-.hero-text { max-width:620px; }
+.hero-text { max-width:620px; width:100%; display:flex; flex-direction:column; align-items:center; }
 .hero-badge {
   display:inline-flex; align-items:center; gap:7px;
   padding:5px 16px; margin-bottom:22px;
@@ -90,48 +91,78 @@ nav a:hover { color:#111; }
   line-height:1.78; margin-bottom:28px; animation:up .8s .16s ease both;
 }
 
-/* ── Waitlist form — modern pill ── */
-.wl-wrap { animation:up .8s .24s ease both; width:100%; max-width:480px; }
+/* ── Waitlist form ── */
+.wl-wrap { animation:up .8s .24s ease both; width:100%; max-width:460px; }
+
 .wl-pill {
   display:flex; align-items:center;
-  background:#fff; border-radius:100px;
-  border:0.8px solid transparent;
+  border-radius:100px;
+  border:1px solid transparent;
   background: #fff padding-box, var(--rb) border-box;
-  box-shadow: 0 6px 32px rgba(150,60,0,.14), 0 1px 4px rgba(0,0,0,.06);
-  padding:6px 6px 6px 22px;
-  gap:8px;
+  box-shadow: 0 8px 40px rgba(150,60,0,.14), 0 2px 6px rgba(0,0,0,.06);
+  padding:6px 6px 6px 22px; gap:8px;
+  transition: box-shadow .25s;
+}
+.wl-pill:focus-within {
+  box-shadow: 0 8px 40px rgba(234,88,12,.26), 0 0 0 4px rgba(234,88,12,.10);
 }
 .wl-input {
   flex:1; background:transparent; border:none; outline:none;
   font-family:'Nunito',sans-serif; font-size:.95rem; font-weight:500; color:#1a0a00;
   min-width:0;
 }
-.wl-input::placeholder { color:rgba(0,0,0,.32); font-weight:400; }
+.wl-input::placeholder { color:rgba(0,0,0,.30); font-weight:400; }
 .wl-btn {
-  flex-shrink:0;
-  padding:12px 24px; border:none; border-radius:100px; cursor:pointer;
+  flex-shrink:0; padding:12px 24px; border:none; border-radius:100px; cursor:pointer;
   font-family:'Nunito',sans-serif; font-size:.85rem; font-weight:800;
   letter-spacing:.02em; white-space:nowrap;
   background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #c2410c 100%);
-  color:#fff;
-  box-shadow: 0 3px 12px rgba(234,88,12,.40);
+  color:#fff; box-shadow: 0 3px 12px rgba(234,88,12,.40);
   transition: transform .18s, box-shadow .18s;
 }
-.wl-btn:hover {
-  transform:translateY(-1px);
-  box-shadow: 0 6px 20px rgba(234,88,12,.50);
-}
+.wl-btn:hover  { transform:translateY(-2px); box-shadow:0 8px 24px rgba(234,88,12,.50); }
 .wl-btn:active { transform:translateY(0); }
 .wl-note { margin-top:10px; font-size:.68rem; color:rgba(40,15,0,.42); text-align:center; letter-spacing:.01em; }
+
+/* ── Success card ── */
 .wl-success {
-  display:none; padding:22px 20px; text-align:center;
-  background:#fff; border-radius:20px;
-  border:0.8px solid transparent;
-  background:#fff padding-box, var(--rb) border-box;
-  box-shadow:0 4px 24px rgba(0,0,0,.10);
+  display:none; text-align:center;
+  padding:36px 28px 28px;
+  border:1px solid transparent;
+  background: #fff padding-box, var(--rb) border-box;
+  border-radius:28px;
+  box-shadow: 0 12px 48px rgba(150,60,0,.14), 0 2px 8px rgba(0,0,0,.06);
 }
-.wl-success h3 { font-size:1rem; font-weight:700; color:#1a0a00; margin:8px 0 4px; }
-.wl-success p  { font-size:.8rem; color:rgba(40,15,0,.50); }
+.wl-success.visible {
+  display:block;
+  animation: successIn .55s cubic-bezier(.34,1.56,.64,1) both;
+}
+@keyframes successIn {
+  from { opacity:0; transform:translateY(20px) scale(.94); }
+  to   { opacity:1; transform:translateY(0) scale(1); }
+}
+
+/* SVG circle + checkmark */
+.sc-ring {
+  width:72px; height:72px; margin:0 auto 18px; display:block;
+  animation: scPop .45s cubic-bezier(.34,1.56,.64,1) both;
+}
+@keyframes scPop { from{transform:scale(0);opacity:0} to{transform:scale(1);opacity:1} }
+.sc-check {
+  stroke-dasharray:52; stroke-dashoffset:52;
+  animation: scDraw .4s ease .38s forwards;
+}
+@keyframes scDraw { to { stroke-dashoffset:0; } }
+
+.sc-title { font-size:1.25rem; font-weight:900; color:#1a0a00; margin-bottom:6px; letter-spacing:-.01em; }
+.sc-sub   { font-size:.85rem; color:rgba(40,15,0,.55); line-height:1.65; margin-bottom:20px; }
+.sc-badge {
+  display:inline-flex; align-items:center; gap:6px;
+  background:rgba(249,115,22,.09); border:1px solid rgba(249,115,22,.22);
+  border-radius:100px; padding:8px 18px;
+  font-size:.75rem; font-weight:700; color:#c2410c;
+  letter-spacing:.05em; text-transform:uppercase;
+}
 
 .store-row { display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; animation:up .8s .32s ease both; }
 .store-btn {
@@ -593,9 +624,21 @@ footer { background:#fff3e0; border-top:0.8px solid rgba(180,100,0,.12); }
         <div class="wl-note">🔒 No spam, ever · Unsubscribe anytime</div>
       </div>
       <div id="wlOk" class="wl-success">
-        <div style="font-size:2rem">🎉</div>
-        <h3>You're on the list!</h3>
-        <p>We'll notify you the moment myDynasty launches.</p>
+        <svg class="sc-ring" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="scGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#f97316"/>
+              <stop offset="100%" stop-color="#c2410c"/>
+            </linearGradient>
+          </defs>
+          <circle cx="36" cy="36" r="34" fill="rgba(249,115,22,.10)" stroke="url(#scGrad)" stroke-width="2"/>
+          <path class="sc-check" d="M22 37 l11 11 l17-20"
+            stroke="#ea580c" stroke-width="3.5"
+            stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+        <div class="sc-title">Вы в списке!</div>
+        <div class="sc-sub">Уведомим вас, как только myDynasty запустится.<br>Следите за обновлениями ✨</div>
+        <div class="sc-badge">👥 <span id="scCount">...</span> человек уже ждут</div>
       </div>
     </div>
 
@@ -846,16 +889,34 @@ async function join(n) {
     });
   } catch(e) { /* сеть недоступна — всё равно показываем успех */ }
 
+  /* Update counter */
+  const el = document.getElementById('cnt');
+  const newCount = +el.textContent + 1;
+  el.textContent = newCount;
+
   /* Update UI */
   if (n === 1) {
     document.getElementById('wlMain').style.display = 'none';
-    document.getElementById('wlOk').style.display = 'block';
+    const ok = document.getElementById('wlOk');
+    ok.classList.add('visible');
+    const sc = document.getElementById('scCount');
+    if (sc) sc.textContent = newCount;
+
+    /* Confetti burst */
+    confetti({ particleCount: 120, spread: 80, origin: { y: 0.55 },
+               colors: ['#f97316','#ea580c','#fbbf24','#fb923c','#fed7aa'] });
+    setTimeout(() => confetti({
+      particleCount: 60, angle: 60, spread: 55, origin: { x: 0, y: 0.6 },
+      colors: ['#f97316','#fbbf24','#c2410c']
+    }), 200);
+    setTimeout(() => confetti({
+      particleCount: 60, angle: 120, spread: 55, origin: { x: 1, y: 0.6 },
+      colors: ['#f97316','#fbbf24','#c2410c']
+    }), 400);
   } else {
     inp.value = ''; inp.placeholder = '✓ Вы в списке!'; inp.style.color = 'var(--accent)';
     if (btn) { btn.textContent = '✓'; }
   }
-  const el = document.getElementById('cnt');
-  el.textContent = +el.textContent + 1;
 }
 
 document.getElementById('em1').addEventListener('keydown', e => { if (e.key === 'Enter') join(1); });

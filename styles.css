@@ -127,7 +127,7 @@ nav a:hover { color: #ffb347; }
 .wl-btn:active   { transform: translateY(0); }
 .wl-btn:disabled { opacity: .6; cursor: not-allowed; transform: none; }
 .wl-cta-label {
-  font-size: .88rem; font-weight: 700; color: rgba(50,20,0,.72);
+  font-size: 1.76rem; font-weight: 700; color: rgba(50,20,0,.72);
   margin-bottom: 12px; letter-spacing: .01em;
 }
 .wl-note { margin-top: 10px; font-size: .72rem; color: rgba(40,15,0,.42); text-align: center; letter-spacing: .01em; }

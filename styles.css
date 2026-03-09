@@ -43,7 +43,7 @@ nav::after {
   -webkit-mask: linear-gradient(to bottom, black 0%, transparent 100%);
   mask: linear-gradient(to bottom, black 0%, transparent 100%);
 }
-.nav-logo      { display: flex; align-items: center; gap: 4px; }
+.nav-logo      { display: flex; align-items: center; gap: 2px; }
 .nav-logo-img  { height: 72px; width: auto; display: block; filter: drop-shadow(0 4px 12px rgba(255,255,255,.55)); }
 .nav-logo-text {
   font-size: clamp(2.21rem, 4.25vw, 4.08rem); font-weight: 400; letter-spacing: -.03em;

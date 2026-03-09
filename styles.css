@@ -90,24 +90,21 @@ nav a:hover { color: #c2410c; }
 .wl-wrap { animation: up .8s .24s ease both; width: 100%; max-width: 460px; }
 .wl-pill {
   display: flex; align-items: center; border-radius: 100px;
-  border: 1px solid rgba(255,255,255,.28);
-  background: rgba(255,255,255,.16) padding-box, var(--rb) border-box;
-  backdrop-filter: blur(14px) saturate(140%);
-  -webkit-backdrop-filter: blur(14px) saturate(140%);
-  box-shadow: 0 8px 40px rgba(0,0,0,.28), 0 2px 6px rgba(0,0,0,.14);
-  padding: 6px 6px 6px 22px; gap: 8px; transition: box-shadow .25s, background .25s;
+  border: 1px solid transparent;
+  background: #fff padding-box, var(--rb) border-box;
+  box-shadow: 0 8px 40px rgba(0,0,0,.22), 0 2px 6px rgba(0,0,0,.10);
+  padding: 6px 6px 6px 22px; gap: 8px; transition: box-shadow .25s;
 }
 .wl-pill:focus-within {
-  background: rgba(255,255,255,.22) padding-box, var(--rb) border-box;
-  box-shadow: 0 8px 40px rgba(234,88,12,.30), 0 0 0 4px rgba(234,88,12,.18);
+  box-shadow: 0 8px 40px rgba(234,88,12,.26), 0 0 0 4px rgba(234,88,12,.10);
 }
 .wl-input {
   flex: 1; background: transparent; border: none; outline: none;
   font-family: 'Nunito', sans-serif; font-size: .95rem; font-weight: 500;
-  color: #fff; min-width: 0;
+  color: #1a0a00; min-width: 0;
 }
-.wl-input::placeholder { color: rgba(255,255,255,.52); font-weight: 400; }
-.wl-input.err { outline: 2px solid rgba(220,38,38,.55); border-radius: 4px; }
+.wl-input::placeholder { color: rgba(0,0,0,.30); font-weight: 400; }
+.wl-input.err { outline: 2px solid rgba(220,38,38,.45); border-radius: 4px; }
 .wl-btn-mobile { display: none; }
 .wl-btn {
   flex-shrink: 0; width: 48px; height: 48px; padding: 0;

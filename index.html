@@ -3,8 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>myDynasty — Your Family Tree, Reimagined</title>
-<!-- Google tag (gtag.js) -->
+<title>myDynasty &#8212; Your Family Tree, Reimagined</title>
+
+<!-- SEO -->
+<meta name="description" content="The most beautiful family tree app. Connect your roots, share memories, and preserve family history forever. Join the early access waitlist.">
+<link rel="canonical" href="https://mydynasty.app/">
+<meta name="theme-color" content="#fff8f0">
+
+<!-- Open Graph -->
+<meta property="og:type"        content="website">
+<meta property="og:url"         content="https://mydynasty.app/">
+<meta property="og:title"       content="myDynasty &#8212; Your Family Tree, Reimagined">
+<meta property="og:description" content="The most beautiful family tree app. Connect your roots, share memories, and preserve family history forever.">
+<meta property="og:image"       content="https://mydynasty.app/logo.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card"        content="summary_large_image">
+<meta name="twitter:title"       content="myDynasty &#8212; Your Family Tree, Reimagined">
+<meta name="twitter:description" content="The most beautiful family tree app. Join the early access waitlist.">
+<meta name="twitter:image"       content="https://mydynasty.app/logo.png">
+
+<!-- Favicon -->
+<link rel="icon"             type="image/png" href="logo.png">
+<link rel="apple-touch-icon"                  href="logo.png">
+
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-QDYYEHYXJR"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -12,639 +35,96 @@
   gtag('js', new Date());
   gtag('config', 'G-QDYYEHYXJR');
 </script>
+
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<style>
-/* ══ EXACT rainbow from PersonCard.xaml ══════════════════════════════
-   Red 0% · Orange 16.7% · Yellow 33.3% · Green 50% · #1E6FE8 66.6% · Indigo 83.3% · Violet 100%
-   StrokeThickness 0.8 · RoundRectangle 30 · bg #33000000 · shadow 5,5,10,0.5       */
-:root {
-  --rb: linear-gradient(135deg,
-        #FF0000 0%, #FF8000 16.7%, #FFFF00 33.3%,
-        #008000 50%, #1E6FE8 66.6%, #4B0082 83.3%, #EE82EE 100%);
-  --accent: #1E6FE8;
-  --gold-txt: linear-gradient(135deg, #ffffff 15%, #fff5cc 55%, #f5e07a 100%);
-  --dark-txt: linear-gradient(135deg, #1a1a1a 0%, #333 100%);
-}
-
-/* ── rb-border mixin via background-clip ── */
-.rb { border: 0.8px solid transparent; border-radius: 30px; }
-.rb-20 { border: 0.8px solid transparent; border-radius: 20px; }
-.rb-100 { border: 0.8px solid transparent; border-radius: 100px; }
-
-* { margin:0; padding:0; box-sizing:border-box; }
-body {
-  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
-  color: #111; overflow-x: hidden;
-  background: #fff8f0;
-  min-height: 100vh;
-}
-
-/* ══ NAV ═════════════════════════════════════════════════════════════ */
-nav {
-  position:fixed; top:0; left:0; right:0; z-index:300;
-  display:flex; align-items:center; justify-content:space-between;
-  padding:10px 52px;
-  background: transparent;
-  backdrop-filter: none;
-  -webkit-backdrop-filter: none;
-  border-bottom: none;
-}
-.nav-logo { display:flex; align-items:center; }
-.nav-logo-img { height:114px; width:auto; display:block; }
-.nav-links { display:flex; gap:36px; }
-nav a { color:rgba(0,0,0,.58); text-decoration:none; font-size:.82rem; font-weight:500;
-        letter-spacing:.02em; transition:color .2s; }
-nav a:hover { color:#111; }
-.nav-cta {
-  padding:8px 22px; font-size:.8rem; font-weight:600;
-  background: rgba(255,255,255,.40) padding-box, var(--rb) border-box;
-  color:#222; cursor:pointer; transition:background .2s;
-}
-.nav-cta:hover { background: rgba(255,255,255,.6) padding-box, var(--rb) border-box; }
-
-/* ══ HERO ════════════════════════════════════════════════════════════ */
-.hero {
-  position:relative; z-index:1; min-height:100vh;
-  display:flex; flex-direction:column;
-  align-items:center; justify-content:center; text-align:center;
-  padding:160px 32px 80px; gap:0;
-  overflow:hidden;
-}
-/* Remove floating card column on left */
-.hero-cards { display:none; }
-
-/* Text */
-.hero-text { max-width:620px; width:100%; display:flex; flex-direction:column; align-items:center; }
-.hero-badge {
-  display:inline-flex; align-items:center; gap:7px;
-  padding:5px 16px; margin-bottom:22px;
-  background: rgba(255,255,255,.70) padding-box, var(--rb) border-box;
-  font-size:.68rem; letter-spacing:.15em; text-transform:uppercase;
-  color:rgba(80,40,0,.70); animation:up .8s ease both;
-}
-.pulse { width:6px; height:6px; border-radius:50%; background:#fff;
-         box-shadow:0 0 6px rgba(30,111,232,.8); animation:blink 2s infinite; }
-@keyframes blink { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.3;transform:scale(1.6)} }
-
-.hero h1 {
-  font-size:clamp(2.6rem,5vw,4.8rem); font-weight:800; line-height:1.07;
-  margin-bottom:18px; letter-spacing:-.02em;
-  background: linear-gradient(135deg, #2a0f00 0%, #7a3200 45%, #c4690a 100%);
-  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
-  animation:up .8s .08s ease both;
-}
-.hero-desc {
-  font-size:1rem; font-weight:500; color:rgba(40,15,0,.70);
-  line-height:1.78; margin-bottom:28px; animation:up .8s .16s ease both;
-}
-
-/* ── Waitlist form ── */
-.wl-wrap { animation:up .8s .24s ease both; width:100%; max-width:460px; }
-
-.wl-pill {
-  display:flex; align-items:center;
-  border-radius:100px;
-  border:1px solid transparent;
-  background: #fff padding-box, var(--rb) border-box;
-  box-shadow: 0 8px 40px rgba(150,60,0,.14), 0 2px 6px rgba(0,0,0,.06);
-  padding:6px 6px 6px 22px; gap:8px;
-  transition: box-shadow .25s;
-}
-.wl-pill:focus-within {
-  box-shadow: 0 8px 40px rgba(234,88,12,.26), 0 0 0 4px rgba(234,88,12,.10);
-}
-.wl-input {
-  flex:1; background:transparent; border:none; outline:none;
-  font-family:'Nunito',sans-serif; font-size:.95rem; font-weight:500; color:#1a0a00;
-  min-width:0;
-}
-.wl-input::placeholder { color:rgba(0,0,0,.30); font-weight:400; }
-.wl-btn-mobile { display:none; }
-.wl-btn {
-  flex-shrink:0; width:48px; height:48px; padding:0; border:none; border-radius:14px; cursor:pointer;
-  font-family:'Nunito',sans-serif; font-size:1.2rem; font-weight:800;
-  display:flex; align-items:center; justify-content:center;
-  background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #c2410c 100%);
-  color:#fff; box-shadow: 0 3px 12px rgba(234,88,12,.40);
-  transition: transform .18s, box-shadow .18s;
-}
-.wl-btn:hover  { transform:translateY(-2px); box-shadow:0 8px 24px rgba(234,88,12,.50); }
-.wl-btn:active { transform:translateY(0); }
-.wl-note { margin-top:10px; font-size:.68rem; color:rgba(40,15,0,.42); text-align:center; letter-spacing:.01em; }
-
-/* ── Success card ── */
-.wl-success {
-  display:none; text-align:center;
-  padding:36px 28px 28px;
-  border:1px solid transparent;
-  background: #fff padding-box, var(--rb) border-box;
-  border-radius:28px;
-  box-shadow: 0 12px 48px rgba(150,60,0,.14), 0 2px 8px rgba(0,0,0,.06);
-}
-.wl-success.visible {
-  display:block;
-  animation: successIn .55s cubic-bezier(.34,1.56,.64,1) both;
-}
-@keyframes successIn {
-  from { opacity:0; transform:translateY(20px) scale(.94); }
-  to   { opacity:1; transform:translateY(0) scale(1); }
-}
-
-/* SVG circle + checkmark */
-.sc-ring {
-  width:72px; height:72px; margin:0 auto 18px; display:block;
-  animation: scPop .45s cubic-bezier(.34,1.56,.64,1) both;
-}
-@keyframes scPop { from{transform:scale(0);opacity:0} to{transform:scale(1);opacity:1} }
-.sc-check {
-  stroke-dasharray:52; stroke-dashoffset:52;
-  animation: scDraw .4s ease .38s forwards;
-}
-@keyframes scDraw { to { stroke-dashoffset:0; } }
-
-.sc-title { font-size:1.25rem; font-weight:900; color:#1a0a00; margin-bottom:6px; letter-spacing:-.01em; }
-.sc-sub   { font-size:.85rem; color:rgba(40,15,0,.55); line-height:1.65; margin-bottom:20px; }
-.sc-badge {
-  display:inline-flex; align-items:center; gap:6px;
-  background:rgba(249,115,22,.09); border:1px solid rgba(249,115,22,.22);
-  border-radius:100px; padding:8px 18px;
-  font-size:.75rem; font-weight:700; color:#c2410c;
-  letter-spacing:.05em; text-transform:uppercase;
-}
-
-.store-row { display:flex; gap:10px; flex-wrap:wrap; margin-top:14px; animation:up .8s .32s ease both; }
-.store-btn {
-  display:flex; align-items:center; gap:9px; padding:10px 16px;
-  background: rgba(255,255,255,.65) padding-box, var(--rb) border-box;
-  border:0.8px solid transparent; border-radius:14px;
-  color:rgba(60,30,0,.65); opacity:.65; cursor:not-allowed; position:relative;
-}
-.store-btn svg { width:16px; height:16px; }
-.store-btn small { font-size:.54rem; display:block; opacity:.7; letter-spacing:.06em; }
-.store-btn strong { font-size:.82rem; display:block; }
-.soon-tag {
-  position:absolute; top:-7px; right:-7px;
-  background:var(--accent); color:#fff;
-  font-size:.46rem; font-weight:700; letter-spacing:.1em;
-  padding:2px 6px; border-radius:100px; text-transform:uppercase;
-}
-
-/* ══ STATS ═══════════════════════════════════════════════════════════ */
-.stats {
-  position:relative; z-index:1; display:flex; justify-content:center;
-  gap:60px; flex-wrap:wrap; padding:46px 24px;
-  background:rgba(255,248,235,.75);
-  backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px);
-  border-top:0.8px solid rgba(200,140,60,.18);
-  border-bottom:0.8px solid rgba(200,140,60,.18);
-}
-.stat-n {
-  font-size:2.6rem; font-weight:800; line-height:1;
-  background: var(--gold-txt);
-  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
-}
-.stat-l { font-size:.66rem; color:rgba(80,40,0,.50); letter-spacing:.16em; text-transform:uppercase; margin-top:5px; }
-
-/* ══ FAMILY TREE ═════════════════════════════════════════════════════ */
-.tree-sec {
-  position:relative; z-index:1; padding:80px 24px 100px;
-  text-align:center; overflow:hidden;
-  background:rgba(255,248,235,.72);
-  backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
-}
-.sec-label {
-  display:block; font-size:.64rem; letter-spacing:.24em; text-transform:uppercase;
-  color:rgba(80,40,0,.42); margin-bottom:10px;
-}
-.sec-title {
-  font-size:clamp(2rem,5vw,3.2rem); font-weight:800; line-height:1.1; margin-bottom:10px;
-  background: var(--gold-txt);
-  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
-}
-.sec-sub { font-size:.82rem; color:rgba(80,40,0,.38); margin-bottom:52px; letter-spacing:.05em; }
-
-.legend { display:flex; justify-content:center; gap:26px; flex-wrap:wrap; margin-bottom:44px; }
-.leg { display:flex; align-items:center; gap:8px; font-size:.66rem; color:rgba(80,40,0,.45); letter-spacing:.06em; }
-.leg-ln { width:30px; height:2px; border-radius:1px; }
-
-/* Tree wrapper */
-.tree-wrap { position:relative; max-width:1040px; margin:0 auto; }
-.tree-svg { position:absolute; top:0; left:0; width:100%; height:100%;
-            pointer-events:none; z-index:0; overflow:visible; }
-.tree-gen  { display:flex; justify-content:center; align-items:flex-start;
-             gap:12px; position:relative; z-index:1; }
-.gen-1 { margin-bottom:80px; }
-.gen-2 { margin-bottom:80px; }
-
-.m-dot-wrap { display:flex; align-items:center; flex-shrink:0; width:26px; justify-content:center; }
-.m-dot { width:10px; height:10px; border-radius:50%;
-         background:#FF0000; box-shadow:0 0 10px rgba(255,0,0,.6); }
-
-/* ══ PERSON CARD (exact PersonCard.xaml) ═════════════════════════════
-   bg #33000000 · radius 30 · stroke 0.8 · rainbow gradient
-   shadow 5,5,10,0.5                                                   */
-.person-card {
-  width:170px; flex-shrink:0; cursor:default; overflow:hidden;
-  border-radius:30px; border:0.8px solid transparent;
-  background: rgba(0,0,0,.20) padding-box, var(--rb) border-box;
-  backdrop-filter:blur(14px) saturate(160%);
-  -webkit-backdrop-filter:blur(14px) saturate(160%);
-  box-shadow:5px 5px 10px rgba(0,0,0,.50);
-  transition:transform .32s cubic-bezier(.22,.68,0,1.2), box-shadow .32s;
-  position:relative;
-}
-.person-card:hover {
-  transform:translateY(-10px) scale(1.04);
-  box-shadow:8px 18px 40px rgba(0,0,0,.4);
-}
-.card-photo {
-  width:170px; height:170px; object-fit:cover; object-position:center top; display:block;
-}
-.card-photo-ph {
-  width:170px; height:170px; display:none; align-items:center; justify-content:center;
-  font-size:3.2rem;
-  background:linear-gradient(135deg,rgba(255,50,50,.14),rgba(0,180,80,.10),rgba(30,111,232,.14));
-}
-.card-body { padding:12px 12px 40px; background:rgba(0,0,0,.14); }
-.card-name { font-size:.94rem; font-weight:600; color:#fff; margin-bottom:2px; }
-.card-role { font-size:.58rem; color:rgba(255,255,255,.4); text-transform:uppercase;
-             letter-spacing:.09em; margin-bottom:6px; }
-.card-years { font-size:.6rem; color:rgba(255,255,255,.45); }
-
-/* ID badge — exact app style: bg #DD101216, border #FFD54F, text #FFF3C34D */
-.id-badge {
-  position:absolute; bottom:10px; right:10px; z-index:5;
-  border-radius:8px; border:0.8px solid transparent;
-  background: #1a1214 padding-box, var(--rb) border-box;
-  padding:2px 8px;
-}
-.id-badge span { font-size:10px; font-weight:700; color:#f5c84d; }
-
-/* ══ FEATURES — settings page style ══════════════════════════════════ */
-.feat-sec {
-  position:relative; z-index:1;
-  background:linear-gradient(180deg, transparent 0%, rgba(255,255,255,.55) 25%, #edf2f8 100%);
-  padding:80px 24px 90px;
-}
-.feat-inner { max-width:680px; margin:0 auto; }
-.feat-sec .sec-label { color:rgba(0,0,0,.36); }
-.feat-sec .sec-title {
-  background: var(--dark-txt);
-  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
-}
-.feat-sec .sec-sub { color:rgba(0,0,0,.4); }
-
-/* Section group label — like in Settings page */
-.group-label {
-  font-size:.68rem; letter-spacing:.14em; text-transform:uppercase;
-  color:rgba(0,0,0,.38); margin-bottom:7px; padding-left:4px;
-  display:block;
-}
-/* Group card — white rounded, rainbow border */
-.group-card {
-  border-radius:20px; border:0.8px solid transparent;
-  background: rgba(255,255,255,.97) padding-box, var(--rb) border-box;
-  box-shadow:0 2px 16px rgba(0,0,0,.08);
-  overflow:hidden; margin-bottom:28px;
-}
-.group-row {
-  display:flex; align-items:center; padding:16px 20px;
-  border-bottom:0.8px solid rgba(0,0,0,.06);
-}
-.group-row:last-child { border-bottom:none; }
-.row-icon { font-size:1.4rem; margin-right:14px; flex-shrink:0; }
-.row-body { flex:1; }
-.row-body h4 { font-size:.9rem; font-weight:600; color:#1a1a1a; margin-bottom:2px; }
-.row-body p  { font-size:.76rem; color:rgba(0,0,0,.44); line-height:1.5; }
-.row-arr { color:rgba(0,0,0,.2); font-size:.82rem; margin-left:10px; }
-
-/* ══ CTA ═════════════════════════════════════════════════════════════ */
-.cta-sec {
-  position:relative; z-index:1; background:#edf2f8;
-  padding:68px 24px; text-align:center;
-}
-.cta-sec h2 {
-  font-size:clamp(1.8rem,4vw,2.6rem); font-weight:800; margin-bottom:12px;
-  letter-spacing:-.01em; color:#1a1a1a;
-}
-.cta-sec p { color:rgba(0,0,0,.46); font-size:.9rem; margin-bottom:28px; line-height:1.75; }
-.cta-card {
-  max-width:460px; margin:0 auto;
-  border-radius:20px; border:0.8px solid transparent;
-  background: rgba(255,255,255,.98) padding-box, var(--rb) border-box;
-  box-shadow:0 4px 20px rgba(0,0,0,.10); overflow:hidden;
-}
-.cta-row { display:flex; }
-.cta-input {
-  flex:1; padding:15px 18px; background:transparent; border:none; outline:none;
-  font-family:'Nunito',sans-serif; font-size:.9rem; color:#222;
-}
-.cta-input::placeholder { color:rgba(0,0,0,.28); }
-.cta-btn {
-  padding:15px 20px; background:transparent; border:none;
-  border-left:0.8px solid rgba(0,0,0,.08);
-  font-family:'Nunito',sans-serif; font-size:.82rem; font-weight:700;
-  color:var(--accent); cursor:pointer; white-space:nowrap; transition:background .2s;
-}
-.cta-btn:hover { background:rgba(30,111,232,.05); }
-.cta-note { font-size:.68rem; color:rgba(0,0,0,.32); margin-top:10px; text-align:center; }
-
-/* ══ CONTACT ═════════════════════════════════════════════════════════ */
-.contact-sec {
-  position:relative; z-index:1; background:#edf2f8;
-  padding:20px 24px 90px; max-width:580px; margin:0 auto; text-align:center;
-}
-.contact-sec .sec-title {
-  background: var(--dark-txt);
-  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
-}
-.contact-sec .sec-label { color:rgba(0,0,0,.36); }
-.contact-card {
-  margin-top:30px;
-  border-radius:20px; border:0.8px solid transparent;
-  background: rgba(255,255,255,.98) padding-box, var(--rb) border-box;
-  box-shadow:0 4px 20px rgba(0,0,0,.08); overflow:hidden;
-}
-.cf-row { border-bottom:0.8px solid rgba(0,0,0,.06); }
-.cf-row:last-child { border-bottom:none; }
-.cf-row label {
-  display:block; padding:12px 20px 3px;
-  font-size:.62rem; letter-spacing:.14em; text-transform:uppercase; color:rgba(0,0,0,.32);
-}
-.cf-row input, .cf-row textarea {
-  display:block; width:100%; padding:2px 20px 13px;
-  background:transparent; border:none; outline:none;
-  font-family:'Nunito',sans-serif; font-size:.9rem; color:#222;
-}
-.cf-row textarea { resize:vertical; min-height:98px; }
-.cf-btn {
-  display:block; width:100%; padding:16px;
-  background:transparent; border:none; cursor:pointer;
-  font-family:'Nunito',sans-serif; font-size:.9rem; font-weight:700;
-  color:var(--accent); letter-spacing:.04em; transition:background .2s;
-}
-.cf-btn:hover { background:rgba(30,111,232,.04); }
-
-/* ══ FOOTER ══════════════════════════════════════════════════════════ */
-footer {
-  position:relative; z-index:1; text-align:center; padding:26px 24px;
-  background:#fff; border-top:0.8px solid rgba(0,0,0,.07);
-  color:rgba(0,0,0,.32); font-size:.76rem;
-}
-footer span {
-  background:var(--rb); -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent; background-clip:text;
-}
-
-/* Honeypot — скрыто от людей, боты заполняют */
-.hp-trap { position:absolute; left:-9999px; opacity:0; pointer-events:none; }
-
-@keyframes up { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
-@keyframes drift { 0%,100%{transform:var(--r) translateY(0)} 50%{transform:var(--r) translateY(-12px)} }
-
-/* ══ WARM MEMORY CARDS BACKGROUND ═══════════════════════════════════ */
-.bg-memories {
-  position:fixed; inset:0; z-index:0; pointer-events:none; overflow:hidden;
-}
-/* Warm LIGHT vignette — keeps cards visible but readable */
-.bg-memories::after {
-  content:''; position:absolute; inset:0;
-  background:radial-gradient(ellipse 100% 100% at 50% 50%, rgba(255,248,235,.55) 0%, rgba(255,240,210,.80) 100%);
-  z-index:20;
-}
-.mc {
-  position:absolute; border-radius:22px; overflow:hidden;
-  box-shadow:0 8px 40px rgba(0,0,0,.55), 0 2px 8px rgba(0,0,0,.35);
-  animation:drift var(--d,9s) ease-in-out var(--dl,0s) infinite;
-}
-.mc img { width:100%; height:100%; object-fit:cover; display:block; }
-/* Warm tint overlay on each card */
-.mc::before {
-  content:''; position:absolute; inset:0; z-index:1;
-  background: var(--tint, linear-gradient(135deg,rgba(251,146,60,.28),rgba(245,158,11,.22)));
-  mix-blend-mode:multiply;
-}
-.mc-cap {
-  position:absolute; bottom:0; left:0; right:0; z-index:2;
-  padding:14px 14px 12px;
-  background:linear-gradient(transparent 0%, rgba(0,0,0,.68) 100%);
-}
-.mc-place { font-family:'Nunito',sans-serif; font-size:.82rem; font-weight:800; color:#fff; display:block; }
-.mc-date  { font-family:'Nunito',sans-serif; font-size:.62rem; color:rgba(255,255,255,.68); display:block; margin-top:1px; }
-
-/* Sections above background */
-.stats, .tree-sec, .feat-sec, .cta-sec, .contact-sec, footer { position:relative; z-index:1; }
-.tree-sec, .feat-sec, .cta-sec, .contact-sec {
-  background:rgba(17,8,0,.0);
-}
-.feat-sec {
-  background:linear-gradient(180deg, rgba(255,240,220,.0) 0%, rgba(255,248,238,.88) 30%, #fdf6ec 100%);
-}
-.cta-sec { background:#fdf6ec; }
-.contact-sec { background:#fdf6ec; }
-footer { background:#fff3e0; border-top:0.8px solid rgba(180,100,0,.12); }
-
-@media(max-width:800px){
-  .hero { padding:108px 22px 60px; }
-  nav { padding:12px 18px; } .nav-links { display:none; } .nav-cta { display:none; }
-  .stats { gap:28px; }
-  .tree-gen { gap:8px; flex-wrap:wrap; }
-  .person-card { width:140px; }
-  .card-photo, .card-photo-ph { width:140px; height:140px; }
-
-  /* ── Mobile hero heading ── */
-  .hero h1 { font-size: clamp(1.65rem, 8vw, 2.6rem); }
-
-  /* ── Mobile waitlist form: stack vertically ── */
-  .wl-wrap { max-width: 100%; }
-  .wl-pill { flex-direction:column; border-radius:22px; padding:14px 14px 10px; gap:10px; align-items:stretch; }
-  .wl-input { width:100%; padding:8px 4px; border-bottom:1px solid rgba(0,0,0,.10); }
-  .wl-btn { width:100%; height:48px; border-radius:14px; font-size:.9rem; letter-spacing:.02em; }
-  .wl-btn-desktop { display:none; }
-  .wl-btn-mobile { display:inline; }
-}
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- ══ WARM MEMORY CARDS BACKGROUND ════════════════════════════════ -->
+<!-- WARM MEMORY CARDS BACKGROUND -->
 <div class="bg-memories" aria-hidden="true">
-
-  <!-- Row 1 — top-left cluster -->
-  <div class="mc" style="--r:rotate(-8deg);--d:11s;--dl:0s;--tint:linear-gradient(135deg,rgba(234,88,12,.32),rgba(251,191,36,.22));
-       width:200px;height:260px;top:-20px;left:-30px">
-    <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&h=520&fit=crop&auto=format" alt="">
-    <div class="mc-cap"><span class="mc-place">Sunset Valley</span><span class="mc-date">July 14 7:12 PM</span></div>
+  <div class="mc" style="--r:rotate(-8deg);--d:11s;--dl:0s;--tint:linear-gradient(135deg,rgba(234,88,12,.32),rgba(251,191,36,.22));width:200px;height:260px;top:-20px;left:-30px">
+    <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&h=520&fit=crop&auto=format" alt="" loading="lazy">
+    <div class="mc-cap"><span class="mc-place">Sunset Valley</span><span class="mc-date">July 14, 7:12 PM</span></div>
   </div>
-
-  <div class="mc" style="--r:rotate(5deg);--d:14s;--dl:2s;--tint:linear-gradient(135deg,rgba(245,158,11,.30),rgba(239,68,68,.18));
-       width:230px;height:290px;top:60px;left:180px">
-    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=460&h=580&fit=crop&auto=format" alt="">
-    <div class="mc-cap"><span class="mc-place">Golden Fields</span><span class="mc-date">Aug 3 6:45 PM</span></div>
+  <div class="mc" style="--r:rotate(5deg);--d:14s;--dl:2s;--tint:linear-gradient(135deg,rgba(245,158,11,.30),rgba(239,68,68,.18));width:230px;height:290px;top:60px;left:180px">
+    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=460&h=580&fit=crop&auto=format" alt="" loading="lazy">
+    <div class="mc-cap"><span class="mc-place">Golden Fields</span><span class="mc-date">Aug 3, 6:45 PM</span></div>
   </div>
-
-  <div class="mc" style="--r:rotate(-3deg);--d:10s;--dl:1s;--tint:linear-gradient(135deg,rgba(251,146,60,.25),rgba(253,224,71,.20));
-       width:180px;height:230px;top:10px;right:340px">
-    <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=360&h=460&fit=crop&auto=format" alt="">
-    <div class="mc-cap"><span class="mc-place">Amber Forest</span><span class="mc-date">Oct 8 4:30 PM</span></div>
+  <div class="mc" style="--r:rotate(-3deg);--d:10s;--dl:1s;--tint:linear-gradient(135deg,rgba(251,146,60,.25),rgba(253,224,71,.20));width:180px;height:230px;top:10px;right:340px">
+    <img src="https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=360&h=460&fit=crop&auto=format" alt="" loading="lazy">
+    <div class="mc-cap"><span class="mc-place">Amber Forest</span><span class="mc-date">Oct 8, 4:30 PM</span></div>
   </div>
-
-  <!-- Top-right cluster -->
-  <div class="mc" style="--r:rotate(9deg);--d:13s;--dl:3s;--tint:linear-gradient(135deg,rgba(249,115,22,.28),rgba(250,204,21,.22));
-       width:220px;height:275px;top:-15px;right:120px">
-    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=440&h=550&fit=crop&crop=faces&auto=format" alt="">
-    <div class="mc-cap"><span class="mc-place">City Park</span><span class="mc-date">June 8 3:00 PM</span></div>
+  <div class="mc" style="--r:rotate(9deg);--d:13s;--dl:3s;--tint:linear-gradient(135deg,rgba(249,115,22,.28),rgba(250,204,21,.22));width:220px;height:275px;top:-15px;right:120px">
+    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=440&h=550&fit=crop&crop=faces&auto=format" alt="" loading="lazy">
+    <div class="mc-cap"><span class="mc-place">City Park</span><span class="mc-date">June 8, 3:00 PM</span></div>
   </div>
-
-  <div class="mc" style="--r:rotate(-6deg);--d:12s;--dl:0.5s;--tint:linear-gradient(135deg,rgba(239,68,68,.22),rgba(251,146,60,.30));
-       width:190px;height:245px;top:50px;right:-20px">
-    <img src="https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=380&h=490&fit=crop&auto=format" alt="">
-    <div class="mc-cap"><span class="mc-place">Harvest Glow</span><span class="mc-date">Sep 21 5:50 PM</span></div>
+  <div class="mc" style="--r:rotate(-6deg);--d:12s;--dl:0.5s;--tint:linear-gradient(135deg,rgba(239,68,68,.22),rgba(251,146,60,.30));width:190px;height:245px;top:50px;right:-20px">
+    <img src="https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=380&h=490&fit=crop&auto=format" alt="" loading="lazy">
+    <div class="mc-cap"><span class="mc-place">Harvest Glow</span><span class="mc-date">Sep 21, 5:50 PM</span></div>
   </div>
-
-  <!-- Middle strip -->
-  <div class="mc" style="--r:rotate(4deg);--d:16s;--dl:4s;--tint:linear-gradient(135deg,rgba(234,88,12,.26),rgba(253,224,71,.24));
-       width:210px;height:265px;top:calc(50vh - 200px);left:-25px">
-    <img src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=420&h=530&fit=crop&auto=format" alt="">
-    <div class="mc-cap"><span class="mc-place">Sunflower Path</span><span class="mc-date">July 28 6:10 PM</span></div>
+  <div class="mc" style="--r:rotate(4deg);--d:16s;--dl:4s;--tint:linear-gradient(135deg,rgba(234,88,12,.26),rgba(253,224,71,.24));width:210px;height:265px;top:calc(50vh - 200px);left:-25px">
+    <img src="https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=420&h=530&fit=crop&auto=format" alt="" loading="lazy">
+    <div class="mc-cap"><span class="mc-place">Sunflower Path</span><span class="mc-date">July 28, 6:10 PM</span></div>
   </div>
-
-  <div class="mc" style="--r:rotate(-5deg);--d:15s;--dl:2.5s;--tint:linear-gradient(135deg,rgba(245,158,11,.30),rgba(249,115,22,.26));
-       width:200px;height:250px;top:calc(50vh - 80px);right:-15px">
-    <img src="https://images.unsplash.com/photo-1490750967868-88df5691cc99?w=400&h=500&fit=crop&auto=format" alt="">
-    <div class="mc-cap"><span class="mc-place">Desert Bloom</span><span class="mc-date">Apr 19 5:00 PM</span></div>
+  <div class="mc" style="--r:rotate(-5deg);--d:15s;--dl:2.5s;--tint:linear-gradient(135deg,rgba(245,158,11,.30),rgba(249,115,22,.26));width:200px;height:250px;top:calc(50vh - 80px);right:-15px">
+    <img src="https://images.unsplash.com/photo-1490750967868-88df5691cc99?w=400&h=500&fit=crop&auto=format" alt="" loading="lazy">
+    <div class="mc-cap"><span class="mc-place">Desert Bloom</span><span class="mc-date">Apr 19, 5:00 PM</span></div>
   </div>
-
-  <!-- Bottom cluster -->
-  <div class="mc" style="--r:rotate(7deg);--d:11s;--dl:1.5s;--tint:linear-gradient(135deg,rgba(251,191,36,.28),rgba(234,88,12,.24));
-       width:235px;height:295px;bottom:-10px;left:50px">
-    <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=470&h=590&fit=crop&auto=format" alt="">
-    <div class="mc-cap"><span class="mc-place">Evening Light</span><span class="mc-date">Aug 15 8:20 PM</span></div>
+  <div class="mc" style="--r:rotate(7deg);--d:11s;--dl:1.5s;--tint:linear-gradient(135deg,rgba(251,191,36,.28),rgba(234,88,12,.24));width:235px;height:295px;bottom:-10px;left:50px">
+    <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?w=470&h=590&fit=crop&auto=format" alt="" loading="lazy">
+    <div class="mc-cap"><span class="mc-place">Evening Light</span><span class="mc-date">Aug 15, 8:20 PM</span></div>
   </div>
-
-  <div class="mc" style="--r:rotate(-4deg);--d:13s;--dl:3.5s;--tint:linear-gradient(135deg,rgba(239,68,68,.20),rgba(251,146,60,.28));
-       width:205px;height:255px;bottom:20px;left:310px">
-    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=410&h=510&fit=crop&auto=format" alt="">
-    <div class="mc-cap"><span class="mc-place">Mountain Glow</span><span class="mc-date">Sep 5 7:45 PM</span></div>
+  <div class="mc" style="--r:rotate(-4deg);--d:13s;--dl:3.5s;--tint:linear-gradient(135deg,rgba(239,68,68,.20),rgba(251,146,60,.28));width:205px;height:255px;bottom:20px;left:310px">
+    <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=410&h=510&fit=crop&auto=format" alt="" loading="lazy">
+    <div class="mc-cap"><span class="mc-place">Mountain Glow</span><span class="mc-date">Sep 5, 7:45 PM</span></div>
   </div>
-
-  <div class="mc" style="--r:rotate(6deg);--d:12s;--dl:0.8s;--tint:linear-gradient(135deg,rgba(249,115,22,.30),rgba(253,224,71,.20));
-       width:215px;height:270px;bottom:-5px;right:140px">
-    <img src="https://images.unsplash.com/photo-1473073761808-ba75eb16de8a?w=430&h=540&fit=crop&auto=format" alt="">
-    <div class="mc-cap"><span class="mc-place">Autumn Walk</span><span class="mc-date">Oct 22 4:15 PM</span></div>
+  <div class="mc" style="--r:rotate(6deg);--d:12s;--dl:0.8s;--tint:linear-gradient(135deg,rgba(249,115,22,.30),rgba(253,224,71,.20));width:215px;height:270px;bottom:-5px;right:140px">
+    <img src="https://images.unsplash.com/photo-1473073761808-ba75eb16de8a?w=430&h=540&fit=crop&auto=format" alt="" loading="lazy">
+    <div class="mc-cap"><span class="mc-place">Autumn Walk</span><span class="mc-date">Oct 22, 4:15 PM</span></div>
   </div>
-
-  <div class="mc" style="--r:rotate(-9deg);--d:14s;--dl:5s;--tint:linear-gradient(135deg,rgba(245,158,11,.28),rgba(239,68,68,.22));
-       width:185px;height:235px;bottom:30px;right:-10px">
-    <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=370&h=470&fit=crop&auto=format" alt="">
-    <div class="mc-cap"><span class="mc-place">Warm Horizon</span><span class="mc-date">June 30 8:05 PM</span></div>
+  <div class="mc" style="--r:rotate(-9deg);--d:14s;--dl:5s;--tint:linear-gradient(135deg,rgba(245,158,11,.28),rgba(239,68,68,.22));width:185px;height:235px;bottom:30px;right:-10px">
+    <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=370&h=470&fit=crop&auto=format" alt="" loading="lazy">
+    <div class="mc-cap"><span class="mc-place">Warm Horizon</span><span class="mc-date">June 30, 8:05 PM</span></div>
   </div>
-
 </div>
 
-<!-- ══ NAV ══════════════════════════════════════════════════════════ -->
+<!-- NAV -->
 <nav>
   <div class="nav-logo">
     <img src="logo.png" class="nav-logo-img" alt="myDynasty">
   </div>
   <div class="nav-links">
     <a href="#features">Features</a>
-    <a href="#family">Family</a>
+    <a href="#family">Family Tree</a>
     <a href="#contact">Contact</a>
   </div>
   <button class="nav-cta rb rb-100" onclick="document.getElementById('em1').focus()">Join Waitlist</button>
 </nav>
 
-<!-- ══ HERO ══════════════════════════════════════════════════════════ -->
+<!-- HERO -->
 <section class="hero" id="waitlist">
-
-  <!-- Hidden floating cards column -->
-  <div class="hero-cards">
-    <!-- SVG lines connecting hero demo cards -->
-    <svg class="hero-tree-svg" id="heroSvg" viewBox="0 0 400 520">
-      <defs>
-        <linearGradient id="pcg" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#1E6FE8" stop-opacity=".7"/>
-          <stop offset="100%" stop-color="#4B0082" stop-opacity=".7"/>
-        </linearGradient>
-      </defs>
-      <!-- Spouse line (red dual stroke) between card1+card2 -->
-      <line x1="175" y1="130" x2="200" y2="130" stroke="#FF0000" stroke-width="5" stroke-opacity=".3"/>
-      <line x1="175" y1="130" x2="200" y2="130" stroke="#FF0000" stroke-width="1.2"/>
-      <!-- Parent-child (blue bezier dual stroke) to card3 -->
-      <path d="M188,260 C188,310 195,330 195,360" stroke="#1E6FE8" stroke-width="5" fill="none" stroke-opacity=".25"/>
-      <path d="M188,260 C188,310 195,330 195,360" stroke="#1E6FE8" stroke-width="1.5" fill="none" stroke-opacity=".85"/>
-      <circle cx="188" cy="260" r="4" fill="#1E6FE8" opacity=".65"/>
-      <circle cx="195" cy="360" r="4" fill="#4B0082" opacity=".65"/>
-    </svg>
-
-    <!-- Card 1 (William) -->
-    <div class="hc hc1">
-      <div class="person-card">
-        <img class="card-photo"
-          src="https://images.unsplash.com/photo-1504257432389-52343af06ae3?w=300&h=300&fit=crop&crop=faces&auto=format"
-          alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="card-photo-ph">👴</div>
-        <div class="card-body">
-          <div class="card-name">William</div>
-          <div class="card-role">Great-grandfather</div>
-          <div class="card-years">1889 · 1962</div>
-        </div>
-        <div class="id-badge"><span>ID: 1</span></div>
-      </div>
-    </div>
-
-    <!-- Card 2 (Margaret) -->
-    <div class="hc hc2">
-      <div class="person-card">
-        <img class="card-photo"
-          src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=300&h=300&fit=crop&crop=faces&auto=format"
-          alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="card-photo-ph">👵</div>
-        <div class="card-body">
-          <div class="card-name">Margaret</div>
-          <div class="card-role">Great-grandmother</div>
-          <div class="card-years">1893 · 1971</div>
-        </div>
-        <div class="id-badge"><span>ID: 2</span></div>
-      </div>
-    </div>
-
-    <!-- Card 3 (Thomas) -->
-    <div class="hc hc3">
-      <div class="person-card">
-        <img class="card-photo"
-          src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop&crop=faces&auto=format"
-          alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="card-photo-ph">👨</div>
-        <div class="card-body">
-          <div class="card-name">Thomas</div>
-          <div class="card-role">Grandfather</div>
-          <div class="card-years">1921 · 1998</div>
-        </div>
-        <div class="id-badge"><span>ID: 3</span></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Centered text + form -->
   <div class="hero-text">
-    <div class="hero-badge rb rb-100"><div class="pulse"></div> Early Access · 2026</div>
-    <h1>Your Family's<br>Story Lives Here</h1>
-    <p class="hero-desc">The most beautiful family tree app — designed for every generation. Connect your roots, share memories, preserve history forever.</p>
+    <div class="hero-badge rb rb-100"><div class="pulse"></div> Early Access &#183; 2026</div>
+    <h1>Your Family&#8217;s<br>Story Lives Here</h1>
+    <p class="hero-desc">The most beautiful family tree app &#8212; designed for every generation. Connect your roots, share memories, preserve history forever.</p>
 
     <div class="wl-wrap">
       <div id="wlMain">
         <div class="wl-pill">
-          <input class="wl-input" type="email" id="em1" placeholder="Enter your email address…"/>
-          <input class="hp-trap" type="text" name="website" tabindex="-1" autocomplete="off"/>
-          <button class="wl-btn" onclick="join(1)"><span class="wl-btn-desktop">→</span><span class="wl-btn-mobile">Уведомить меня</span></button>
+          <input class="wl-input" type="email" id="em1" placeholder="Enter your email address&#8230;" autocomplete="email">
+          <input class="hp-trap" type="text" name="website" tabindex="-1" autocomplete="off">
+          <button class="wl-btn" onclick="join(1)" aria-label="Notify me">
+            <span class="wl-btn-desktop" aria-hidden="true">&#8594;</span>
+            <span class="wl-btn-mobile">Notify Me</span>
+          </button>
         </div>
-        <div class="wl-note">🔒 No spam, ever · Unsubscribe anytime</div>
+        <p class="wl-note">&#128274; No spam, ever &#183; Unsubscribe anytime</p>
       </div>
-      <div id="wlOk" class="wl-success">
-        <svg class="sc-ring" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+      <div id="wlOk" class="wl-success" role="alert">
+        <svg class="sc-ring" viewBox="0 0 72 72" fill="none" aria-hidden="true">
           <defs>
             <linearGradient id="scGrad" x1="0" y1="0" x2="1" y2="1">
               <stop offset="0%" stop-color="#f97316"/>
@@ -653,42 +133,41 @@ footer { background:#fff3e0; border-top:0.8px solid rgba(180,100,0,.12); }
           </defs>
           <circle cx="36" cy="36" r="34" fill="rgba(249,115,22,.10)" stroke="url(#scGrad)" stroke-width="2"/>
           <path class="sc-check" d="M22 37 l11 11 l17-20"
-            stroke="#ea580c" stroke-width="3.5"
-            stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            stroke="#ea580c" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
         </svg>
-        <div class="sc-title">Вы в списке!</div>
-        <div class="sc-sub">Уведомим вас, как только myDynasty запустится.<br>Следите за обновлениями ✨</div>
-        <div class="sc-badge">👥 <span id="scCount">...</span> человек уже ждут</div>
+        <div class="sc-title">You&#8217;re on the list!</div>
+        <div class="sc-sub">We&#8217;ll reach out as soon as myDynasty launches.<br>Stay tuned for updates &#10024;</div>
+        <div class="sc-badge">&#128101; <span id="scCount">&#8230;</span> people already waiting</div>
       </div>
     </div>
 
     <div class="store-row">
-      <div class="store-btn">
+      <div class="store-btn" aria-label="App Store &#8212; coming soon">
         <span class="soon-tag">Soon</span>
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
         <div><small>Download on the</small><strong>App Store</strong></div>
       </div>
-      <div class="store-btn">
+      <div class="store-btn" aria-label="Google Play &#8212; coming soon">
         <span class="soon-tag">Soon</span>
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3.18 23.76c.38.21.82.27 1.28.16l13.1-7.56-2.75-2.75-11.63 10.15zm-1.7-19.3C1.18 4.84 1 5.24 1 5.77v12.46c0 .53.19.94.49 1.22l.07.06 6.98-6.98v-.16L1.55 5.4l-.07.06zm18.12 8.87l-2.56-1.47-2.88 2.88 2.88 2.88 2.57-1.48c.74-.43.74-1.38-.01-1.81zm-16.9 9.09l11.63-10.15-2.88-2.88L1.35 19.42l1.35.78z"/></svg>
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3.18 23.76c.38.21.82.27 1.28.16l13.1-7.56-2.75-2.75-11.63 10.15zm-1.7-19.3C1.18 4.84 1 5.24 1 5.77v12.46c0 .53.19.94.49 1.22l.07.06 6.98-6.98v-.16L1.55 5.4l-.07.06zm18.12 8.87l-2.56-1.47-2.88 2.88 2.88 2.88 2.57-1.48c.74-.43.74-1.38-.01-1.81zm-16.9 9.09l11.63-10.15-2.88-2.88L1.35 19.42l1.35.78z"/></svg>
         <div><small>Get it on</small><strong>Google Play</strong></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ STATS ══════════════════════════════════════════════════════════ -->
+<!-- STATS -->
 <div class="stats">
   <div><div class="stat-n" id="cnt">0</div><div class="stat-l">On Waitlist</div></div>
   <div><div class="stat-n">6+</div><div class="stat-l">Generations tracked</div></div>
-  <div><div class="stat-n">∞</div><div class="stat-l">Family memories</div></div>
+  <div><div class="stat-n">&#8734;</div><div class="stat-l">Family memories</div></div>
 </div>
 
-<!-- ══ FAMILY TREE ════════════════════════════════════════════════════ -->
+<!-- FAMILY TREE -->
 <section class="tree-sec" id="family">
   <span class="sec-label">Meet your ancestors</span>
   <h2 class="sec-title">Every person has a story</h2>
-  <p class="sec-sub">Connect across generations · Preserve memories forever</p>
+  <p class="sec-sub">Connect across generations &#183; Preserve memories forever</p>
 
   <div class="legend">
     <div class="leg">
@@ -697,12 +176,12 @@ footer { background:#fff3e0; border-top:0.8px solid rgba(180,100,0,.12); }
     </div>
     <div class="leg">
       <div class="leg-ln" style="background:linear-gradient(90deg,#1E6FE8,#4B0082)"></div>
-      Parent · Child
+      Parent &#183; Child
     </div>
   </div>
 
   <div class="tree-wrap" id="treeWrap">
-    <svg class="tree-svg" id="treeSvg" xmlns="http://www.w3.org/2000/svg">
+    <svg class="tree-svg" id="treeSvg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <defs>
         <linearGradient id="pcLine" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stop-color="#1E6FE8" stop-opacity=".75"/>
@@ -711,76 +190,74 @@ footer { background:#fff3e0; border-top:0.8px solid rgba(180,100,0,.12); }
       </defs>
     </svg>
 
-    <!-- Gen I -->
+    <!-- Generation I -->
     <div class="tree-gen gen-1" id="gen1">
       <div class="person-card" id="p1">
-        <img class="card-photo" src="https://images.unsplash.com/photo-1504257432389-52343af06ae3?w=300&h=300&fit=crop&crop=faces&auto=format" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="card-photo-ph">👴</div>
-        <div class="card-body"><div class="card-name">William</div><div class="card-role">Great-grandfather</div><div class="card-years">1889 · 1962</div></div>
+        <img class="card-photo" src="https://images.unsplash.com/photo-1504257432389-52343af06ae3?w=300&h=300&fit=crop&crop=faces&auto=format" alt="William" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="card-photo-ph">&#128116;</div>
+        <div class="card-body"><div class="card-name">William</div><div class="card-role">Great-grandfather</div><div class="card-years">1889 &#183; 1962</div></div>
         <div class="id-badge"><span>ID: 1</span></div>
       </div>
       <div class="m-dot-wrap"><div class="m-dot"></div></div>
       <div class="person-card" id="p2">
-        <img class="card-photo" src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=300&h=300&fit=crop&crop=faces&auto=format" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="card-photo-ph">👵</div>
-        <div class="card-body"><div class="card-name">Margaret</div><div class="card-role">Great-grandmother</div><div class="card-years">1893 · 1971</div></div>
+        <img class="card-photo" src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=300&h=300&fit=crop&crop=faces&auto=format" alt="Margaret" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="card-photo-ph">&#128117;</div>
+        <div class="card-body"><div class="card-name">Margaret</div><div class="card-role">Great-grandmother</div><div class="card-years">1893 &#183; 1971</div></div>
         <div class="id-badge"><span>ID: 2</span></div>
       </div>
-
       <div style="width:66px;flex-shrink:0"></div>
-
       <div class="person-card" id="p3">
-        <img class="card-photo" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=300&h=300&fit=crop&crop=faces&auto=format" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="card-photo-ph">👴</div>
-        <div class="card-body"><div class="card-name">Robert</div><div class="card-role">Great-grandfather</div><div class="card-years">1885 · 1955</div></div>
+        <img class="card-photo" src="https://images.unsplash.com/photo-1568602471122-7832951cc4c5?w=300&h=300&fit=crop&crop=faces&auto=format" alt="Robert" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="card-photo-ph">&#128116;</div>
+        <div class="card-body"><div class="card-name">Robert</div><div class="card-role">Great-grandfather</div><div class="card-years">1885 &#183; 1955</div></div>
         <div class="id-badge"><span>ID: 3</span></div>
       </div>
       <div class="m-dot-wrap"><div class="m-dot"></div></div>
       <div class="person-card" id="p4">
-        <img class="card-photo" src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=300&h=300&fit=crop&crop=faces&auto=format" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="card-photo-ph">👵</div>
-        <div class="card-body"><div class="card-name">Helen</div><div class="card-role">Great-grandmother</div><div class="card-years">1891 · 1968</div></div>
+        <img class="card-photo" src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=300&h=300&fit=crop&crop=faces&auto=format" alt="Helen" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="card-photo-ph">&#128117;</div>
+        <div class="card-body"><div class="card-name">Helen</div><div class="card-role">Great-grandmother</div><div class="card-years">1891 &#183; 1968</div></div>
         <div class="id-badge"><span>ID: 4</span></div>
       </div>
     </div>
 
-    <!-- Gen II -->
+    <!-- Generation II -->
     <div class="tree-gen gen-2" id="gen2">
       <div class="person-card" id="p5">
-        <img class="card-photo" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop&crop=faces&auto=format" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="card-photo-ph">👨</div>
-        <div class="card-body"><div class="card-name">Thomas</div><div class="card-role">Grandfather</div><div class="card-years">1921 · 1998</div></div>
+        <img class="card-photo" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=300&h=300&fit=crop&crop=faces&auto=format" alt="Thomas" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="card-photo-ph">&#128104;</div>
+        <div class="card-body"><div class="card-name">Thomas</div><div class="card-role">Grandfather</div><div class="card-years">1921 &#183; 1998</div></div>
         <div class="id-badge"><span>ID: 5</span></div>
       </div>
       <div class="m-dot-wrap"><div class="m-dot"></div></div>
       <div class="person-card" id="p6">
-        <img class="card-photo" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop&crop=faces&auto=format" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="card-photo-ph">👩</div>
-        <div class="card-body"><div class="card-name">Eleanor</div><div class="card-role">Grandmother</div><div class="card-years">1925 · 2003</div></div>
+        <img class="card-photo" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300&h=300&fit=crop&crop=faces&auto=format" alt="Eleanor" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="card-photo-ph">&#128105;</div>
+        <div class="card-body"><div class="card-name">Eleanor</div><div class="card-role">Grandmother</div><div class="card-years">1925 &#183; 2003</div></div>
         <div class="id-badge"><span>ID: 6</span></div>
       </div>
     </div>
 
-    <!-- Gen III -->
+    <!-- Generation III -->
     <div class="tree-gen gen-3" id="gen3">
       <div class="person-card" id="p7">
-        <img class="card-photo" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=faces&auto=format" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="card-photo-ph">🧑</div>
-        <div class="card-body"><div class="card-name">James</div><div class="card-role">Father</div><div class="card-years">1955 · present</div></div>
+        <img class="card-photo" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&h=300&fit=crop&crop=faces&auto=format" alt="James" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="card-photo-ph">&#129489;</div>
+        <div class="card-body"><div class="card-name">James</div><div class="card-role">Father</div><div class="card-years">1955 &#183; present</div></div>
         <div class="id-badge"><span>ID: 7</span></div>
       </div>
       <div class="m-dot-wrap"><div class="m-dot"></div></div>
       <div class="person-card" id="p8">
-        <img class="card-photo" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=300&fit=crop&crop=faces&auto=format" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="card-photo-ph">👩</div>
-        <div class="card-body"><div class="card-name">Catherine</div><div class="card-role">Mother</div><div class="card-years">1958 · present</div></div>
+        <img class="card-photo" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=300&h=300&fit=crop&crop=faces&auto=format" alt="Catherine" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="card-photo-ph">&#128105;</div>
+        <div class="card-body"><div class="card-name">Catherine</div><div class="card-role">Mother</div><div class="card-years">1958 &#183; present</div></div>
         <div class="id-badge"><span>ID: 8</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ FEATURES (Settings-page style) ═══════════════════════════════ -->
+<!-- FEATURES -->
 <section class="feat-sec" id="features">
   <div class="feat-inner">
     <span class="sec-label">Why myDynasty</span>
@@ -790,187 +267,93 @@ footer { background:#fff3e0; border-top:0.8px solid rgba(180,100,0,.12); }
     <span class="group-label">Visual</span>
     <div class="group-card">
       <div class="group-row">
-        <span class="row-icon">🌳</span>
-        <div class="row-body"><h4>Visual Family Tree</h4><p>Beautiful interactive charts across generations with stunning visuals.</p></div>
-        <span class="row-arr">›</span>
+        <span class="row-icon">&#127795;</span>
+        <div class="row-body"><h4>Visual Family Tree</h4><p>Beautiful interactive charts spanning generations, with stunning visuals and smooth animations.</p></div>
+        <span class="row-arr" aria-hidden="true">&#8250;</span>
       </div>
       <div class="group-row">
-        <span class="row-icon">📸</span>
-        <div class="row-body"><h4>Photos & Stories</h4><p>Attach photos and personal stories to each family member.</p></div>
-        <span class="row-arr">›</span>
+        <span class="row-icon">&#128248;</span>
+        <div class="row-body"><h4>Photos &amp; Stories</h4><p>Attach photos and personal stories to each family member to bring history to life.</p></div>
+        <span class="row-arr" aria-hidden="true">&#8250;</span>
       </div>
     </div>
 
     <span class="group-label">Security</span>
     <div class="group-card">
       <div class="group-row">
-        <span class="row-icon">🔒</span>
-        <div class="row-body"><h4>Private & Secure</h4><p>End-to-end encryption keeps your memories safe forever.</p></div>
-        <span class="row-arr">›</span>
+        <span class="row-icon">&#128274;</span>
+        <div class="row-body"><h4>Private &amp; Secure</h4><p>End-to-end encryption keeps your family&#8217;s memories safe and private forever.</p></div>
+        <span class="row-arr" aria-hidden="true">&#8250;</span>
       </div>
     </div>
 
     <span class="group-label">Collaboration</span>
     <div class="group-card">
       <div class="group-row">
-        <span class="row-icon">🤝</span>
+        <span class="row-icon">&#129309;</span>
         <div class="row-body"><h4>Family Collaboration</h4><p>Build your tree together with relatives across continents in real time.</p></div>
-        <span class="row-arr">›</span>
+        <span class="row-arr" aria-hidden="true">&#8250;</span>
       </div>
       <div class="group-row">
-        <span class="row-icon">🔍</span>
+        <span class="row-icon">&#128269;</span>
         <div class="row-body"><h4>Smart Search</h4><p>Find any ancestor instantly by name, date, or location.</p></div>
-        <span class="row-arr">›</span>
+        <span class="row-arr" aria-hidden="true">&#8250;</span>
       </div>
       <div class="group-row">
-        <span class="row-icon">📱</span>
-        <div class="row-body"><h4>iOS & Android</h4><p>Seamlessly synced across all devices. Always with you.</p></div>
-        <span class="row-arr">›</span>
+        <span class="row-icon">&#128241;</span>
+        <div class="row-body"><h4>iOS &amp; Android</h4><p>Seamlessly synced across all your devices. Always with you.</p></div>
+        <span class="row-arr" aria-hidden="true">&#8250;</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══ CTA ════════════════════════════════════════════════════════════ -->
+<!-- CTA -->
 <div class="cta-sec">
-  <h2>Don't miss the launch</h2>
+  <h2>Don&#8217;t miss the launch</h2>
   <p>Join families already on the waitlist.<br>Get early access and exclusive launch benefits.</p>
   <div class="cta-form-wrap">
     <div class="cta-card">
       <div class="cta-row">
-        <input class="cta-input" type="email" id="em2" placeholder="Your email address…"/>
-        <button class="cta-btn" onclick="join(2)">Notify Me →</button>
+        <input class="cta-input" type="email" id="em2" placeholder="Your email address&#8230;" autocomplete="email">
+        <button class="cta-btn" onclick="join(2)">Notify Me &#8594;</button>
       </div>
     </div>
-    <p class="cta-note">🔒 No spam · Unsubscribe anytime</p>
+    <p class="cta-note">&#128274; No spam &#183; Unsubscribe anytime</p>
   </div>
 </div>
 
-<!-- ══ CONTACT ════════════════════════════════════════════════════════ -->
+<!-- CONTACT -->
 <section class="contact-sec" id="contact">
   <span class="sec-label">Get in touch</span>
-  <h2 class="sec-title">Questions?<br>We'd love to hear</h2>
-  <div class="contact-card">
-    <div class="cf-row"><label>Name</label><input type="text" placeholder="John Smith"></div>
-    <div class="cf-row"><label>Email</label><input type="email" placeholder="john@example.com"></div>
-    <div class="cf-row"><label>Message</label><textarea placeholder="Tell us how we can help…"></textarea></div>
-    <div class="cf-row"><button class="cf-btn">Send Message →</button></div>
-  </div>
+  <h2 class="sec-title">Questions?<br>We&#8217;d love to hear</h2>
+  <form class="contact-card" id="contactForm" novalidate>
+    <div class="cf-row">
+      <label for="cf-name">Name</label>
+      <input type="text" id="cf-name" name="name" placeholder="John Smith" autocomplete="name" required>
+    </div>
+    <div class="cf-row">
+      <label for="cf-email">Email</label>
+      <input type="email" id="cf-email" name="email" placeholder="john@example.com" autocomplete="email" required>
+    </div>
+    <div class="cf-row">
+      <label for="cf-message">Message</label>
+      <textarea id="cf-message" name="message" placeholder="Tell us how we can help&#8230;" required></textarea>
+    </div>
+    <div class="cf-row">
+      <button class="cf-btn" type="submit">Send Message &#8594;</button>
+    </div>
+    <p class="cf-note">Opens your email client to compose the message directly.</p>
+  </form>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  <p>© 2025 <span>myDynasty</span> · Built with ❤️ for families everywhere ·
+  <p>&#169; 2026 <span>myDynasty</span> &#183; Built with &#10084;&#65039; for families everywhere &#183;
     <a href="mailto:hello@mydynasty.app" style="color:rgba(0,0,0,.25);text-decoration:none">hello@mydynasty.app</a>
   </p>
 </footer>
 
-<script>
-/* Counter */
-const ob = new IntersectionObserver(e => {
-  if (e[0].isIntersecting) { cnt(document.getElementById('cnt'),247,1400); ob.disconnect(); }
-});
-ob.observe(document.querySelector('.stats'));
-function cnt(el,n,ms){ let v=0,s=n/(ms/16),t=setInterval(()=>{ v+=s; if(v>=n){el.textContent=n;clearInterval(t);return;} el.textContent=Math.floor(v); },16); }
-
-/* ── Waitlist → Google Sheets ── */
-const SHEET_URL = 'https://script.google.com/macros/s/AKfycbzuHMy4bSzBuXSdwYRslZjr9SPD6JkrkPbzanq7qUENahu2yXrgIvpmDXh1f-v3Rugm/exec';
-const _pageBorn = Date.now(); // таймер загрузки страницы
-
-async function join(n) {
-  const inp = document.getElementById('em'+n);
-  const email = inp.value.trim();
-
-  // 1. Валидация email
-  if (!email || !email.includes('@')) {
-    inp.style.outline = '2px solid rgba(255,0,0,.4)';
-    inp.placeholder = 'Введите корректный email ↑';
-    inp.value = '';
-    setTimeout(() => inp.style.outline = '', 2000);
-    return;
-  }
-
-  // 2. Honeypot — если заполнено, это бот
-  const hp = inp.closest('form, .wl-pill')?.querySelector('.hp-trap');
-  if (hp && hp.value) return;
-
-  // 3. Таймер — форма должна быть открыта хотя бы 2 секунды
-  if (Date.now() - _pageBorn < 2000) return;
-
-  /* Button loading state */
-  const btn = inp.closest('.wl-pill, .cta-row')?.querySelector('button');
-  if (btn) { btn.textContent = '…'; btn.disabled = true; }
-
-  try {
-    await fetch(SHEET_URL, {
-      method: 'POST',
-      mode: 'no-cors',
-      headers: { 'Content-Type': 'text/plain' },
-      body: JSON.stringify({ email, hp: hp ? hp.value : '', source: 'mydynasty.app', ts: new Date().toISOString() })
-    });
-  } catch(e) { /* сеть недоступна — всё равно показываем успех */ }
-
-  /* Update counter */
-  const el = document.getElementById('cnt');
-  const newCount = +el.textContent + 1;
-  el.textContent = newCount;
-
-  /* Update UI */
-  if (n === 1) {
-    document.getElementById('wlMain').style.display = 'none';
-    const ok = document.getElementById('wlOk');
-    ok.classList.add('visible');
-    const sc = document.getElementById('scCount');
-    if (sc) sc.textContent = newCount;
-
-    /* Confetti burst */
-    confetti({ particleCount: 120, spread: 80, origin: { y: 0.55 },
-               colors: ['#f97316','#ea580c','#fbbf24','#fb923c','#fed7aa'] });
-    setTimeout(() => confetti({
-      particleCount: 60, angle: 60, spread: 55, origin: { x: 0, y: 0.6 },
-      colors: ['#f97316','#fbbf24','#c2410c']
-    }), 200);
-    setTimeout(() => confetti({
-      particleCount: 60, angle: 120, spread: 55, origin: { x: 1, y: 0.6 },
-      colors: ['#f97316','#fbbf24','#c2410c']
-    }), 400);
-  } else {
-    inp.value = ''; inp.placeholder = '✓ Вы в списке!'; inp.style.color = 'var(--accent)';
-    if (btn) { btn.textContent = '✓'; }
-  }
-}
-
-document.getElementById('em1').addEventListener('keydown', e => { if (e.key === 'Enter') join(1); });
-document.getElementById('em2').addEventListener('keydown', e => { if (e.key === 'Enter') join(2); });
-
-/* Tree SVG lines (app exact: red dual-stroke spouse, blue bezier parent-child) */
-function drawTree() {
-  const svg=document.getElementById('treeSvg'), wrap=document.getElementById('treeWrap');
-  const wr=wrap.getBoundingClientRect(), sy=window.scrollY, sx=window.scrollX;
-  function c(id){ const r=document.getElementById(id).getBoundingClientRect();
-    return { cx:r.left+sx-(wr.left+sx)+r.width/2, topY:r.top+sy-(wr.top+sy), botY:r.top+sy-(wr.top+sy)+r.height }; }
-  const [p1,p2,p3,p4,p5,p6,p7,p8]=['p1','p2','p3','p4','p5','p6','p7','p8'].map(c);
-  const cpl1={cx:(p1.cx+p2.cx)/2,y:p1.botY}, cpl2={cx:(p3.cx+p4.cx)/2,y:p3.botY};
-  const cpl3={cx:(p5.cx+p6.cx)/2,y:p5.botY}, g3={cx:(p7.cx+p8.cx)/2,topY:p7.topY};
-  svg.setAttribute('height',wrap.getBoundingClientRect().height);
-  [...svg.querySelectorAll('path,circle,line')].forEach(n=>n.remove());
-  const NS='http://www.w3.org/2000/svg';
-  function pcLine(x1,y1,x2,y2){ const g=(y2-y1)*.46, d=`M${x1},${y1} C${x1},${y1+g} ${x2},${y2-g} ${x2},${y2}`;
-    [['6','0.28'],['1.5','0.9']].forEach(([sw,op])=>{
-      const p=document.createElementNS(NS,'path');
-      p.setAttribute('d',d); p.setAttribute('stroke','url(#pcLine)');
-      p.setAttribute('stroke-width',sw); p.setAttribute('fill','none'); p.setAttribute('opacity',op);
-      svg.appendChild(p);
-    });
-    [[x1,y1],[x2,y2]].forEach(([cx,cy])=>{ const c=document.createElementNS(NS,'circle');
-      c.setAttribute('cx',cx); c.setAttribute('cy',cy); c.setAttribute('r','4');
-      c.setAttribute('fill','url(#pcLine)'); c.setAttribute('opacity','.65'); svg.appendChild(c); });
-  }
-  pcLine(cpl1.cx,cpl1.y,p5.cx,p5.topY);
-  pcLine(cpl2.cx,cpl2.y,p6.cx,p6.topY);
-  pcLine(cpl3.cx,cpl3.y,g3.cx,g3.topY);
-}
-window.addEventListener('load',()=>setTimeout(drawTree,300));
-window.addEventListener('resize',drawTree);
-</script>
+<script src="script.js"></script>
 </body>
 </html>

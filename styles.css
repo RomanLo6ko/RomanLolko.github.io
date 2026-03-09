@@ -64,9 +64,9 @@ nav a:hover { color: #c2410c; }
 .hero-badge {
   display: inline-flex; align-items: center; gap: 7px;
   padding: 5px 16px; margin-bottom: 22px;
-  background: rgba(255,255,255,.70) padding-box, var(--rb) border-box;
+  background: rgba(0,0,0,.32) padding-box, var(--rb) border-box;
   font-size: .72rem; letter-spacing: .15em; text-transform: uppercase;
-  color: rgba(80,40,0,.70); animation: up .8s ease both;
+  color: rgba(255,255,255,.80); animation: up .8s ease both;
 }
 .pulse {
   width: 6px; height: 6px; border-radius: 50%; background: #fff;
@@ -77,13 +77,14 @@ nav a:hover { color: #c2410c; }
 .hero h1 {
   font-size: clamp(2.6rem, 5vw, 4.8rem); font-weight: 800; line-height: 1.07;
   margin-bottom: 18px; letter-spacing: -.02em;
-  background: linear-gradient(135deg, #2a0f00 0%, #7a3200 45%, #c4690a 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #ffe8cc 55%, #ffb347 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
   animation: up .8s .08s ease both;
+  text-shadow: none; filter: drop-shadow(0 2px 24px rgba(0,0,0,.45));
 }
 .hero-desc {
-  font-size: 1rem; font-weight: 500; color: rgba(40,15,0,.70);
-  line-height: 1.78; margin-bottom: 28px; animation: up .8s .16s ease both;
+  font-size: 1rem; font-weight: 500; color: rgba(255,255,255,.78);
+  line-height: 1.78; margin-bottom: 12px; animation: up .8s .16s ease both;
 }
 
 /* ── Waitlist form ── */
@@ -118,7 +119,12 @@ nav a:hover { color: #c2410c; }
 .wl-btn:hover    { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(234,88,12,.50); }
 .wl-btn:active   { transform: translateY(0); }
 .wl-btn:disabled { opacity: .6; cursor: not-allowed; transform: none; }
-.wl-note { margin-top: 10px; font-size: .72rem; color: rgba(40,15,0,.42); text-align: center; letter-spacing: .01em; }
+.wl-cta-label {
+  font-size: .88rem; font-weight: 700; color: rgba(255,255,255,.90);
+  margin-bottom: 12px; letter-spacing: .01em;
+  text-shadow: 0 1px 8px rgba(0,0,0,.55);
+}
+.wl-note { margin-top: 10px; font-size: .72rem; color: rgba(255,255,255,.45); text-align: center; letter-spacing: .01em; }
 
 /* ── Success card ── */
 .wl-success {

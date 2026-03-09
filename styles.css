@@ -18,7 +18,7 @@
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
-  font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   color: #111; overflow-x: hidden;
   background: #0d1826; min-height: 100vh;
 }
@@ -35,7 +35,7 @@ nav {
   transition: background .3s;
 }
 .nav-logo     { display: flex; align-items: center; }
-.nav-logo-img { height: 114px; width: auto; display: block; }
+.nav-logo-img { height: 114px; width: auto; display: block; mix-blend-mode: multiply; }
 .nav-links    { display: flex; gap: 36px; }
 nav a {
   color: rgba(0,0,0,.60); text-decoration: none;
@@ -100,7 +100,7 @@ nav a:hover { color: #c2410c; }
 }
 .wl-input {
   flex: 1; background: transparent; border: none; outline: none;
-  font-family: 'Nunito', sans-serif; font-size: .95rem; font-weight: 500;
+  font-family: 'Inter', sans-serif; font-size: .95rem; font-weight: 500;
   color: #1a0a00; min-width: 0;
 }
 .wl-input::placeholder { color: rgba(0,0,0,.30); font-weight: 400; }
@@ -109,7 +109,7 @@ nav a:hover { color: #c2410c; }
 .wl-btn {
   flex-shrink: 0; width: 48px; height: 48px; padding: 0;
   border: none; border-radius: 14px; cursor: pointer;
-  font-family: 'Nunito', sans-serif; font-size: 1.2rem; font-weight: 800;
+  font-family: 'Inter', sans-serif; font-size: 1.2rem; font-weight: 800;
   display: flex; align-items: center; justify-content: center;
   background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #c2410c 100%);
   color: #fff; box-shadow: 0 3px 12px rgba(234,88,12,.40);
@@ -262,10 +262,10 @@ nav a:hover { color: #c2410c; }
 .cta-sec > p { color: rgba(0,0,0,.46); font-size: .92rem; margin-bottom: 28px; line-height: 1.75; }
 .cta-card   { max-width: 460px; margin: 0 auto; border-radius: 20px; border: 0.8px solid transparent; background: rgba(255,255,255,.98) padding-box, var(--rb) border-box; box-shadow: 0 4px 20px rgba(0,0,0,.10); overflow: hidden; }
 .cta-row    { display: flex; }
-.cta-input  { flex: 1; padding: 15px 18px; background: transparent; border: none; outline: none; font-family: 'Nunito', sans-serif; font-size: .92rem; color: #222; transition: background .2s; }
+.cta-input  { flex: 1; padding: 15px 18px; background: transparent; border: none; outline: none; font-family: 'Inter', sans-serif; font-size: .92rem; color: #222; transition: background .2s; }
 .cta-input::placeholder { color: rgba(0,0,0,.28); }
 .cta-input:focus { background: rgba(249,115,22,.03); }
-.cta-btn    { padding: 15px 20px; background: transparent; border: none; border-left: 0.8px solid rgba(0,0,0,.08); font-family: 'Nunito', sans-serif; font-size: .84rem; font-weight: 700; color: var(--accent); cursor: pointer; white-space: nowrap; transition: background .2s; }
+.cta-btn    { padding: 15px 20px; background: transparent; border: none; border-left: 0.8px solid rgba(0,0,0,.08); font-family: 'Inter', sans-serif; font-size: .84rem; font-weight: 700; color: var(--accent); cursor: pointer; white-space: nowrap; transition: background .2s; }
 .cta-btn:hover    { background: rgba(30,111,232,.06); }
 .cta-btn:disabled { opacity: .6; cursor: not-allowed; }
 .cta-note { font-size: .72rem; color: rgba(0,0,0,.32); margin-top: 10px; text-align: center; }
@@ -278,10 +278,10 @@ nav a:hover { color: #c2410c; }
 .cf-row { border-bottom: 0.8px solid rgba(0,0,0,.06); }
 .cf-row:last-child { border-bottom: none; }
 .cf-row label    { display: block; padding: 12px 20px 3px; font-size: .70rem; letter-spacing: .14em; text-transform: uppercase; color: rgba(0,0,0,.32); }
-.cf-row input, .cf-row textarea { display: block; width: 100%; padding: 2px 20px 13px; background: transparent; border: none; outline: none; font-family: 'Nunito', sans-serif; font-size: .92rem; color: #222; transition: background .2s; }
+.cf-row input, .cf-row textarea { display: block; width: 100%; padding: 2px 20px 13px; background: transparent; border: none; outline: none; font-family: 'Inter', sans-serif; font-size: .92rem; color: #222; transition: background .2s; }
 .cf-row input:focus, .cf-row textarea:focus { background: rgba(249,115,22,.03); }
 .cf-row textarea { resize: vertical; min-height: 98px; }
-.cf-btn  { display: block; width: 100%; padding: 16px; background: transparent; border: none; cursor: pointer; font-family: 'Nunito', sans-serif; font-size: .92rem; font-weight: 700; color: var(--accent); letter-spacing: .04em; transition: background .2s; }
+.cf-btn  { display: block; width: 100%; padding: 16px; background: transparent; border: none; cursor: pointer; font-family: 'Inter', sans-serif; font-size: .92rem; font-weight: 700; color: var(--accent); letter-spacing: .04em; transition: background .2s; }
 .cf-btn:hover { background: rgba(30,111,232,.05); }
 .cf-note { font-size: .72rem; color: rgba(0,0,0,.32); text-align: center; padding: 0 20px 12px; }
 
@@ -313,8 +313,8 @@ footer span { background: var(--rb); -webkit-background-clip: text; -webkit-text
 .mc img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .mc::before { content: ''; position: absolute; inset: 0; z-index: 1; background: var(--tint, linear-gradient(135deg,rgba(251,146,60,.28),rgba(245,158,11,.22))); mix-blend-mode: multiply; }
 .mc-cap    { position: absolute; bottom: 0; left: 0; right: 0; z-index: 2; padding: 14px 14px 12px; background: linear-gradient(transparent 0%, rgba(0,0,0,.68) 100%); }
-.mc-place  { font-family: 'Nunito', sans-serif; font-size: .82rem; font-weight: 800; color: #fff; display: block; }
-.mc-date   { font-family: 'Nunito', sans-serif; font-size: .64rem; color: rgba(255,255,255,.68); display: block; margin-top: 1px; }
+.mc-place  { font-family: 'Inter', sans-serif; font-size: .82rem; font-weight: 800; color: #fff; display: block; }
+.mc-date   { font-family: 'Inter', sans-serif; font-size: .64rem; color: rgba(255,255,255,.68); display: block; margin-top: 1px; }
 
 .stats, .tree-sec, .feat-sec, .cta-sec, .contact-sec, footer { position: relative; z-index: 1; }
 .tree-sec, .feat-sec, .cta-sec, .contact-sec { background: transparent; }

@@ -20,7 +20,7 @@
 body {
   font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
   color: #111; overflow-x: hidden;
-  background: #fff8f0; min-height: 100vh;
+  background: #0d1826; min-height: 100vh;
 }
 
 /* ══ NAV ═══════════════════════════════════════════════════════════════ */
@@ -292,11 +292,14 @@ footer span { background: var(--rb); -webkit-background-clip: text; -webkit-text
 @keyframes drift { 0%,100%{transform:var(--r) translateY(0)} 50%{transform:var(--r) translateY(-12px)} }
 
 /* ══ WARM MEMORY CARDS BACKGROUND ══════════════════════════════════════ */
-.bg-memories { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
+.bg-memories {
+  position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
+  background: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1920&q=85&fit=crop&auto=format') no-repeat center center / cover;
+}
 .bg-memories::after {
   content: '';
   position: absolute; inset: 0;
-  background: radial-gradient(ellipse 100% 100% at 50% 50%, rgba(255,248,235,.55) 0%, rgba(255,240,210,.80) 100%);
+  background: radial-gradient(ellipse 120% 120% at 50% 40%, rgba(255,248,235,.28) 0%, rgba(10,18,38,.68) 100%);
   z-index: 20;
 }
 .mc { position: absolute; border-radius: 22px; overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,.55), 0 2px 8px rgba(0,0,0,.35); animation: drift var(--d,9s) ease-in-out var(--dl,0s) infinite; }

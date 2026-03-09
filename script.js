@@ -90,7 +90,6 @@ async function join(n) {
 }
 
 document.getElementById('em1').addEventListener('keydown', function(e) { if (e.key === 'Enter') join(1); });
-document.getElementById('em2').addEventListener('keydown', function(e) { if (e.key === 'Enter') join(2); });
 
 /* —— Contact form → mailto (honest fallback, no backend needed) —— */
 document.getElementById('contactForm').addEventListener('submit', function(e) {

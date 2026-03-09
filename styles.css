@@ -64,9 +64,9 @@ nav a:hover { color: #c2410c; }
 .hero-badge {
   display: inline-flex; align-items: center; gap: 7px;
   padding: 5px 16px; margin-bottom: 22px;
-  background: rgba(0,0,0,.32) padding-box, var(--rb) border-box;
+  background: rgba(255,255,255,.55) padding-box, var(--rb) border-box;
   font-size: .72rem; letter-spacing: .15em; text-transform: uppercase;
-  color: rgba(255,255,255,.80); animation: up .8s ease both;
+  color: rgba(80,40,0,.70); animation: up .8s ease both;
 }
 .pulse {
   width: 6px; height: 6px; border-radius: 50%; background: #fff;
@@ -77,13 +77,12 @@ nav a:hover { color: #c2410c; }
 .hero h1 {
   font-size: clamp(2.6rem, 5vw, 4.8rem); font-weight: 800; line-height: 1.07;
   margin-bottom: 18px; letter-spacing: -.02em;
-  background: linear-gradient(135deg, #ffffff 0%, #ffe8cc 55%, #ffb347 100%);
+  background: linear-gradient(135deg, #2a0f00 0%, #7a3200 45%, #c4690a 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
   animation: up .8s .08s ease both;
-  text-shadow: none; filter: drop-shadow(0 2px 24px rgba(0,0,0,.45));
 }
 .hero-desc {
-  font-size: 1rem; font-weight: 500; color: rgba(255,255,255,.78);
+  font-size: 1rem; font-weight: 500; color: rgba(40,15,0,.72);
   line-height: 1.78; margin-bottom: 12px; animation: up .8s .16s ease both;
 }
 
@@ -91,21 +90,24 @@ nav a:hover { color: #c2410c; }
 .wl-wrap { animation: up .8s .24s ease both; width: 100%; max-width: 460px; }
 .wl-pill {
   display: flex; align-items: center; border-radius: 100px;
-  border: 1px solid transparent;
-  background: #fff padding-box, var(--rb) border-box;
-  box-shadow: 0 8px 40px rgba(150,60,0,.14), 0 2px 6px rgba(0,0,0,.06);
-  padding: 6px 6px 6px 22px; gap: 8px; transition: box-shadow .25s;
+  border: 1px solid rgba(255,255,255,.28);
+  background: rgba(255,255,255,.16) padding-box, var(--rb) border-box;
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  box-shadow: 0 8px 40px rgba(0,0,0,.28), 0 2px 6px rgba(0,0,0,.14);
+  padding: 6px 6px 6px 22px; gap: 8px; transition: box-shadow .25s, background .25s;
 }
 .wl-pill:focus-within {
-  box-shadow: 0 8px 40px rgba(234,88,12,.26), 0 0 0 4px rgba(234,88,12,.10);
+  background: rgba(255,255,255,.22) padding-box, var(--rb) border-box;
+  box-shadow: 0 8px 40px rgba(234,88,12,.30), 0 0 0 4px rgba(234,88,12,.18);
 }
 .wl-input {
   flex: 1; background: transparent; border: none; outline: none;
   font-family: 'Nunito', sans-serif; font-size: .95rem; font-weight: 500;
-  color: #1a0a00; min-width: 0;
+  color: #fff; min-width: 0;
 }
-.wl-input::placeholder { color: rgba(0,0,0,.30); font-weight: 400; }
-.wl-input.err { outline: 2px solid rgba(220,38,38,.45); border-radius: 4px; }
+.wl-input::placeholder { color: rgba(255,255,255,.52); font-weight: 400; }
+.wl-input.err { outline: 2px solid rgba(220,38,38,.55); border-radius: 4px; }
 .wl-btn-mobile { display: none; }
 .wl-btn {
   flex-shrink: 0; width: 48px; height: 48px; padding: 0;
@@ -120,11 +122,10 @@ nav a:hover { color: #c2410c; }
 .wl-btn:active   { transform: translateY(0); }
 .wl-btn:disabled { opacity: .6; cursor: not-allowed; transform: none; }
 .wl-cta-label {
-  font-size: .88rem; font-weight: 700; color: rgba(255,255,255,.90);
+  font-size: .88rem; font-weight: 700; color: rgba(50,20,0,.72);
   margin-bottom: 12px; letter-spacing: .01em;
-  text-shadow: 0 1px 8px rgba(0,0,0,.55);
 }
-.wl-note { margin-top: 10px; font-size: .72rem; color: rgba(255,255,255,.45); text-align: center; letter-spacing: .01em; }
+.wl-note { margin-top: 10px; font-size: .72rem; color: rgba(40,15,0,.42); text-align: center; letter-spacing: .01em; }
 
 /* ── Success card ── */
 .wl-success {
@@ -305,7 +306,10 @@ footer span { background: var(--rb); -webkit-background-clip: text; -webkit-text
 .bg-memories::after {
   content: '';
   position: absolute; inset: 0;
-  background: radial-gradient(ellipse 120% 120% at 50% 40%, rgba(255,248,235,.28) 0%, rgba(10,18,38,.68) 100%);
+  background: radial-gradient(ellipse 80% 70% at 50% 38%,
+    rgba(255,252,245,.62) 0%,
+    rgba(255,248,235,.30) 45%,
+    rgba(10,18,38,.72) 100%);
   z-index: 20;
 }
 .mc { position: absolute; border-radius: 22px; overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,.55), 0 2px 8px rgba(0,0,0,.35); animation: drift var(--d,9s) ease-in-out var(--dl,0s) infinite; }

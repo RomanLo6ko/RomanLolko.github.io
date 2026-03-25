@@ -119,12 +119,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
     });
   } catch(err) { /* silent */ }
 
-  /* 2. Open mailto so the full message also arrives in your inbox */
-  var subject = encodeURIComponent('myDynasty — message from ' + name);
-  var body    = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message);
-  window.open('mailto:hello@mydynasty.app?subject=' + subject + '&body=' + body);
-
-  /* 3. Show success state */
+  /* 2. Show success state */
   this.innerHTML =
     '<div class="cf-ok">' +
       '<div class="cf-ok-icon">&#10003;</div>' +

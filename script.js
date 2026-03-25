@@ -91,16 +91,39 @@ async function join(n) {
 
 document.getElementById('em1').addEventListener('keydown', function(e) { if (e.key === 'Enter') join(1); });
 
-/* —— Contact form → mailto (honest fallback, no backend needed) —— */
-document.getElementById('contactForm').addEventListener('submit', function(e) {
+/* —— Contact form → same Google Sheet as waitlist —— */
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
   e.preventDefault();
   var name    = document.getElementById('cf-name').value.trim();
   var email   = document.getElementById('cf-email').value.trim();
   var message = document.getElementById('cf-message').value.trim();
   if (!name || !email || !message) return;
-  var subject = encodeURIComponent('Message from ' + name + ' via myDynasty');
-  var body    = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message);
-  window.location.href = 'mailto:hello@mydynasty.app?subject=' + subject + '&body=' + body;
+
+  var btn = this.querySelector('.cf-btn');
+  btn.textContent = '\u2026';
+  btn.disabled = true;
+
+  try {
+    await fetch(SHEET_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify({
+        email:   email,
+        name:    name,
+        message: message,
+        source:  'mydynasty.app/contact',
+        ts:      new Date().toISOString()
+      })
+    });
+  } catch(err) { /* network unavailable — request may still reach server */ }
+
+  this.innerHTML =
+    '<div class="cf-ok">' +
+      '<div class="cf-ok-icon">&#10003;</div>' +
+      '<div class="cf-ok-title">Message sent!</div>' +
+      '<div class="cf-ok-sub">We\'ll get back to you soon &nbsp;&#128521;</div>' +
+    '</div>';
 });
 
 /* —— Tree SVG lines (app-exact: red dual-stroke spouse, blue bezier parent-child) —— */

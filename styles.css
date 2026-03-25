@@ -301,6 +301,10 @@ nav a:hover { color: #ffb347; }
 .cf-btn  { display: block; width: 100%; padding: 16px; background: transparent; border: none; cursor: pointer; font-family: 'Inter', sans-serif; font-size: .92rem; font-weight: 700; color: var(--accent); letter-spacing: .04em; transition: background .2s; }
 .cf-btn:hover { background: rgba(30,111,232,.05); }
 .cf-note { font-size: .72rem; color: rgba(0,0,0,.32); text-align: center; padding: 0 20px 12px; }
+.cf-ok { padding: 36px 20px; text-align: center; }
+.cf-ok-icon { font-size: 2rem; color: #ea580c; margin-bottom: 10px; }
+.cf-ok-title { font-size: 1.1rem; font-weight: 700; color: #1a1a1a; margin-bottom: 6px; }
+.cf-ok-sub { font-size: .88rem; color: rgba(40,20,0,.45); }
 
 /* ══ MEANING BLOCK ══════════════════════════════════════════════════════ */
 .meaning-sec { position: relative; z-index: 1; background: #fff8f0; padding: 72px 24px 64px; text-align: center; }

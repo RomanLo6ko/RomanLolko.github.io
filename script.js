@@ -91,7 +91,7 @@ async function join(n) {
 
 document.getElementById('em1').addEventListener('keydown', function(e) { if (e.key === 'Enter') join(1); });
 
-/* —— Contact form → same Google Sheet as waitlist —— */
+/* —— Contact form → Google Sheet + mailto fallback —— */
 document.getElementById('contactForm').addEventListener('submit', async function(e) {
   e.preventDefault();
   var name    = document.getElementById('cf-name').value.trim();
@@ -103,6 +103,7 @@ document.getElementById('contactForm').addEventListener('submit', async function
   btn.textContent = '\u2026';
   btn.disabled = true;
 
+  /* 1. Send email field to Google Sheet (same script as waitlist) */
   try {
     await fetch(SHEET_URL, {
       method: 'POST',
@@ -112,12 +113,18 @@ document.getElementById('contactForm').addEventListener('submit', async function
         email:   email,
         name:    name,
         message: message,
-        source:  'mydynasty.app/contact',
+        source:  'contact-form',
         ts:      new Date().toISOString()
       })
     });
-  } catch(err) { /* network unavailable — request may still reach server */ }
+  } catch(err) { /* silent */ }
 
+  /* 2. Open mailto so the full message also arrives in your inbox */
+  var subject = encodeURIComponent('myDynasty — message from ' + name);
+  var body    = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\n' + message);
+  window.open('mailto:hello@mydynasty.app?subject=' + subject + '&body=' + body);
+
+  /* 3. Show success state */
   this.innerHTML =
     '<div class="cf-ok">' +
       '<div class="cf-ok-icon">&#10003;</div>' +

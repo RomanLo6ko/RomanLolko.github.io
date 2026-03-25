@@ -302,6 +302,35 @@ nav a:hover { color: #ffb347; }
 .cf-btn:hover { background: rgba(30,111,232,.05); }
 .cf-note { font-size: .72rem; color: rgba(0,0,0,.32); text-align: center; padding: 0 20px 12px; }
 
+/* ══ MEANING BLOCK ══════════════════════════════════════════════════════ */
+.meaning-sec { position: relative; z-index: 1; background: #fff8f0; padding: 72px 24px 64px; text-align: center; }
+.meaning-inner { max-width: 780px; margin: 0 auto; }
+.meaning-eyebrow { display: block; font-size: .72rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(80,40,0,.38); margin-bottom: 14px; }
+.meaning-title { font-size: clamp(2rem, 5vw, 3.4rem); font-weight: 800; line-height: 1.1; background: var(--dark-txt); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 36px; }
+.meaning-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; text-align: left; margin-bottom: 32px; }
+@media(max-width:600px){ .meaning-cols { grid-template-columns: 1fr; } }
+.meaning-col p { font-size: .94rem; line-height: 1.75; color: rgba(40,20,0,.62); }
+.meaning-end { font-size: .94rem; line-height: 1.8; color: rgba(40,20,0,.5); }
+.meaning-end em { display: block; margin-top: 6px; color: rgba(40,20,0,.35); font-style: italic; }
+
+/* ══ FUTURE BLOCK ═══════════════════════════════════════════════════════ */
+.future-sec { position: relative; z-index: 1; padding: 80px 24px 80px; text-align: center; background: linear-gradient(180deg, #0d1826 0%, #111e30 100%); }
+.future-inner { max-width: 640px; margin: 0 auto; }
+.future-title { font-size: clamp(1.8rem, 4.5vw, 3rem); font-weight: 700; line-height: 1.2; background: var(--gold-txt); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 28px; }
+.future-body { font-size: .96rem; line-height: 1.9; color: rgba(255,255,255,.52); }
+.future-body em { font-style: italic; color: rgba(255,255,255,.35); }
+
+/* ══ FAQ ════════════════════════════════════════════════════════════════ */
+.faq-sec { position: relative; z-index: 1; background: #fdf6ec; padding: 72px 24px 72px; }
+.faq-inner { max-width: 680px; margin: 0 auto; }
+.faq-inner .sec-title { text-align: center; background: var(--dark-txt); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.faq-inner .sec-label { display: block; text-align: center; font-size: .72rem; letter-spacing: .22em; text-transform: uppercase; color: rgba(0,0,0,.36); margin-bottom: 10px; }
+.faq-item { border-bottom: 0.8px solid rgba(0,0,0,.08); padding: 22px 0; }
+.faq-item:last-child { border-bottom: none; }
+.faq-q { font-size: 1rem; font-weight: 700; color: #1a1a1a; margin-bottom: 10px; line-height: 1.4; }
+.faq-a { font-size: .88rem; line-height: 1.75; color: rgba(40,20,0,.55); }
+.faq-a em { font-style: italic; color: rgba(40,20,0,.38); }
+
 /* ══ FOOTER ═════════════════════════════════════════════════════════════ */
 footer { position: relative; z-index: 1; text-align: center; padding: 26px 24px; background: rgba(255,255,255,.10); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-top: 0.8px solid rgba(255,255,255,.16); color: rgba(0,0,0,.45); font-size: .78rem; }
 footer span { background: var(--rb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
@@ -333,7 +362,7 @@ footer span { background: var(--rb); -webkit-background-clip: text; -webkit-text
 .mc-place  { font-family: 'Inter', sans-serif; font-size: .82rem; font-weight: 800; color: #fff; display: block; }
 .mc-date   { font-family: 'Inter', sans-serif; font-size: .64rem; color: rgba(255,255,255,.68); display: block; margin-top: 1px; }
 
-.stats, .tree-sec, .feat-sec, .cta-sec, .contact-sec, footer { position: relative; z-index: 1; }
+.stats, .tree-sec, .feat-sec, .cta-sec, .contact-sec, .meaning-sec, .future-sec, .faq-sec, footer { position: relative; z-index: 1; }
 .feat-sec {
   background: rgba(255,255,255,.10);
   backdrop-filter: blur(16px) saturate(140%); -webkit-backdrop-filter: blur(16px) saturate(140%);

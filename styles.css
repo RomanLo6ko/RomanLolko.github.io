@@ -355,17 +355,18 @@ footer span { background: var(--rb); -webkit-background-clip: text; -webkit-text
   display: flex; align-items: center; justify-content: center;
 }
 .bg-tree img {
-  width: 104%; height: 104%;
-  object-fit: cover;
+  width: 80%; height: auto;
+  max-height: 90vh;
+  object-fit: contain;
   mix-blend-mode: screen;
   opacity: .38;
   animation: treePan 40s ease-in-out infinite;
   transform-origin: center center;
 }
 @keyframes treePan {
-  0%   { transform: scale(0.92) translateX(0); }
-  50%  { transform: scale(0.92) translateX(-7%); }
-  100% { transform: scale(0.92) translateX(0); }
+  0%   { transform: translateX(0); }
+  50%  { transform: translateX(-4%); }
+  100% { transform: translateX(0); }
 }
 .bg-memories::after {
   content: ''; position: absolute; inset: 0; z-index: 2;

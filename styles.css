@@ -355,8 +355,8 @@ footer span { background: var(--rb); -webkit-background-clip: text; -webkit-text
   display: flex; align-items: center; justify-content: center;
 }
 .bg-tree img {
-  width: 80%; height: auto;
-  max-height: 90vh;
+  width: 160%; height: auto;
+  max-height: 180vh;
   object-fit: contain;
   mix-blend-mode: screen;
   opacity: .38;

@@ -91,12 +91,12 @@ nav a:hover { color: #ffb347; }
 .hero h1 {
   font-size: clamp(2.6rem, 5vw, 4.8rem); font-weight: 800; line-height: 1.07;
   margin-bottom: 18px; letter-spacing: -.02em;
-  background: linear-gradient(135deg, #2a0f00 0%, #7a3200 45%, #c4690a 100%);
+  background: linear-gradient(135deg, #fff 0%, #ffe8c0 55%, #ffb347 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
   animation: up .8s .08s ease both;
 }
 .hero-desc {
-  font-size: 1rem; font-weight: 500; color: rgba(40,15,0,.72);
+  font-size: 1rem; font-weight: 500; color: rgba(255,255,255,.75);
   line-height: 1.78; margin-bottom: 12px; animation: up .8s .16s ease both;
 }
 .hero-slogan {
@@ -146,10 +146,10 @@ nav a:hover { color: #ffb347; }
 .wl-btn:active   { transform: translateY(0); }
 .wl-btn:disabled { opacity: .6; cursor: not-allowed; transform: none; }
 .wl-cta-label {
-  font-size: 1.76rem; font-weight: 700; color: rgba(50,20,0,.72);
+  font-size: 1.76rem; font-weight: 700; color: rgba(255,255,255,.90);
   margin-bottom: 12px; letter-spacing: .01em;
 }
-.wl-note { margin-top: 10px; font-size: .72rem; color: rgba(40,15,0,.42); text-align: center; letter-spacing: .01em; }
+.wl-note { margin-top: 10px; font-size: .72rem; color: rgba(255,255,255,.45); text-align: center; letter-spacing: .01em; }
 
 /* ── Success card ── */
 .wl-success {

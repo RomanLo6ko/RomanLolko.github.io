@@ -348,23 +348,32 @@ footer span { background: var(--rb); -webkit-background-clip: text; -webkit-text
 /* ══ WARM MEMORY CARDS BACKGROUND ══════════════════════════════════════ */
 .bg-memories {
   position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden;
-  background: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1920&q=85&fit=crop&auto=format') no-repeat center center / cover;
+  background: #0a1020;
+}
+.bg-tree {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+}
+.bg-tree img {
+  width: 130%; height: 130%;
+  object-fit: cover;
+  mix-blend-mode: screen;
+  opacity: .38;
+  animation: treePan 40s ease-in-out infinite;
+  transform-origin: center center;
+}
+@keyframes treePan {
+  0%   { transform: scale(1.15) translateX(0); }
+  50%  { transform: scale(1.15) translateX(-7%); }
+  100% { transform: scale(1.15) translateX(0); }
 }
 .bg-memories::after {
-  content: '';
-  position: absolute; inset: 0;
+  content: ''; position: absolute; inset: 0; z-index: 2;
   background: radial-gradient(ellipse 80% 70% at 50% 38%,
-    rgba(255,252,245,.62) 0%,
-    rgba(255,248,235,.30) 45%,
-    rgba(10,18,38,.72) 100%);
-  z-index: 20;
+    rgba(255,252,245,.55) 0%,
+    rgba(255,248,235,.22) 45%,
+    rgba(10,18,38,.80) 100%);
 }
-.mc { position: absolute; border-radius: 22px; overflow: hidden; box-shadow: 0 8px 40px rgba(0,0,0,.55), 0 2px 8px rgba(0,0,0,.35); animation: drift var(--d,9s) ease-in-out var(--dl,0s) infinite; }
-.mc img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.mc::before { content: ''; position: absolute; inset: 0; z-index: 1; background: var(--tint, linear-gradient(135deg,rgba(251,146,60,.28),rgba(245,158,11,.22))); mix-blend-mode: multiply; }
-.mc-cap    { position: absolute; bottom: 0; left: 0; right: 0; z-index: 2; padding: 14px 14px 12px; background: linear-gradient(transparent 0%, rgba(0,0,0,.68) 100%); }
-.mc-place  { font-family: 'Inter', sans-serif; font-size: .82rem; font-weight: 800; color: #fff; display: block; }
-.mc-date   { font-family: 'Inter', sans-serif; font-size: .64rem; color: rgba(255,255,255,.68); display: block; margin-top: 1px; }
 
 .stats, .tree-sec, .feat-sec, .cta-sec, .contact-sec, .meaning-sec, .future-sec, .faq-sec, footer { position: relative; z-index: 1; }
 .feat-sec {

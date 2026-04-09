@@ -99,6 +99,16 @@ nav a:hover { color: #ffb347; }
   font-size: 1rem; font-weight: 500; color: rgba(40,15,0,.72);
   line-height: 1.78; margin-bottom: 12px; animation: up .8s .16s ease both;
 }
+.hero-slogan {
+  font-size: clamp(1rem, 2vw, 1.3rem); font-weight: 300; font-style: italic;
+  color: rgba(255,255,255,.55); letter-spacing: .08em;
+  margin-bottom: 14px; animation: up .8s .05s ease both;
+}
+.sec-slogan {
+  font-size: clamp(.95rem, 1.8vw, 1.2rem); font-weight: 300; font-style: italic;
+  color: rgba(255,255,255,.45); letter-spacing: .08em;
+  margin-bottom: 10px;
+}
 
 /* ── Waitlist form ── */
 .wl-wrap { animation: up .8s .24s ease both; width: 100%; max-width: 460px; }

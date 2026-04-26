@@ -1,2 +1,4 @@
 .tree-fragment-bg,.tree-fragment-lines,.hero-person{display:none!important}
-.tree-fragment-card{background:#fffaf2!important;overflow:hidden!important}
+.tree-fragment-card{background-color:#fffaf2!important;background-image:url('tree-bg.png')!important;background-repeat:no-repeat!important;background-position:center 42%!important;background-size:260% auto!important;overflow:hidden!important}
+@media(max-width:900px){.tree-fragment-card{background-size:300% auto!important;background-position:center 42%!important}}
+@media(max-width:420px){.tree-fragment-card{background-size:330% auto!important;background-position:center 42%!important}}

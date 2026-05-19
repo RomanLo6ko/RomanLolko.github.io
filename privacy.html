@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — myDynasty</title>
+<meta name="description" content="Privacy policy for the myDynasty Android app — a local-first family tree application. We don't run servers, we don't collect your data.">
+<link rel="canonical" href="https://mydynasty.app/privacy">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#fff8f0">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mydynasty.app/privacy">
+<meta property="og:title" content="Privacy Policy — myDynasty">
+<meta property="og:description" content="myDynasty is local-first. Your family data stays on your device. We don't have servers.">
+<meta property="og:image" content="https://mydynasty.app/logo.png">
+
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="apple-touch-icon" href="logo.png">
+
+<style>
+  :root {
+    --bg: #fff8f0;
+    --ink: #2a221d;
+    --ink-soft: #5a4a3f;
+    --accent: #b8722a;
+    --accent-soft: #e9c69a;
+    --line: #ebd9c4;
+    --card: #fffbf5;
+    --shadow: 0 4px 24px rgba(80, 50, 20, 0.06);
+    --radius: 14px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 36px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--ink);
+  }
+
+  .brand img {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+  }
+
+  .brand-name {
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: -0.01em;
+  }
+
+  .lang-switch {
+    display: inline-flex;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    overflow: hidden;
+    background: var(--card);
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .lang-switch button {
+    border: 0;
+    background: transparent;
+    color: var(--ink-soft);
+    padding: 8px 16px;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .lang-switch button.is-active {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  h1 {
+    font-size: clamp(28px, 5vw, 38px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin: 0 0 8px;
+  }
+
+  .meta {
+    color: var(--ink-soft);
+    font-size: 14px;
+    margin: 0 0 32px;
+  }
+
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 40px 0 12px;
+    letter-spacing: -0.01em;
+  }
+
+  h3 {
+    font-size: 17px;
+    font-weight: 700;
+    margin: 24px 0 8px;
+    color: var(--ink);
+  }
+
+  p, li {
+    font-size: 16px;
+    color: var(--ink);
+  }
+
+  ul {
+    padding-left: 22px;
+  }
+
+  ul li {
+    margin-bottom: 6px;
+  }
+
+  strong {
+    font-weight: 700;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  a:hover {
+    color: #8a4f10;
+  }
+
+  .summary {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    box-shadow: var(--shadow);
+    margin: 0 0 32px;
+  }
+
+  .summary p:first-child { margin-top: 0; }
+  .summary p:last-child  { margin-bottom: 0; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 24px;
+    font-size: 15px;
+    background: var(--card);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+
+  th, td {
+    text-align: left;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+
+  th {
+    background: #f6e9d5;
+    font-weight: 700;
+    color: var(--ink);
+    font-size: 14px;
+  }
+
+  tr:last-child td { border-bottom: 0; }
+
+  td code {
+    font-family: 'SF Mono', 'Menlo', 'Consolas', monospace;
+    font-size: 13px;
+    background: #f5e7d0;
+    color: #6a3e10;
+    padding: 1px 6px;
+    border-radius: 4px;
+  }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    color: var(--ink-soft);
+    font-size: 13px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .lang-content { display: none; }
+  .lang-content.is-active { display: block; }
+
+  @media (max-width: 560px) {
+    .page { padding: 24px 16px 60px; }
+    table { font-size: 14px; }
+    th, td { padding: 10px 10px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header>
+    <a class="brand" href="/">
+      <img src="logo.png" alt="myDynasty">
+      <span class="brand-name">myDynasty</span>
+    </a>
+    <div class="lang-switch" role="tablist" aria-label="Language">
+      <button type="button" role="tab" data-lang="en" class="is-active" aria-selected="true">EN</button>
+      <button type="button" role="tab" data-lang="ru" aria-selected="false">RU</button>
+    </div>
+  </header>
+
+  <!-- ============== ENGLISH ============== -->
+  <section class="lang-content is-active" data-lang="en">
+
+    <h1>Privacy Policy</h1>
+    <p class="meta">Effective May&nbsp;19,&nbsp;2026 · Last updated May&nbsp;19,&nbsp;2026 · App version 1.0 · Package <code>com.mydynasty.app</code></p>
+
+    <div class="summary">
+      <p><strong>Short version.</strong> myDynasty is a <strong>local-first</strong> family-tree app. All your family data — names, dates, photos, places — stays on your device in a private SQLite database.</p>
+      <p>We <strong>don't</strong> run an account system. We <strong>don't</strong> operate servers that receive your family data. We <strong>don't</strong> sell your data, use it for advertising, or share it with third parties for marketing. We <strong>don't</strong> embed third-party analytics, crash reporters, or trackers inside the app.</p>
+      <p>The only third-party SDKs that ever see anything are <strong>Google Maps SDK</strong> (when you open the map) and <strong>Google Play Billing</strong> (only if you subscribe to Premium). Both are operated by Google under <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</p>
+      <p>If you uninstall the app, your data is removed from the device with it. We have no copy.</p>
+    </div>
+
+    <h2>1. Who we are</h2>
+    <p>myDynasty is an independent Android application for genealogy: family trees, photo galleries, archive of family documents, burial places and memorial materials.</p>
+    <ul>
+      <li><strong>App name:</strong> myDynasty</li>
+      <li><strong>Publisher (data controller / operator of personal data):</strong> Roman Lobko, individual developer, residing in Ukraine</li>
+      <li><strong>Developer contact:</strong> <a href="mailto:mydynastyapp.team@gmail.com">mydynastyapp.team@gmail.com</a></li>
+      <li><strong>Website:</strong> <a href="https://mydynasty.app">https://mydynasty.app</a></li>
+    </ul>
+
+    <h3>Scope of our controller role</h3>
+    <p>We act as a <strong>data controller</strong> under GDPR Art 4(7) (and "оператор персональных данных" under Russian 152-ФЗ Art 3 п.2) in three narrow situations:</p>
+    <ol>
+      <li>Marketing-website visitor analytics on <a href="https://mydynasty.app">https://mydynasty.app</a>, which currently uses Google Analytics 4 for visit counting (see §5).</li>
+      <li>In-app integration of Google Maps SDK — we choose to use Maps; the user triggers it. Google itself is the controller of the underlying mapping service (joint-controller analysis under CJEU C-210/16 <em>Fashion ID</em>).</li>
+      <li>In-app integration of Google Play Billing for the Premium subscription.</li>
+    </ol>
+    <p>For the family data you enter into the app — names, dates, photos, places, biographical notes — <strong>we are not a controller and we are not a processor.</strong> That data is processed by you on your own device for personal and family purposes; it never reaches us. Under GDPR Art 2(2)(c) (household exemption) and Russian 152-ФЗ Art 1 ч.2 п.1, this means the data-protection regime treats <em>you</em> as the operator of that data, not us.</p>
+
+    <h3>EU Representative (GDPR Art 27)</h3>
+    <p>Because we are based outside the EU/EEA, GDPR Art 27 in principle requires us to appoint an EU representative. We currently rely on the exemption in Art 27(2)(a): the processing we actually carry out as a controller is <strong>occasional</strong>, <strong>does not include special-category data on our side</strong> (Art 9), and is <strong>low risk</strong> to data subjects. If this analysis no longer holds for you, please contact us at the email above.</p>
+
+    <h2>2. What stays on your device only</h2>
+    <p>The following information lives <strong>only</strong> in the app's local SQLite database in your private Android app sandbox. It is never sent to us:</p>
+    <ul>
+      <li>Names, dates of birth and death, sex, biographical notes you enter for your relatives.</li>
+      <li>Family relationships you create (parent/child, spouse, sibling).</li>
+      <li>Photos and documents you import into the app archive (PNG, JPG, SVG, PDF, video, etc.).</li>
+      <li>GPS coordinates you attach to a person's birth, place of living, or burial.</li>
+      <li>Family-tree files you import (GEDCOM 7.0, LRV) or export (GEDCOM, LRV, SVG, PNG).</li>
+      <li>App preferences (theme, layout settings, locale).</li>
+    </ul>
+    <p>Android isolates this database under your user profile. Other apps cannot read it without explicit permission. If you uninstall myDynasty, this data is deleted.</p>
+
+    <h3>Special category data (GDPR Art 9)</h3>
+    <p>Some of the data you may enter into the app — for example ethnicity, religion, health notes about ancestors — could qualify as "special category" personal data under GDPR Art 9. Because this data <strong>never leaves your device</strong> and <strong>we never receive or access it</strong>, we do not process such data within the meaning of GDPR or 152-ФЗ. The user themselves processes it under the household exemption.</p>
+
+    <h2>3. Permissions and why we need them</h2>
+    <p>We request only the Android permissions that are actually used by features you enable:</p>
+    <table>
+      <thead>
+        <tr><th>Permission</th><th>Used for</th><th>Behaviour</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>INTERNET</code>, <code>ACCESS_NETWORK_STATE</code></td>
+          <td>Loading map tiles from Google Maps; checking your Google Play subscription status.</td>
+          <td>No personal data is sent.</td>
+        </tr>
+        <tr>
+          <td><code>ACCESS_COARSE_LOCATION</code>, <code>ACCESS_FINE_LOCATION</code></td>
+          <td>Showing your current position on the map; attaching the current location to a relative's place; optional compass / AR helper for finding a burial place.</td>
+          <td>Coordinates stay on the device and are saved only if you save them. Geocoding of address strings you type is performed by Google Maps SDK — see §4.1.</td>
+        </tr>
+        <tr>
+          <td><code>CAMERA</code></td>
+          <td>Taking a photo for a person card or for verifying a burial place.</td>
+          <td>Photos are stored in the app's private storage. Not uploaded.</td>
+        </tr>
+        <tr>
+          <td><code>POST_NOTIFICATIONS</code></td>
+          <td>Optional local reminders (e.g. anniversaries you set yourself).</td>
+          <td>Notifications are produced locally; no push service is used.</td>
+        </tr>
+        <tr>
+          <td><code>RECEIVE_BOOT_COMPLETED</code></td>
+          <td>Re-arming local reminders after the device reboots.</td>
+          <td>No network activity.</td>
+        </tr>
+        <tr>
+          <td><code>com.android.vending.BILLING</code></td>
+          <td>Letting Google Play process a Premium subscription if you upgrade.</td>
+          <td>Standard Google Play Billing. We never see your card data.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>We have intentionally <strong>removed</strong> the following permissions from our manifest, even when some MAUI libraries try to add them transitively:</p>
+    <ul>
+      <li><code>READ_EXTERNAL_STORAGE</code>, <code>WRITE_EXTERNAL_STORAGE</code></li>
+      <li><code>READ_MEDIA_IMAGES</code>, <code>READ_MEDIA_VIDEO</code></li>
+      <li><code>SCHEDULE_EXACT_ALARM</code>, <code>USE_EXACT_ALARM</code></li>
+    </ul>
+    <p>The app uses Android's modern photo picker / Storage Access Framework instead, so it does <strong>not</strong> scan your gallery.</p>
+
+    <h2>4. Third-party services that may see something</h2>
+    <p>We use exactly two third-party SDKs at runtime. Both are operated by <strong>Google&nbsp;LLC</strong> under Google's own privacy policy.</p>
+
+    <h3>Legal basis (GDPR Art 6)</h3>
+    <p>The narrow processing we do as a controller relies on the following lawful bases:</p>
+    <ul>
+      <li><strong>Art 6(1)(b)</strong> — performance of a contract: for the Premium subscription, processing the entitlement signal from Google Play is necessary to deliver the subscribed service.</li>
+      <li><strong>Art 6(1)(f)</strong> — legitimate interest: for displaying map tiles requested by you and for marketing-website visitor analytics. Balanced against the minimal IP/request-data footprint. You can object under Art 21 by contacting us.</li>
+      <li><strong>Art 6(1)(a)</strong> — consent: if and when we add an in-app or website consent banner for analytics or other optional processing, consent becomes the basis.</li>
+    </ul>
+    <p>For the family data you enter on-device, GDPR Art 2(2)(c) (household exemption) applies — see §1 and §2.</p>
+
+    <h3>4.1 Google Maps SDK for Android</h3>
+    <ul>
+      <li><strong>Triggered by a network call:</strong> opening the Map screen, geocoding an address string you type, fetching map tiles.</li>
+      <li><strong>Local only (no network):</strong> attaching already-known coordinates to a person's record, viewing a stored place without opening the map.</li>
+      <li><strong>Data Google receives:</strong> technical map-request data (device IP, requested tiles, viewport, the address string for geocoding) per Google's terms. See <a href="https://policies.google.com/privacy">Google's privacy policy</a> and the <a href="https://policies.google.com/terms/maps">Google Maps additional terms</a>.</li>
+      <li>We do not send Google your tree, your names, your photos, or any other personal data beyond what is strictly required to render a map request.</li>
+    </ul>
+
+    <h3>4.2 Google Play Billing</h3>
+    <ul>
+      <li><strong>Triggered by:</strong> purchasing or restoring a Premium subscription (<code>mydynasty_premium_monthly</code>).</li>
+      <li><strong>Data Google receives:</strong> the standard purchase information Google Play needs to process a subscription via the device's Google account. Subject to <a href="https://play.google.com/about/play-terms/">Google Play's terms</a> and <a href="https://policies.google.com/privacy">Google's privacy policy</a>.</li>
+      <li>We receive only an entitlement signal on the device (active / not active). We do not receive your Google account email or payment details.</li>
+    </ul>
+
+    <p>We do <strong>not</strong> integrate Firebase Analytics, Google Analytics for Firebase, Crashlytics, App Center, Sentry, AppsFlyer, Facebook SDK, or any advertising SDK.</p>
+
+    <h2>5. The website mydynasty.app</h2>
+    <p><strong>The Android app does not use Google Analytics or any other analytics.</strong> This section is only about the marketing website.</p>
+    <p>The website at <a href="https://mydynasty.app">https://mydynasty.app</a> is a separate marketing landing page. It currently uses <strong>Google Analytics 4</strong> to count anonymous visits (cookies, IP address, referrer, page views). This applies only to the website. It does <strong>not</strong> apply to the Android app.</p>
+    <p>We are working on adding a cookie-consent banner to the website to give EU/UK visitors a proper opt-in mechanism (ePrivacy Directive 2002/58/EC Art 5(3); UK PECR reg 6). Until then, you can opt out via:</p>
+    <ul>
+      <li>Your browser's tracking protection (Firefox ETP, Brave Shields, Safari ITP).</li>
+      <li>The <a href="https://tools.google.com/dlpage/gaoptout">Google Analytics Opt-out browser add-on</a>.</li>
+      <li>Blocking third-party scripts on <a href="https://mydynasty.app">https://mydynasty.app</a>.</li>
+    </ul>
+    <p>California residents — see §11 for CCPA/CPRA rights including the right to opt out of "sharing" if our GA4 configuration falls within that definition.</p>
+
+    <h2>6. Subscriptions (Premium)</h2>
+
+    <h3>Free tier (default)</h3>
+    <ul>
+      <li>1 family tree.</li>
+      <li>1 photo gallery.</li>
+      <li>Up to 50 people in your free tree.</li>
+      <li>Up to 25 archive files per project.</li>
+      <li>Maps, photos, GPS, basic export are included.</li>
+    </ul>
+
+    <h3>Premium tier (<code>mydynasty_premium_monthly</code>)</h3>
+    <ul>
+      <li>Up to 5 family trees.</li>
+      <li>Up to 5 photo galleries.</li>
+      <li>Up to 500 people per family tree.</li>
+      <li>Up to 500 archive files per project.</li>
+      <li>Advanced export / import / transfer.</li>
+      <li>Burial-site navigation helpers.</li>
+    </ul>
+
+    <h3>Pricing and billing terms</h3>
+    <ul>
+      <li><strong>Price:</strong> EUR 4.99 per month (Google Play applies localized pricing in other markets).</li>
+      <li><strong>Billing period:</strong> monthly.</li>
+      <li><strong>Auto-renewal:</strong> the subscription renews automatically each month until you cancel.</li>
+      <li><strong>Free trial:</strong> no free trial in this version.</li>
+      <li><strong>Account:</strong> none required. Premium is tied to the Google account on the device, not to an app account. We do not receive your email.</li>
+      <li><strong>Manage / cancel:</strong> Google Play → Subscriptions on your device, or at <a href="https://play.google.com/store/account/subscriptions">play.google.com/store/account/subscriptions</a>. The app also provides an in-app deep link to the management screen.</li>
+      <li><strong>Effect of cancellation:</strong> Premium remains active until the end of the current paid period; afterwards the account reverts to Free. Existing data is preserved and remains accessible for viewing and export; Premium-only actions are blocked until you re-subscribe.</li>
+      <li><strong>Refunds:</strong> handled by Google Play (typically within 48 hours of purchase). For refund questions outside Google's window, write to <a href="mailto:mydynastyapp.team@gmail.com">mydynastyapp.team@gmail.com</a>; we cannot guarantee a refund.</li>
+      <li><strong>Restore Purchases:</strong> use the "Restore purchases" button on the Premium screen after reinstall or device switch with the same Google account.</li>
+    </ul>
+
+    <h2>7. Children's privacy</h2>
+    <p>myDynasty is <strong>not directed at children</strong>. The content, complexity, and subject matter are oriented toward adult users building genealogical records.</p>
+    <p>We do not knowingly process personal data of children below the age of digital consent in their jurisdiction:</p>
+    <ul>
+      <li>16 years in most EU member states (GDPR Art 8(1)).</li>
+      <li>14 years in France, Italy, Spain, and some others.</li>
+      <li>13 years in the United Kingdom (UK GDPR / Data Protection Act 2018 s.9).</li>
+      <li>13 years in the United States under COPPA (16 CFR §312).</li>
+    </ul>
+    <p>Because the app stores all entries locally on the user's device and <strong>transmits no personal data to our servers</strong>, we do not "collect" personal information from any user — including any child whose data a parent records in a family tree — within the meaning of COPPA, 16 CFR §312.2. We comply with the FTC's amended COPPA Final Rule of January 16, 2025 (89 FR 2034) by virtue of not collecting any data within the rule's scope.</p>
+    <p>Users who upload photos or data about identifiable third parties (including minors) are responsible for any consent required under their local law. The household / personal-use exemption (GDPR Art 2(2)(c)) generally applies while the data is kept for personal/family purposes; it ceases the moment the user shares the data publicly (e.g. by exporting GEDCOM and publishing it).</p>
+    <p>If you are a parent or guardian and want such content removed, simply delete the records inside the app (everything is local) or uninstall the app.</p>
+
+    <h2>8. Data security</h2>
+    <ul>
+      <li>All app data is stored in your device's private application sandbox, isolated by the Android operating system.</li>
+      <li>Stored at rest in the OS-encrypted application sandbox — Android full-disk / file-based encryption applies on devices with a screen lock enabled (default for modern devices). We rely on this OS-level protection.</li>
+      <li><strong>No additional app-layer encryption on top of OS encryption in v1.0.</strong> We say this honestly. We plan to evaluate SQLCipher / Android-keystore-protected database encryption in a future release.</li>
+      <li>We recommend that you protect your device itself with a PIN, password, or biometric lock — this is the strongest practical protection for a local-first app.</li>
+      <li>Network traffic to Google services is performed over HTTPS by the respective Google SDKs.</li>
+    </ul>
+
+    <h2>9. Your rights</h2>
+    <p>Because we hold very limited personal data about you, most data-subject rights are exercised directly inside the app:</p>
+    <ul>
+      <li><strong>Access / review</strong> (Art 15): you can see all your data — it is what the app shows.</li>
+      <li><strong>Rectification / correction</strong> (Art 16): edit any record in the person card or settings.</li>
+      <li><strong>Erasure</strong> (Art 17): delete records in-app, or uninstall the app to remove everything.</li>
+      <li><strong>Restriction</strong> (Art 18): because there is no off-device processing to restrict, restriction in practice means deleting the record or uninstalling.</li>
+      <li><strong>Portability</strong> (Art 20): export your tree to GEDCOM 7.0, LRV, SVG, PNG via the app's export menu.</li>
+      <li><strong>Objection</strong> (Art 21): you may object to our legitimate-interest processing (Art 6(1)(f)) by writing to us.</li>
+      <li><strong>Revoke permissions:</strong> Android Settings → Apps → myDynasty → Permissions.</li>
+    </ul>
+
+    <h3>Right to lodge a complaint with a supervisory authority</h3>
+    <ul>
+      <li><strong>United Kingdom — ICO:</strong> <a href="https://ico.org.uk/make-a-complaint/">ico.org.uk/make-a-complaint</a></li>
+      <li><strong>EU / EEA — your national DPA:</strong> <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en">EDPB members list</a></li>
+      <li><strong>Russia — Роскомнадзор:</strong> <a href="https://rkn.gov.ru/treatments/ask-question/">rkn.gov.ru/treatments/ask-question</a></li>
+      <li><strong>Ukraine — Уповноважений з прав людини:</strong> <a href="https://ombudsman.gov.ua/">ombudsman.gov.ua</a></li>
+    </ul>
+
+    <h3>Retention period</h3>
+    <ul>
+      <li><strong>On our infrastructure:</strong> none. We operate no servers.</li>
+      <li><strong>On your device:</strong> retained until you delete the record or uninstall the app.</li>
+      <li><strong>Support email:</strong> correspondence at mydynastyapp.team@gmail.com kept up to 24 months for support purposes, then deleted unless required for an open issue or by law.</li>
+    </ul>
+    <p>We have very limited personal data about you. Nevertheless, you can exercise these rights at any time by writing to <a href="mailto:mydynastyapp.team@gmail.com">mydynastyapp.team@gmail.com</a>.</p>
+
+    <h2>10. International transfers</h2>
+    <p>When you use Google Maps SDK or Google Play Billing, the relevant requests are processed by Google's global infrastructure, which may transfer technical request data outside your country, including to the United States. These transfers are governed by:</p>
+    <ul>
+      <li><strong>EU/EEA personal data:</strong> the <a href="https://commission.europa.eu/document/fa09cbad-dd7d-4684-ace2-be9210873f51_en">EU–US Data Privacy Framework</a> adequacy decision (Commission Implementing Decision (EU) 2023/1795 of 10 July 2023) and/or Standard Contractual Clauses under GDPR Art 46.</li>
+      <li><strong>UK personal data:</strong> the UK–US Data Bridge extension to the DPF, and/or the UK International Data Transfer Agreement.</li>
+      <li><strong>Other regions:</strong> Google's own transfer mechanisms.</li>
+    </ul>
+    <p>We rely on Google as the controller of those flows; we do not select transfer destinations independently.</p>
+
+    <h2>11. California Privacy Rights (CCPA / CPRA)</h2>
+    <p>If you are a California resident, you have specific rights under the California Consumer Privacy Act (CCPA) as amended by the California Privacy Rights Act (CPRA).</p>
+    <ul>
+      <li><strong>Categories of personal information we collect:</strong>
+        <ul>
+          <li><em>In the app:</em> none. The app does not transmit your personal information to us.</li>
+          <li><em>On the marketing website:</em> cookies, IP address, device/browser identifiers, page views — collected by Google Analytics 4.</li>
+        </ul>
+      </li>
+      <li><strong>Sources:</strong> directly from you (when you visit the website).</li>
+      <li><strong>Business purposes:</strong> website analytics.</li>
+      <li><strong>Sale:</strong> we do not sell personal information.</li>
+      <li><strong>Sharing for cross-context behavioral advertising:</strong> depending on the GA4 configuration on mydynasty.app, GA may constitute "sharing" under CPRA §1798.140(ah). We are reviewing the configuration to ensure Google Signals / personalized advertising features are disabled.</li>
+      <li><strong>Your rights:</strong> to know, delete, correct, opt out of sale/sharing, limit use of sensitive PI, and non-discrimination.</li>
+      <li><strong>How to exercise:</strong> write to <a href="mailto:mydynastyapp.team@gmail.com">mydynastyapp.team@gmail.com</a> with subject "California privacy request" — we will respond within 45 days.</li>
+      <li><strong>Do Not Sell or Share My Personal Information:</strong> you can use Global Privacy Control in your browser; we honor a GPC signal as an opt-out once our consent banner is live.</li>
+    </ul>
+
+    <h2>12. Changes to this policy</h2>
+    <p>We may update this policy as the app evolves (for example, when we add cloud sync, accounts, or new third-party services). When we do, we will update the "Last updated" date at the top. Material changes will be highlighted in the app's release notes or on this page.</p>
+
+    <h2>13. Contact</h2>
+    <ul>
+      <li>Email: <a href="mailto:mydynastyapp.team@gmail.com">mydynastyapp.team@gmail.com</a></li>
+      <li>Website: <a href="https://mydynasty.app">https://mydynasty.app</a></li>
+      <li>Privacy Policy URL: <a href="https://mydynasty.app/privacy">https://mydynasty.app/privacy</a></li>
+    </ul>
+
+  </section>
+
+  <!-- ============== RUSSIAN ============== -->
+  <section class="lang-content" data-lang="ru">
+
+    <h1>Политика конфиденциальности</h1>
+    <p class="meta">Действует с 19&nbsp;мая&nbsp;2026&nbsp;г. · Последнее обновление 19&nbsp;мая&nbsp;2026&nbsp;г. · Версия приложения 1.0 · Пакет <code>com.mydynasty.app</code></p>
+
+    <div class="summary">
+      <p><strong>Коротко.</strong> myDynasty — <strong>local-first</strong> приложение для семейного древа. Все ваши семейные данные — имена, даты, фотографии, места — хранятся только на вашем устройстве в приватной SQLite-базе.</p>
+      <p>Мы <strong>не</strong> используем аккаунты. У нас <strong>нет</strong> серверов, которые принимают ваши семейные данные. Мы <strong>не</strong> продаём ваши данные, не используем их для рекламы и не передаём третьим лицам для маркетинга. Мы <strong>не</strong> встраиваем в приложение сторонние системы аналитики, crash-репортов или трекеры.</p>
+      <p>Единственные сторонние SDK, которые в работе приложения видят какой-либо трафик — <strong>Google Maps SDK</strong> (когда вы открываете карту) и <strong>Google Play Billing</strong> (только если вы подписываетесь на Premium). И то и другое — сервисы Google, действующие по <a href="https://policies.google.com/privacy">политике конфиденциальности Google</a>.</p>
+      <p>Если вы удалите приложение, ваши данные удаляются с устройства вместе с ним. У нас нет копии.</p>
+    </div>
+
+    <h2>1. Кто мы</h2>
+    <p>myDynasty — независимое приложение для Android для генеалогии: семейные деревья, фотогалереи, архив документов, места захоронений и материалы памяти.</p>
+    <ul>
+      <li><strong>Название:</strong> myDynasty</li>
+      <li><strong>Издатель (оператор персональных данных / data controller):</strong> Роман Лобко (Roman Lobko), индивидуальный разработчик, страна резидентства — Украина</li>
+      <li><strong>Контакт разработчика:</strong> <a href="mailto:mydynastyapp.team@gmail.com">mydynastyapp.team@gmail.com</a></li>
+      <li><strong>Сайт:</strong> <a href="https://mydynasty.app">https://mydynasty.app</a></li>
+    </ul>
+
+    <h3>Объём роли оператора</h3>
+    <p>Мы выступаем <strong>оператором персональных данных</strong> в смысле 152-ФЗ Art 3 п.2 (и data controller по GDPR Art 4(7)) <strong>только в трёх узких случаях</strong>:</p>
+    <ol>
+      <li>Аналитика посетителей маркетингового сайта <a href="https://mydynasty.app">https://mydynasty.app</a> — там используется Google Analytics 4 (см. §6).</li>
+      <li>Интеграция Google Maps SDK в приложении. Google сам — контролёр базового картографического сервиса (joint-controller по CJEU C-210/16 <em>Fashion ID</em>).</li>
+      <li>Интеграция Google Play Billing для подписки Premium.</li>
+    </ol>
+    <p>Для семейных данных, которые вы вводите в приложение — имён, дат, фотографий, мест, биографий — <strong>мы не оператор и не процессор.</strong> Эти данные обрабатываются вами на вашем собственном устройстве для личных и семейных нужд; они никогда до нас не доходят.</p>
+    <p>Поскольку данные о родственниках вы вводите для <strong>личных и семейных нужд, не связанных с предпринимательской деятельностью</strong>, и они не покидают ваше устройство, обработка подпадает под исключение ч.2 ст.1 152-ФЗ. <strong>Оператором этих данных по российскому праву являетесь вы.</strong> Аналогичная норма GDPR Art 2(2)(c) (household exemption).</p>
+
+    <h3>Представитель в ЕС (GDPR Art 27)</h3>
+    <p>Поскольку мы расположены вне ЕС/ЕЭЗ, GDPR Art 27 в принципе требует назначить представителя в ЕС. Сейчас мы полагаемся на исключение Art 27(2)(a): обработка, которую мы реально осуществляем как оператор, является <strong>occasional</strong>, <strong>не включает special category data на нашей стороне</strong> (Art 9) и <strong>низкорисковая</strong> для субъектов данных. Если этот анализ не покрывает ваш конкретный случай — напишите нам.</p>
+
+    <h2>2. Что хранится только на вашем устройстве</h2>
+    <p>Перечисленные ниже данные находятся <strong>только</strong> в локальной SQLite-базе приложения, в приватном sandbox-каталоге Android. Они никогда не отправляются нам:</p>
+    <ul>
+      <li>Имена, даты рождения и смерти, пол, биографические заметки родственников.</li>
+      <li>Семейные связи (родитель/ребёнок, супруги, братья/сёстры).</li>
+      <li>Фотографии и документы, добавленные в архив (PNG, JPG, SVG, PDF, видео и т.п.).</li>
+      <li>GPS-координаты мест рождения, жизни или захоронения.</li>
+      <li>Файлы деревьев, которые вы импортируете (GEDCOM 7.0, LRV) или экспортируете (GEDCOM, LRV, SVG, PNG).</li>
+      <li>Настройки приложения (тема, параметры раскладки, язык).</li>
+    </ul>
+    <p>Android изолирует эту базу в вашем профиле пользователя. Другие приложения не могут читать её без отдельного разрешения. При удалении myDynasty эти данные удаляются.</p>
+
+    <h3>Особые категории данных (GDPR Art 9 / 152-ФЗ Art 10)</h3>
+    <p>Часть данных, которые вы можете вводить в приложение — этнос, религия, заметки о здоровье предков — может быть отнесена к <strong>особым категориям персональных данных</strong>. Поскольку эти данные <strong>никогда не покидают ваше устройство</strong> и <strong>мы их не получаем и не обрабатываем</strong>, мы не обрабатываем их в смысле GDPR или 152-ФЗ. Их обрабатываете вы под исключение «личные и семейные нужды».</p>
+
+    <h2>3. Цели обработки персональных данных</h2>
+    <p>В пределах нашей роли оператора (152-ФЗ Art 14 ч.2 п.5) мы обрабатываем персональные данные исключительно для следующих целей:</p>
+    <ol>
+      <li>Предоставление функций приложения — отображение карт, проверка статуса подписки Premium на устройстве.</li>
+      <li>Обработка подписки Premium — обмен сигналом entitlement с Google Play Billing.</li>
+      <li>Аналитика посетителей сайта mydynasty.app — подсчёт визитов через Google Analytics 4 (только сайт, не приложение).</li>
+      <li>Обработка обращений в поддержку — ответы на письма, отправленные на mydynastyapp.team@gmail.com.</li>
+    </ol>
+    <p>Иные цели мы не преследуем.</p>
+
+    <h2>4. Разрешения и зачем они нужны</h2>
+    <p>Мы запрашиваем только те разрешения Android, которые действительно используются включёнными вами функциями:</p>
+    <table>
+      <thead>
+        <tr><th>Разрешение</th><th>Зачем</th><th>Поведение</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>INTERNET</code>, <code>ACCESS_NETWORK_STATE</code></td>
+          <td>Загрузка карт Google Maps; проверка статуса подписки Google Play.</td>
+          <td>Персональные данные не передаются.</td>
+        </tr>
+        <tr>
+          <td><code>ACCESS_COARSE_LOCATION</code>, <code>ACCESS_FINE_LOCATION</code></td>
+          <td>Текущее положение на карте; привязка координат к месту родственника; компас / AR-помощник для поиска места захоронения.</td>
+          <td>Координаты остаются на устройстве и сохраняются только если вы это явно сделали. Геокодирование адресов выполняет Google Maps SDK — см. §5.1.</td>
+        </tr>
+        <tr>
+          <td><code>CAMERA</code></td>
+          <td>Съёмка фото для карточки человека или для верификации места захоронения.</td>
+          <td>Фотографии сохраняются в приватное хранилище. Никуда не выгружаются.</td>
+        </tr>
+        <tr>
+          <td><code>POST_NOTIFICATIONS</code></td>
+          <td>Опциональные локальные напоминания (годовщины, которые вы сами настроили).</td>
+          <td>Уведомления локальные; push-сервисы не используются.</td>
+        </tr>
+        <tr>
+          <td><code>RECEIVE_BOOT_COMPLETED</code></td>
+          <td>Восстановление локальных напоминаний после перезагрузки.</td>
+          <td>Без сетевой активности.</td>
+        </tr>
+        <tr>
+          <td><code>com.android.vending.BILLING</code></td>
+          <td>Обработка подписки Premium через Google Play.</td>
+          <td>Стандартный Google Play Billing. Данные карты мы не видим.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Мы намеренно <strong>исключили</strong> из манифеста следующие разрешения, которые иногда добавляются библиотеками .NET MAUI транзитивно:</p>
+    <ul>
+      <li><code>READ_EXTERNAL_STORAGE</code>, <code>WRITE_EXTERNAL_STORAGE</code></li>
+      <li><code>READ_MEDIA_IMAGES</code>, <code>READ_MEDIA_VIDEO</code></li>
+      <li><code>SCHEDULE_EXACT_ALARM</code>, <code>USE_EXACT_ALARM</code></li>
+    </ul>
+    <p>Вместо этого используется системный photo picker / Storage Access Framework — приложение <strong>не</strong> сканирует вашу галерею.</p>
+
+    <h2>5. Сторонние сервисы</h2>
+    <p>В рантайме приложение использует ровно два сторонних SDK. Оба предоставляются <strong>Google&nbsp;LLC</strong> и обрабатывают данные по собственной политике Google.</p>
+
+    <h3>Правовые основания обработки (GDPR Art 6 / 152-ФЗ Art 6)</h3>
+    <ul>
+      <li><strong>GDPR Art 6(1)(b) / 152-ФЗ Art 6 п.1 п/п 5</strong> — исполнение договора: для подписки Premium проверка entitlement-сигнала от Google Play необходима для предоставления оплаченного сервиса.</li>
+      <li><strong>GDPR Art 6(1)(f) / 152-ФЗ Art 6 п.1 п/п 7</strong> — законный интерес: для отображения карт по вашему запросу и для аналитики сайта. Возразить против такой обработки можно по Art 21 GDPR — напишите нам.</li>
+      <li><strong>GDPR Art 6(1)(a) / 152-ФЗ Art 6 п.1 п/п 1</strong> — согласие: если и когда мы добавим cookie-баннер согласия или иную опциональную обработку, основанием станет согласие.</li>
+    </ul>
+    <p>Для семейных данных на устройстве применяется исключение GDPR Art 2(2)(c) / 152-ФЗ Art 1 ч.2 п.1 — см. §1, §2.</p>
+
+    <h3>5.1 Google Maps SDK для Android</h3>
+    <ul>
+      <li><strong>С сетевым вызовом:</strong> открытие карты, геокодирование введённого адреса, загрузка картографических тайлов.</li>
+      <li><strong>Без сетевого вызова:</strong> привязка уже известных координат к записи, просмотр сохранённого места без открытия карты.</li>
+      <li><strong>Что получает Google:</strong> технические данные запроса (IP устройства, запрашиваемые тайлы, видимая область, строка адреса для геокодинга). См. <a href="https://policies.google.com/privacy">политика конфиденциальности Google</a> и <a href="https://policies.google.com/terms/maps">дополнительные условия Google Maps</a>.</li>
+      <li>Мы не отправляем Google ни дерево, ни имена, ни фотографии.</li>
+    </ul>
+
+    <h3>5.2 Google Play Billing</h3>
+    <ul>
+      <li><strong>Когда срабатывает:</strong> покупка или восстановление подписки Premium (<code>mydynasty_premium_monthly</code>).</li>
+      <li><strong>Что получает Google:</strong> стандартную информацию о покупке для обработки подписки через Google-аккаунт устройства. См. <a href="https://play.google.com/about/play-terms/">правила Google Play</a> и <a href="https://policies.google.com/privacy">политику Google</a>.</li>
+      <li>Мы получаем только сигнал на устройстве: подписка активна / неактивна. Ваш Google-email и данные оплаты мы не получаем.</li>
+    </ul>
+
+    <p>Мы <strong>не</strong> интегрируем Firebase Analytics, Google Analytics for Firebase, Crashlytics, App Center, Sentry, AppsFlyer, Facebook SDK или какие-либо рекламные SDK.</p>
+
+    <h2>6. Сайт mydynasty.app</h2>
+    <p><strong>В Android-приложении Google Analytics или иная аналитика не используется.</strong> Этот раздел только о маркетинговом сайте.</p>
+    <p>Сайт <a href="https://mydynasty.app">https://mydynasty.app</a> — отдельная маркетинговая страница. На сайте используется <strong>Google Analytics 4</strong> для анонимного подсчёта посещений (cookies, IP, referrer, просмотры страниц). Это касается <strong>только сайта</strong> и не относится к Android-приложению.</p>
+    <p>Мы готовим внедрение cookie-баннера согласия на сайте для посетителей из ЕС/UK (ePrivacy Directive 2002/58/EC Art 5(3); UK PECR reg 6). До деплоя:</p>
+    <ul>
+      <li>Защита от трекинга в браузере (Firefox ETP, Brave Shields, Safari ITP).</li>
+      <li><a href="https://tools.google.com/dlpage/gaoptout">Google Analytics Opt-out browser add-on</a>.</li>
+      <li>Блокировка сторонних скриптов на mydynasty.app.</li>
+    </ul>
+
+    <h2>7. Подписки (Premium)</h2>
+
+    <h3>Бесплатный тариф (по умолчанию)</h3>
+    <ul>
+      <li>1 семейное дерево.</li>
+      <li>1 фотогалерея.</li>
+      <li>До 50 человек в бесплатном дереве.</li>
+      <li>До 25 файлов архива на проект.</li>
+      <li>Карты, фото, GPS и базовый экспорт уже включены.</li>
+    </ul>
+
+    <h3>Premium тариф (<code>mydynasty_premium_monthly</code>)</h3>
+    <ul>
+      <li>До 5 семейных деревьев.</li>
+      <li>До 5 фотогалерей.</li>
+      <li>До 500 человек в семейном дереве.</li>
+      <li>До 500 файлов архива на проект.</li>
+      <li>Расширенный экспорт / импорт / перенос.</li>
+      <li>Помощники навигации к местам захоронений.</li>
+    </ul>
+
+    <h3>Условия оплаты и биллинга</h3>
+    <ul>
+      <li><strong>Цена:</strong> 4,99 EUR в месяц (Google Play применяет локализованные цены в других регионах).</li>
+      <li><strong>Период:</strong> ежемесячно.</li>
+      <li><strong>Автопродление:</strong> подписка продлевается автоматически каждый месяц до момента отмены.</li>
+      <li><strong>Пробный период:</strong> в этой версии отсутствует.</li>
+      <li><strong>Аккаунт:</strong> не требуется. Premium привязан к Google-аккаунту устройства, а не к аккаунту в приложении. Мы не получаем ваш e-mail.</li>
+      <li><strong>Управление и отмена:</strong> Google Play → Подписки на устройстве, или по адресу <a href="https://play.google.com/store/account/subscriptions">play.google.com/store/account/subscriptions</a>. Приложение также содержит in-app deeplink на экран управления.</li>
+      <li><strong>Последствия отмены:</strong> Premium остаётся активной до конца оплаченного периода; затем — переход на Free. Существующие данные сохраняются и доступны для просмотра и экспорта; Premium-действия блокируются до восстановления.</li>
+      <li><strong>Возврат:</strong> обрабатывается Google Play по стандартной политике (обычно 48 часов). По вопросам возврата вне окна Google пишите на <a href="mailto:mydynastyapp.team@gmail.com">mydynastyapp.team@gmail.com</a>; гарантировать возврат не можем.</li>
+      <li><strong>Восстановление покупки:</strong> кнопка «Восстановить покупку» на экране Premium после переустановки или смены устройства с тем же Google-аккаунтом.</li>
+    </ul>
+
+    <h2>8. Конфиденциальность детей</h2>
+    <p>myDynasty <strong>не предназначено для детей</strong>. Содержание, сложность и тематика приложения ориентированы на взрослых пользователей.</p>
+    <p>Мы сознательно не обрабатываем персональные данные детей младше возраста цифрового согласия в их юрисдикции:</p>
+    <ul>
+      <li>16 лет в большинстве стран ЕС (GDPR Art 8(1)).</li>
+      <li>14 лет во Франции, Италии, Испании и некоторых других.</li>
+      <li>13 лет в Великобритании (UK GDPR / Data Protection Act 2018 s.9).</li>
+      <li>13 лет в США по COPPA (16 CFR §312).</li>
+      <li>В России — согласие даёт законный представитель (152-ФЗ Art 9); точного возраста цифрового согласия закон не устанавливает.</li>
+    </ul>
+    <p>Поскольку приложение хранит все записи локально на устройстве пользователя и <strong>не передаёт персональные данные на наши серверы</strong>, мы не «собираем» персональную информацию ни у одного пользователя — включая ребёнка, чьи данные записывает родитель — в смысле COPPA 16 CFR §312.2. Мы соответствуем требованиям FTC's amended COPPA Final Rule от 16 января 2025 г. (89 FR 2034) в силу того, что не собираем данные, попадающие под её действие.</p>
+    <p>Пользователи, которые загружают фотографии или данные об опознаваемых третьих лицах (включая несовершеннолетних), несут ответственность за получение согласия, если оно требуется их местным законом. Исключение «личные и семейные нужды» (GDPR Art 2(2)(c) / 152-ФЗ Art 1 ч.2 п.1) применяется, пока данные используются для личных/семейных целей; перестаёт действовать с момента публичного распространения.</p>
+
+    <h2>9. Безопасность данных</h2>
+    <ul>
+      <li>Все данные приложения хранятся в приватном sandbox-каталоге, изолированном операционной системой Android.</li>
+      <li>Хранятся at rest в зашифрованном файловой системой Android sandbox — full-disk / file-based encryption применяется на устройствах с включённой блокировкой экрана.</li>
+      <li><strong>Дополнительное шифрование базы на уровне файла приложения в версии 1.0 не применяется.</strong> В будущей версии планируем оценить SQLCipher.</li>
+      <li>Рекомендуем защитить само устройство PIN-кодом, паролем или биометрией.</li>
+      <li>Сетевой трафик к сервисам Google идёт по HTTPS.</li>
+    </ul>
+
+    <h2>10. Ваши права</h2>
+    <ul>
+      <li><strong>Доступ</strong> (GDPR Art 15 / 152-ФЗ Art 14): все ваши данные — то, что показывает приложение.</li>
+      <li><strong>Уточнение / исправление</strong> (Art 16 / Art 14): редактируйте любую запись в карточке человека или в настройках.</li>
+      <li><strong>Удаление / право на забвение</strong> (Art 17): удалите записи в приложении или само приложение.</li>
+      <li><strong>Ограничение</strong> (Art 18): на практике = удалить запись или удалить приложение.</li>
+      <li><strong>Переносимость</strong> (Art 20): экспорт в GEDCOM 7.0, LRV, SVG, PNG.</li>
+      <li><strong>Возражение</strong> (Art 21): возразить против обработки на основании законного интереса (Art 6(1)(f)) — письмом на mydynastyapp.team@gmail.com.</li>
+      <li><strong>Отзыв разрешений:</strong> Настройки Android → Приложения → myDynasty → Разрешения.</li>
+    </ul>
+
+    <h3>Право подать жалобу в надзорный орган</h3>
+    <ul>
+      <li><strong>Россия — Роскомнадзор:</strong> <a href="https://rkn.gov.ru/treatments/ask-question/">rkn.gov.ru/treatments/ask-question</a></li>
+      <li><strong>Україна — Уповноважений з прав людини:</strong> <a href="https://ombudsman.gov.ua/">ombudsman.gov.ua</a></li>
+      <li><strong>UK ICO:</strong> <a href="https://ico.org.uk/make-a-complaint/">ico.org.uk/make-a-complaint</a></li>
+      <li><strong>EU DPAs:</strong> <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en">edpb.europa.eu/about-edpb/about-edpb/members_en</a></li>
+    </ul>
+
+    <h3>Срок хранения</h3>
+    <ul>
+      <li><strong>На нашей инфраструктуре:</strong> нулевой. Серверов у нас нет.</li>
+      <li><strong>На вашем устройстве:</strong> пока вы не удалите запись или приложение.</li>
+      <li><strong>Переписка с поддержкой:</strong> до 24 месяцев в нашей почте, затем удаление.</li>
+    </ul>
+    <p>У нас очень ограниченный объём ваших данных. Тем не менее, вы можете воспользоваться этими правами в любое время, написав на <a href="mailto:mydynastyapp.team@gmail.com">mydynastyapp.team@gmail.com</a>.</p>
+
+    <h2>11. Международная передача данных</h2>
+    <p>При использовании Google Maps SDK или Google Play Billing запросы обрабатываются глобальной инфраструктурой Google и могут передаваться за пределы вашей страны, включая США. Эти передачи регулируются:</p>
+    <ul>
+      <li><strong>Для персональных данных ЕС/ЕЭЗ:</strong> <a href="https://commission.europa.eu/document/fa09cbad-dd7d-4684-ace2-be9210873f51_en">EU–US Data Privacy Framework</a> (решение Еврокомиссии (ЕС) 2023/1795) и/или Стандартные договорные оговорки (GDPR Art 46).</li>
+      <li><strong>Для UK:</strong> UK–US Data Bridge — расширение DPF, и/или британский IDTA.</li>
+      <li><strong>Для российских граждан:</strong> первичная запись данных (152-ФЗ Art 18 ч.5) происходит на вашем устройстве в России, в нашу инфраструктуру не передаётся.</li>
+    </ul>
+    <p>Мы полагаемся на Google как контролёра этих передач.</p>
+
+    <h2>12. Изменения этой политики</h2>
+    <p>Мы можем обновлять эту политику по мере развития приложения. При обновлении изменим дату «Последнее обновление». Существенные изменения будут отмечены в release notes приложения или на этой странице.</p>
+
+    <h2>13. Контакты</h2>
+    <ul>
+      <li>E-mail: <a href="mailto:mydynastyapp.team@gmail.com">mydynastyapp.team@gmail.com</a></li>
+      <li>Сайт: <a href="https://mydynasty.app">https://mydynasty.app</a></li>
+      <li>URL политики: <a href="https://mydynasty.app/privacy">https://mydynasty.app/privacy</a></li>
+    </ul>
+
+  </section>
+
+  <footer>
+    <div>&copy; 2026 myDynasty</div>
+    <div><a href="/">mydynasty.app</a> · <a href="mailto:mydynastyapp.team@gmail.com">mydynastyapp.team@gmail.com</a></div>
+  </footer>
+</div>
+
+<script>
+  (function () {
+    var buttons = document.querySelectorAll('.lang-switch button');
+    var sections = document.querySelectorAll('.lang-content');
+
+    function apply(lang) {
+      buttons.forEach(function (btn) {
+        var active = btn.dataset.lang === lang;
+        btn.classList.toggle('is-active', active);
+        btn.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      sections.forEach(function (sec) {
+        sec.classList.toggle('is-active', sec.dataset.lang === lang);
+      });
+      document.documentElement.setAttribute('lang', lang);
+      try { localStorage.setItem('mydynasty.privacy.lang', lang); } catch (e) {}
+    }
+
+    buttons.forEach(function (btn) {
+      btn.addEventListener('click', function () { apply(btn.dataset.lang); });
+    });
+
+    var stored;
+    try { stored = localStorage.getItem('mydynasty.privacy.lang'); } catch (e) {}
+    if (stored === 'ru' || stored === 'en') {
+      apply(stored);
+    } else {
+      var nav = (navigator.language || 'en').toLowerCase();
+      apply(nav.indexOf('ru') === 0 ? 'ru' : 'en');
+    }
+  })();
+</script>
+
+</body>
+</html>

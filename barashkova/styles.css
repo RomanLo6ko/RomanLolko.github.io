@@ -47,8 +47,9 @@ h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.08;letter-spa
   backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav-inner{max-width:var(--maxw);margin:0 auto;padding:18px 40px;
   display:flex;align-items:center;justify-content:space-between;gap:24px}
-.nav-logo img{height:52px;width:auto}
-.nav-menu{display:flex;gap:34px;align-items:center}
+.nav-logo{flex-shrink:0}
+.nav-logo img{height:52px;width:auto;max-width:none;flex-shrink:0}
+.nav-menu{display:flex;gap:26px;align-items:center}
 .nav-menu a{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;color:var(--graphite);
   font-weight:400;position:relative;padding:4px 0;transition:color .2s;white-space:nowrap}
 .nav-menu a::after{content:'';position:absolute;left:0;right:100%;bottom:-2px;height:1px;
@@ -271,6 +272,7 @@ form.enquiry{background:var(--cream2);border:1px solid var(--line);padding:38px}
   .foot{grid-template-columns:1fr 1fr;gap:32px}
   .foot-brand{grid-column:1/-1}
 }
+@media(max-width:1240px){.nav-cta.desktop{display:none}}
 @media(max-width:900px){
   .nav{backdrop-filter:none;-webkit-backdrop-filter:none;background:var(--cream)}
   .nav-menu{position:fixed;top:0;bottom:0;right:0;width:min(82vw,320px);

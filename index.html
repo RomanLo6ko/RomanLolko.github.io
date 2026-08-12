@@ -13,7 +13,7 @@
 <link rel="icon" type="image/png" href="app-icon.png"><link rel="apple-touch-icon" href="app-icon.png">
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}function mdEnableGA(){if(window.mdGaLoaded)return;window.mdGaLoaded=true;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-QDYYEHYXJR';document.head.appendChild(s);gtag('js',new Date());gtag('config','G-QDYYEHYXJR',{anonymize_ip:true});}</script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="home.css?v=20260812-1">
+<link rel="stylesheet" href="home.css?v=20260812-2">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"MobileApplication","name":"myDynasty","description":"A private, on-device family tree app: visual family trees, photos and documents, places and burial sites, GEDCOM and LRV import and export.","url":"https://mydynasty.app/","applicationCategory":"BooksApplication","operatingSystem":"iOS, Android","installUrl":"https://play.google.com/store/apps/details?id=com.mydynasty.app","offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"publisher":{"@type":"Person","name":"Roman Lobko","url":"https://mydynasty.app/"}}</script>
 </head>
 <body>
@@ -32,11 +32,14 @@
     <a href="privacy.html" data-i18n="nav.privacy">Privacy</a>
   </div>
   <div class="nav-right">
-    <div class="lang-switch" role="tablist" aria-label="Language">
-      <button type="button" role="tab" data-lang="en" class="is-active" aria-selected="true">EN</button>
-      <button type="button" role="tab" data-lang="uk" aria-selected="false">UA</button>
-      <button type="button" role="tab" data-lang="ru" aria-selected="false">RU</button>
-      <button type="button" role="tab" data-lang="de" aria-selected="false">DE</button>
+    <div class="lang-dd" aria-label="Language">
+      <button type="button" class="lang-dd-trigger" aria-haspopup="listbox" aria-expanded="false"><span class="lang-dd-code">EN</span><svg viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M1 1.5l4 3.5 4-3.5"/></svg></button>
+      <div class="lang-dd-menu" role="listbox">
+        <button type="button" role="option" data-lang="en">English</button>
+        <button type="button" role="option" data-lang="uk">Українська</button>
+        <button type="button" role="option" data-lang="ru">Русский</button>
+        <button type="button" role="option" data-lang="de">Deutsch</button>
+      </div>
     </div>
     <a class="btn-primary" href="#get">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 11l5 5 5-5M4 21h16"/></svg>
@@ -371,7 +374,11 @@
       "cb.text":"Wir verwenden Google Analytics auf dieser Website, um Besuche zu zählen. Wählen Sie, ob Analyse-Cookies erlaubt sein sollen. Siehe unsere <a href=\"privacy.html\">Datenschutzerklärung</a>.","cb.ok":"Analyse zulassen","cb.no":"Ablehnen","cb.settings":"Cookie-Einstellungen"
     }
   };
-  var buttons=document.querySelectorAll('.lang-switch button');
+  var langDD=document.querySelector('.lang-dd');
+  var langTrig=langDD&&langDD.querySelector('.lang-dd-trigger');
+  var langCode=langDD&&langDD.querySelector('.lang-dd-code');
+  var menuBtns=document.querySelectorAll('.lang-dd-menu button');
+  var LANGCODES={en:'EN',uk:'UA',ru:'RU',de:'DE'};
   function apply(lang){
     var dict=I18N[lang]||I18N.en;
     document.querySelectorAll('[data-i18n]').forEach(function(el){
@@ -384,14 +391,15 @@
       el.setAttribute('src','screens/'+lang+'/'+el.getAttribute('data-shot')+'.jpg');
     });
     document.documentElement.setAttribute('lang',lang);
-    buttons.forEach(function(b){
-      var a=b.dataset.lang===lang;
-      b.classList.toggle('is-active',a);
-      b.setAttribute('aria-selected',a?'true':'false');
-    });
+    if(langCode)langCode.textContent=LANGCODES[lang]||'EN';
+    menuBtns.forEach(function(b){b.classList.toggle('is-active',b.dataset.lang===lang);});
     try{localStorage.setItem('mydynasty.site.lang',lang);}catch(e){}
   }
-  buttons.forEach(function(b){b.addEventListener('click',function(){apply(b.dataset.lang);});});
+  if(langTrig){
+    langTrig.addEventListener('click',function(e){e.stopPropagation();var o=langDD.classList.toggle('open');langTrig.setAttribute('aria-expanded',o?'true':'false');});
+    menuBtns.forEach(function(b){b.addEventListener('click',function(){apply(b.dataset.lang);langDD.classList.remove('open');langTrig.setAttribute('aria-expanded','false');});});
+    document.addEventListener('click',function(e){if(langDD.classList.contains('open')&&!langDD.contains(e.target)){langDD.classList.remove('open');langTrig.setAttribute('aria-expanded','false');}});
+  }
   var stored;
   try{stored=localStorage.getItem('mydynasty.site.lang');}catch(e){}
   if(stored==='en'||stored==='ru'||stored==='uk'||stored==='de'){apply(stored);}

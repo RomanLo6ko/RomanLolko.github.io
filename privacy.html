@@ -275,7 +275,7 @@
         <li><strong>AI features come with the myDynasty Premium subscription on iPhone, iPad and Android</strong>. What you choose to send goes to our server "Capybara" in Germany, and from there to OpenAI, which processes it for us. Our server passes it on and does not keep it. OpenAI does not use it to train its models. OpenAI may keep it for up to 30 days to detect abuse. Versions of the app without AI features, including earlier Android versions, do not contact our server.</li>
         <li><strong>The app uses a random number, not your identity.</strong> To know which installation may use AI and how much of its allowance is left, the app uses a random number that it creates itself. It is not your name, your e-mail or your Apple or Google account. You can see it in Settings.</li>
         <li><strong>Apple and Google handle payment.</strong> We never see your card, name or e-mail. Our server receives only a purchase record signed by Apple or, on Android, a Google Play purchase token, which it checks with Google Play.</li>
-        <li>The app has no advertising, no analytics or crash-reporting services of its own, and no tracking. We do not sell data.</li>
+        <li>The app has no advertising, no analytics or crash-reporting services of its own, and no tracking. We do not sell data. On Android, maps are drawn by a Google Maps component inside the app, which sends Google its own technical data (section 3).</li>
       </ul>
     </div>
 
@@ -300,12 +300,12 @@
       <li>photos, documents and other files in the archive;</li>
       <li>places and coordinates of birth, residence and burial;</li>
       <li>drafts of AI features: what you dictated, the answers that came back, and grave photos;</li>
-      <li>a voice recording that has not been sent yet. It is deleted once it has been sent. If it is older than 7 days, it is deleted the next time you open the screen where you recorded it;</li>
+      <li>a voice recording that has not been sent yet (iPhone and iPad). It is deleted once it has been sent. If it is older than 7 days, it is deleted the next time you open the screen where you recorded it;</li>
       <li>a restored photo that arrived after you left the screen. It waits until you open that photo again. Once it is older than 30 days, the app deletes it the next time it checks for restored photos;</li>
       <li>settings, your consent choices and the app number (section 4).</li>
     </ul>
     <p>On iPhone and iPad the app marks its data folder so that it is left out of iCloud and computer backups. On Android the app opts out of Android's automatic cloud backup.</p>
-    <p>If the app crashes, a short technical log is written to a file on the device only, and the app uploads nothing. The app has no crash-reporting service. If you have agreed in your phone's settings to share diagnostics with app developers, Apple or Google may pass crash reports to us under their own terms.</p>
+    <p>If the app crashes, a short technical log is written to a file on the device only, and the app itself uploads nothing. The app has no crash-reporting service of its own. On Android, the Google Maps component inside the app sends Google its own crash and diagnostic data (section 3). If you have agreed in your phone's settings to share diagnostics with app developers, Apple or Google may pass crash reports to us under their own terms.</p>
     <p>Your tree leaves the device only when you export or share it yourself. Exported files (GEDCOM, LRV, SVG, PNG) go where you choose, for example Files, Photos or another app. From there, that service may copy them further, for example to iCloud Photos. If you uninstall the app, everything is deleted from the device, except files you exported yourself.</p>
     <p><strong>Permissions:</strong></p>
     <ul>
@@ -323,7 +323,7 @@
         <tr><th>When you…</th><th>What is sent</th><th>To whom</th></tr>
       </thead>
       <tbody>
-        <tr><td>open a map</td><td>technical map requests: IP address and which area of the map</td><td>Apple Maps (iPhone, iPad) or Google Maps (Android)</td></tr>
+        <tr><td>open a map</td><td>technical map requests: IP address and which area of the map. On Android, the Google Maps component inside the app also sends Google its own data: map interactions (moving and zooming), crash traces and crash metrics, device data (model, brand, Android version) and a pseudonymous identifier of the component. Google uses them under its own privacy policy, as an independent controller</td><td>Apple Maps (iPhone, iPad) or Google (Android)</td></tr>
         <tr><td>search for an address on the map</td><td>the address you typed</td><td>Apple or Google (the phone's address search)</td></tr>
         <tr><td>take grave photos</td><td>the place where you took them, to show its address</td><td>Apple or Google (the phone's address search)</td></tr>
         <tr><td>use the cemetery directory</td><td>country, language, region and town, names you type or coordinates, the directory number of a cemetery; without the app number</td><td>our server (section 6)</td></tr>
@@ -364,11 +364,11 @@
     <h2>5. AI features ("Capybara AI")</h2>
     <p>AI features are available on iPhone, iPad and Android with the myDynasty Premium subscription. Without the subscription, the app does not show them.</p>
     <p>Before a feature sends anything for the first time, it shows a consent screen. The screen lists what will be sent and names our server "Capybara" and OpenAI. Nothing is sent to our server or to OpenAI until you agree (section 8). Your phone's own speech recognition works as soon as you tap the microphone; see "Speech recognition by your phone" below.</p>
-    <p><strong>5.1 Tell about a person.</strong> You tell about a relative. The AI fills in the card, and at a grave it can ask follow-up questions aloud.</p>
+    <p><strong>5.1 Tell about a person.</strong> You tell about a relative. The AI fills in the card and can ask follow-up questions aloud.</p>
     <ul>
       <li>On iPhone and iPad, the app sends the voice recording (compressed audio) and the language you chose, to recognise the speech, and then the text of the story — recognised from the recording or, if that fails, by your phone. After recognition the recording is deleted from the phone.</li>
       <li>On Android, the app makes no recording and never sends audio to our server. It sends the text of the story as your phone recognised it, and the language you chose.</li>
-      <li><strong>Questions at a grave</strong> are read aloud by an OpenAI voice. The text of the question is sent to OpenAI to be turned into speech.</li>
+      <li><strong>Follow-up questions</strong> — at a grave, and when the AI needs to know how the person is related to someone in your story — are read aloud by an OpenAI voice. The text of the question, which may contain names you mentioned, is sent to OpenAI to be turned into speech.</li>
       <li>The person appears in your tree only after you check the card and tap "Save".</li>
     </ul>
     <p><strong>5.2 Grave photos.</strong></p>
@@ -549,8 +549,8 @@
     </div>
     <p>Each of them processes the data only on our instructions under its data processing terms and must protect it at least as well as described here.</p>
     <p>Copies of the server database are also kept by the controller on his own computer and backup drive. The database holds only the records listed in section 11: no trees, stories or photos.</p>
-    <p>Apple, Google and the OpenStreetMap Foundation provide their services to you under their own terms and privacy policies. For Google this includes Google Play and the Google Play Developer API, through which our server checks an Android subscription (section 7).</p>
-    <p>We use no analytics, advertising, crash-reporting or tracking services. We do not sell data, share it for advertising or build profiles. We make no automated decisions about you.</p>
+    <p>Apple, Google and the OpenStreetMap Foundation provide their services to you under their own terms and privacy policies. For Google this includes Google Play and the Google Play Developer API, through which our server checks an Android subscription (section 7), and the Google Maps component in the Android app (section 3).</p>
+    <p>We use no analytics, advertising, crash-reporting or tracking services of our own (for the Google Maps component on Android, see section 3). We do not sell data, share it for advertising or build profiles. We make no automated decisions about you.</p>
 
     <h2>10. Legal bases</h2>
     <ul>
@@ -613,7 +613,7 @@
     <ul>
       <li><strong>On your device.</strong> You can view, correct, delete and export your data in the app (GEDCOM, LRV, SVG, PNG). Uninstalling the app deletes everything.</li>
       <li><strong>On our server.</strong> You have the rights of access, correction, deletion, restriction, portability and objection. You can withdraw consent at any time (section 8).</li>
-      <li><strong>How to reach your records.</strong> We don't know who you are, so we can find your records only by the app number. You can see and copy it in Settings → "Capybara AI" → "App number". Send it to <a href="mailto:mydynastyapp.team@gmail.com">mydynastyapp.team@gmail.com</a> and we will reply within one month.</li>
+      <li><strong>How to reach your records.</strong> We don't know who you are, so we can find your records only by the app number — on Android also by the Google Play order number (section 7). You can see and copy it in Settings → "Capybara AI" → "App number". Send it to <a href="mailto:mydynastyapp.team@gmail.com">mydynastyapp.team@gmail.com</a> and we will reply within one month.</li>
       <li><strong>Complaints:</strong>
         <ul>
           <li>EU/EEA: the data protection authority of your country (list: <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en">https://edpb.europa.eu/about-edpb/about-edpb/members_en</a>);</li>
@@ -635,10 +635,11 @@
     <ol>
       <li><strong>On your phone.</strong> Delete a person, a photo or a whole tree in the app, or uninstall myDynasty: everything stored on the phone goes with it. We have no copy.</li>
       <li><strong>Stop sending.</strong> Settings → "Capybara AI" → "Withdraw consents" (section 8).</li>
-      <li><strong>Records on our server.</strong> In Settings → "Capybara AI", copy the app number and send it to <a href="mailto:mydynastyapp.team@gmail.com">mydynastyapp.team@gmail.com</a> with the words "Delete my data". We delete everything linked to that number — the app number, consent records, counters, subscription records and reports — and confirm within one month. Do it before uninstalling the app: afterwards the number cannot be shown again.</li>
-      <li><strong>Without a request.</strong> The server deletes the app number and everything linked to it 12 months after it was last used, reports after 90 days, consents when they expire (section 11).</li>
+      <li><strong>Records on our server.</strong> In Settings → "Capybara AI", copy the app number. If you have Premium: while the subscription is active and the app is installed, the app links it to our server again at its next check — so uninstall the app after copying the number, or write to us after the subscription has ended. Send the number to <a href="mailto:mydynastyapp.team@gmail.com">mydynastyapp.team@gmail.com</a> with the words "Delete my data". We delete everything linked to that number — the app number, consent records, counters, subscription records and reports — and confirm within one month. Lost the number after reinstalling? On Android, send the Google Play order number (it starts with GPA.) from Google's purchase e-mail instead.</li>
+      <li><strong>Without a request.</strong> The server deletes the app number and everything linked to it 12 months after it was last used; an app number linked to a subscription, 12 months after the subscription ends; reports after 90 days; consents when they expire (section 11).</li>
       <li><strong>Subscription.</strong> Cancel it in your Apple Account settings or in Google Play. Apple and Google keep their own payment records under their own rules.</li>
     </ol>
+    <p><strong>What stays for a while after deletion:</strong> copies in server backups and technical logs, up to 30 days; content already sent to OpenAI, up to 30 days, according to OpenAI; your e-mails to us, up to 24 months; payment records at Apple and Google, under their own rules.</p>
 
     <h2>16. The website mydynasty.app</h2>
     <p>The website is separate from the app.</p>
@@ -673,7 +674,7 @@
         <li><strong>KI-Funktionen gehören auf iPhone, iPad und Android zum Abonnement myDynasty Premium</strong>. Was Sie senden möchten, geht an unseren Server „Capybara“ in Deutschland und von dort an OpenAI, das es in unserem Auftrag verarbeitet. Unser Server leitet es weiter und speichert es nicht. OpenAI nutzt es nicht zum Training seiner Modelle. OpenAI kann es bis zu 30 Tage aufbewahren, um Missbrauch zu erkennen. Versionen der App ohne KI-Funktionen, auch frühere Android-Versionen, verbinden sich nicht mit unserem Server.</li>
         <li><strong>Die App nutzt eine Zufallsnummer, nicht Ihre Identität.</strong> Um zu wissen, welche Installation KI nutzen darf und wie viel von ihrem Kontingent noch übrig ist, verwendet die App eine Zufallsnummer, die sie selbst erzeugt. Sie ist weder Ihr Name noch Ihre E-Mail-Adresse noch Ihr Apple- oder Google-Konto. Sie sehen sie in den Einstellungen.</li>
         <li><strong>Die Zahlung wickeln Apple und Google ab.</strong> Wir sehen nie Ihre Karte, Ihren Namen oder Ihre E-Mail-Adresse. Unser Server erhält nur einen von Apple signierten Kaufnachweis oder, unter Android, ein Kauftoken von Google Play, das er bei Google Play prüft.</li>
-        <li>Die App enthält keine Werbung, keine eigenen Analyse- oder Absturzberichtsdienste und kein Tracking. Wir verkaufen keine Daten.</li>
+        <li>Die App enthält keine Werbung, keine eigenen Analyse- oder Absturzberichtsdienste und kein Tracking. Wir verkaufen keine Daten. Auf Android zeichnet eine in die App eingebaute Google-Maps-Komponente die Karten; sie sendet Google ihre eigenen technischen Daten (Abschnitt 3).</li>
       </ul>
     </div>
 
@@ -698,12 +699,12 @@
       <li>Fotos, Dokumente und andere Dateien im Archiv;</li>
       <li>Orte und Koordinaten von Geburt, Wohnort und Bestattung;</li>
       <li>Entwürfe der KI-Funktionen: was Sie diktiert haben, die zurückgekommenen Antworten und Grabfotos;</li>
-      <li>eine Sprachaufnahme, die noch nicht gesendet wurde. Sie wird gelöscht, sobald sie gesendet ist. Ist sie älter als 7 Tage, wird sie gelöscht, wenn Sie den Bildschirm, auf dem Sie sie aufgenommen haben, das nächste Mal öffnen;</li>
+      <li>eine Sprachaufnahme, die noch nicht gesendet wurde (iPhone und iPad). Sie wird gelöscht, sobald sie gesendet ist. Ist sie älter als 7 Tage, wird sie gelöscht, wenn Sie den Bildschirm, auf dem Sie sie aufgenommen haben, das nächste Mal öffnen;</li>
       <li>ein restauriertes Foto, das angekommen ist, nachdem Sie den Bildschirm verlassen haben. Es wartet, bis Sie dieses Foto wieder öffnen. Ist es älter als 30 Tage, löscht die App es bei der nächsten Prüfung auf restaurierte Fotos;</li>
       <li>Einstellungen, Ihre Einwilligungsentscheidungen und die App-Nummer (Abschnitt 4).</li>
     </ul>
     <p>Auf iPhone und iPad markiert die App ihren Datenordner so, dass er von iCloud- und Computer-Backups ausgenommen ist. Unter Android nimmt die App nicht an der automatischen Cloud-Sicherung von Android teil.</p>
-    <p>Stürzt die App ab, wird ein kurzes technisches Protokoll nur in eine Datei auf dem Gerät geschrieben, und die App lädt nichts hoch. Die App hat keinen Absturzberichtsdienst. Wenn Sie in den Einstellungen Ihres Telefons zugestimmt haben, Diagnosedaten mit App-Entwicklern zu teilen, können Apple oder Google uns Absturzberichte nach ihren eigenen Bedingungen weitergeben.</p>
+    <p>Stürzt die App ab, wird ein kurzes technisches Protokoll nur in eine Datei auf dem Gerät geschrieben, und die App selbst lädt nichts hoch. Die App hat keinen eigenen Absturzberichtsdienst. Auf Android sendet die in die App eingebaute Google-Maps-Komponente Google ihre eigenen Absturz- und Diagnosedaten (Abschnitt 3). Wenn Sie in den Einstellungen Ihres Telefons zugestimmt haben, Diagnosedaten mit App-Entwicklern zu teilen, können Apple oder Google uns Absturzberichte nach ihren eigenen Bedingungen weitergeben.</p>
     <p>Ihr Stammbaum verlässt das Gerät nur, wenn Sie ihn selbst exportieren oder teilen. Exportierte Dateien (GEDCOM, LRV, SVG, PNG) gehen dorthin, wo Sie es wählen, zum Beispiel in „Dateien“, „Fotos“ oder eine andere App. Von dort kann dieser Dienst sie weiterkopieren, zum Beispiel in iCloud-Fotos. Wenn Sie die App deinstallieren, wird alles vom Gerät gelöscht, außer Dateien, die Sie selbst exportiert haben.</p>
     <p><strong>Berechtigungen:</strong></p>
     <ul>
@@ -721,7 +722,7 @@
         <tr><th>Wenn Sie …</th><th>Was gesendet wird</th><th>An wen</th></tr>
       </thead>
       <tbody>
-        <tr><td>eine Karte öffnen</td><td>technische Kartenanfragen: IP-Adresse und welcher Kartenausschnitt nötig ist</td><td>Apple Karten (iPhone, iPad) oder Google Maps (Android)</td></tr>
+        <tr><td>eine Karte öffnen</td><td>technische Kartenanfragen: IP-Adresse und welcher Kartenausschnitt nötig ist. Auf Android sendet die in die App eingebaute Google-Maps-Komponente Google außerdem ihre eigenen Daten: Karteninteraktionen (Verschieben und Zoomen), Absturzprotokolle und -kennzahlen, Gerätedaten (Modell, Marke, Android-Version) und eine pseudonyme Kennung der Komponente. Google nutzt sie nach seiner eigenen Datenschutzerklärung, als eigenständiger Verantwortlicher</td><td>Apple Karten (iPhone, iPad) oder Google (Android)</td></tr>
         <tr><td>auf der Karte eine Adresse suchen</td><td>die eingegebene Adresse</td><td>Apple oder Google (Adresssuche des Telefons)</td></tr>
         <tr><td>Grabfotos aufnehmen</td><td>den Ort, an dem Sie sie aufgenommen haben, um seine Adresse anzuzeigen</td><td>Apple oder Google (Adresssuche des Telefons)</td></tr>
         <tr><td>das Friedhofsverzeichnis nutzen</td><td>Land, Sprache, Region und Ort, eingegebene Namen oder Koordinaten, die Verzeichnisnummer eines Friedhofs; ohne die App-Nummer</td><td>unser Server (Abschnitt 6)</td></tr>
@@ -762,11 +763,11 @@
     <h2>5. KI-Funktionen („Capybara AI“)</h2>
     <p>KI-Funktionen gibt es auf iPhone, iPad und Android mit dem Abonnement myDynasty Premium. Ohne das Abonnement zeigt die App sie nicht an.</p>
     <p>Bevor eine Funktion zum ersten Mal etwas sendet, zeigt sie einen Einwilligungsbildschirm. Er nennt, was gesendet wird, sowie unseren Server „Capybara“ und OpenAI. Bis Sie zustimmen, wird weder an unseren Server noch an OpenAI etwas gesendet (Abschnitt 8). Die Spracherkennung Ihres Telefons arbeitet, sobald Sie auf das Mikrofon tippen; siehe unten „Spracherkennung durch Ihr Telefon“.</p>
-    <p><strong>5.1 „Von einer Person erzählen“.</strong> Sie erzählen von einem Angehörigen. Die KI füllt die Karte aus und kann am Grab laut Rückfragen stellen.</p>
+    <p><strong>5.1 „Von einer Person erzählen“.</strong> Sie erzählen von einem Angehörigen. Die KI füllt die Karte aus und kann laut Rückfragen stellen.</p>
     <ul>
       <li>Auf iPhone und iPad sendet die App die Sprachaufnahme (komprimierter Ton) und die gewählte Sprache, damit die Sprache erkannt wird, und danach den Text der Erzählung — aus der Aufnahme erkannt oder, wenn das nicht gelingt, vom Telefon. Nach der Erkennung wird die Aufnahme vom Telefon gelöscht.</li>
       <li>Unter Android macht die App keine Aufnahme und sendet nie Ton an unseren Server. Sie sendet den Text der Erzählung, so wie Ihr Telefon ihn erkannt hat, und die gewählte Sprache.</li>
-      <li><strong>Fragen am Grab</strong> liest eine Stimme von OpenAI vor. Der Text der Frage wird an OpenAI gesendet, damit er in Sprache umgewandelt wird.</li>
+      <li><strong>Rückfragen</strong> — am Grab und wenn die KI wissen muss, wie die Person mit jemandem aus Ihrer Erzählung verwandt ist — liest eine Stimme von OpenAI vor. Der Text der Frage, der von Ihnen genannte Namen enthalten kann, wird an OpenAI gesendet, damit er in Sprache umgewandelt wird.</li>
       <li>Die Person erscheint erst im Stammbaum, nachdem Sie die Karte geprüft und auf „Speichern“ getippt haben.</li>
     </ul>
     <p><strong>5.2 „Grabfotos“.</strong></p>
@@ -947,8 +948,8 @@
     </div>
     <p>Jeder von ihnen verarbeitet die Daten nur nach unseren Weisungen gemäß seinen Bedingungen zur Auftragsverarbeitung und muss sie mindestens so gut schützen wie hier beschrieben.</p>
     <p>Der Verantwortliche bewahrt außerdem Kopien unserer Serverdatenbank auf seinem eigenen Computer und seinem Backup-Laufwerk auf. Die Datenbank enthält nur die in Abschnitt 11 aufgeführten Einträge: keine Stammbäume, Erzählungen oder Fotos.</p>
-    <p>Apple, Google und die OpenStreetMap Foundation erbringen ihre Dienste Ihnen gegenüber nach ihren eigenen Bedingungen und Datenschutzerklärungen. Bei Google gehören dazu auch Google Play und die Google Play Developer API, über die unser Server ein Android-Abonnement prüft (Abschnitt 7).</p>
-    <p>Wir nutzen keine Analyse-, Werbe-, Absturzberichts- oder Tracking-Dienste. Wir verkaufen keine Daten, geben sie nicht für Werbung weiter und erstellen keine Profile. Wir treffen keine automatisierten Entscheidungen über Sie.</p>
+    <p>Apple, Google und die OpenStreetMap Foundation erbringen ihre Dienste Ihnen gegenüber nach ihren eigenen Bedingungen und Datenschutzerklärungen. Bei Google gehören dazu auch Google Play und die Google Play Developer API, über die unser Server ein Android-Abonnement prüft (Abschnitt 7), sowie die Google-Maps-Komponente in der Android-App (Abschnitt 3).</p>
+    <p>Wir nutzen keine eigenen Analyse-, Werbe-, Absturzberichts- oder Tracking-Dienste (zur Google-Maps-Komponente auf Android siehe Abschnitt 3). Wir verkaufen keine Daten, geben sie nicht für Werbung weiter und erstellen keine Profile. Wir treffen keine automatisierten Entscheidungen über Sie.</p>
 
     <h2>10. Rechtsgrundlagen</h2>
     <ul>
@@ -1011,7 +1012,7 @@
     <ul>
       <li><strong>Auf Ihrem Gerät.</strong> Sie können Ihre Daten in der App ansehen, berichtigen, löschen und exportieren (GEDCOM, LRV, SVG, PNG). Das Deinstallieren der App löscht alles.</li>
       <li><strong>Auf unserem Server.</strong> Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Einwilligungen können Sie jederzeit widerrufen (Abschnitt 8).</li>
-      <li><strong>Wie wir Ihre Einträge finden.</strong> Wir wissen nicht, wer Sie sind, und finden Ihre Einträge daher nur über die App-Nummer. Sie können sie unter Einstellungen → „Capybara AI“ → „App-Nummer“ ansehen und kopieren. Senden Sie sie an <a href="mailto:mydynastyapp.team@gmail.com">mydynastyapp.team@gmail.com</a>. Wir antworten innerhalb eines Monats.</li>
+      <li><strong>Wie wir Ihre Einträge finden.</strong> Wir wissen nicht, wer Sie sind, und finden Ihre Einträge daher nur über die App-Nummer — auf Android auch über die Google-Play-Bestellnummer (Abschnitt 7). Sie können sie unter Einstellungen → „Capybara AI“ → „App-Nummer“ ansehen und kopieren. Senden Sie sie an <a href="mailto:mydynastyapp.team@gmail.com">mydynastyapp.team@gmail.com</a>. Wir antworten innerhalb eines Monats.</li>
       <li><strong>Beschwerden:</strong>
         <ul>
           <li>EU/EWR: die Datenschutzaufsichtsbehörde Ihres Landes (Liste: <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en">https://edpb.europa.eu/about-edpb/about-edpb/members_en</a>);</li>
@@ -1033,10 +1034,11 @@
     <ol>
       <li><strong>Auf Ihrem Telefon.</strong> Löschen Sie eine Person, ein Foto oder einen ganzen Stammbaum in der App oder deinstallieren Sie myDynasty: Alles, was auf dem Telefon gespeichert ist, wird mitgelöscht. Wir haben keine Kopie.</li>
       <li><strong>Nichts mehr senden.</strong> Einstellungen → „Capybara AI“ → „Einwilligungen widerrufen“ (Abschnitt 8).</li>
-      <li><strong>Datensätze auf unserem Server.</strong> Kopieren Sie unter Einstellungen → „Capybara AI“ die App-Nummer und senden Sie sie mit den Worten „Meine Daten löschen“ an <a href="mailto:mydynastyapp.team@gmail.com">mydynastyapp.team@gmail.com</a>. Wir löschen alles, was mit dieser Nummer verknüpft ist — App-Nummer, Einwilligungsdatensätze, Zähler, Abonnementdatensätze und Meldungen — und bestätigen es innerhalb eines Monats. Tun Sie das vor der Deinstallation: Danach lässt sich die Nummer nicht mehr anzeigen.</li>
-      <li><strong>Ohne Anfrage.</strong> Der Server löscht die App-Nummer und alles damit Verknüpfte 12 Monate nach der letzten Nutzung, Meldungen nach 90 Tagen, Einwilligungen mit ihrem Ablauf (Abschnitt 11).</li>
+      <li><strong>Datensätze auf unserem Server.</strong> Kopieren Sie unter Einstellungen → „Capybara AI“ die App-Nummer. Mit Premium gilt: Solange das Abonnement läuft und die App installiert ist, verknüpft die App es bei der nächsten Prüfung wieder mit unserem Server — deinstallieren Sie die App also, nachdem Sie die Nummer kopiert haben, oder schreiben Sie uns nach dem Ende des Abonnements. Senden Sie die Nummer mit den Worten „Meine Daten löschen“ an <a href="mailto:mydynastyapp.team@gmail.com">mydynastyapp.team@gmail.com</a>. Wir löschen alles, was mit dieser Nummer verknüpft ist — App-Nummer, Einwilligungsdatensätze, Zähler, Abonnementdatensätze und Meldungen — und bestätigen es innerhalb eines Monats. Nummer nach einer Neuinstallation verloren? Auf Android senden Sie stattdessen die Google-Play-Bestellnummer (sie beginnt mit GPA.) aus der Kaufbestätigung von Google.</li>
+      <li><strong>Ohne Anfrage.</strong> Der Server löscht die App-Nummer und alles damit Verknüpfte 12 Monate nach der letzten Nutzung, eine mit einem Abonnement verknüpfte App-Nummer 12 Monate nach dem Ende des Abonnements, Meldungen nach 90 Tagen, Einwilligungen mit ihrem Ablauf (Abschnitt 11).</li>
       <li><strong>Abonnement.</strong> Kündigen Sie es in den Einstellungen Ihres Apple-Accounts oder in Google Play. Apple und Google bewahren ihre eigenen Zahlungsdaten nach ihren eigenen Regeln auf.</li>
     </ol>
+    <p><strong>Was nach dem Löschen noch eine Weile bleibt:</strong> Kopien in Server-Backups und technischen Protokollen bis zu 30 Tage; bereits an OpenAI gesendete Inhalte bis zu 30 Tage, laut OpenAI; Ihre E-Mails an uns bis zu 24 Monate; Zahlungsdaten bei Apple und Google nach deren eigenen Regeln.</p>
 
     <h2>16. Die Website mydynasty.app</h2>
     <p>Die Website ist von der App getrennt.</p>
@@ -1071,7 +1073,7 @@
         <li><strong>Функции ИИ входят в подписку myDynasty Premium на iPhone, iPad и Android</strong>. То, что вы решили отправить, уходит на наш сервер «Капибара» в Германии, а оттуда — в OpenAI, который обрабатывает это по нашему поручению. Наш сервер передаёт данные дальше и не хранит их. OpenAI не обучает на них свои модели. OpenAI может хранить их до 30 дней, чтобы выявлять злоупотребления. Версии приложения без функций ИИ, в том числе прежние версии для Android, к нашему серверу не обращаются.</li>
         <li><strong>Приложение использует случайный номер, а не вашу личность.</strong> Чтобы понимать, какой установке доступен ИИ и сколько ей ещё осталось, приложение использует случайный номер, который создаёт само. Это не ваше имя, не e-mail и не аккаунт Apple или Google. Номер виден в Настройках.</li>
         <li><strong>Оплату принимают Apple и Google.</strong> Мы никогда не видим вашу карту, имя или e-mail. Наш сервер получает только запись о покупке, подписанную Apple, или, на Android, токен покупки Google Play, который он проверяет в Google Play.</li>
-        <li>В приложении нет рекламы, собственных сервисов аналитики и отчётов о сбоях и нет слежки. Данные мы не продаём.</li>
+        <li>В приложении нет рекламы, собственных сервисов аналитики и отчётов о сбоях и нет слежки. Данные мы не продаём. На Android карты рисует встроенный в приложение компонент Google Maps — он сам отправляет Google свои технические данные (раздел 3).</li>
       </ul>
     </div>
 
@@ -1096,12 +1098,12 @@
       <li>фотографии, документы и другие файлы архива;</li>
       <li>места и координаты рождения, жизни и захоронения;</li>
       <li>черновики функций ИИ: то, что вы надиктовали, полученные ответы и снимки могил;</li>
-      <li>запись голоса, которую ещё не удалось отправить. Она удаляется, как только уйдёт. Если ей больше 7 дней, она удалится при следующем открытии экрана, где вы её записали;</li>
+      <li>запись голоса, которую ещё не удалось отправить (iPhone и iPad). Она удаляется, как только уйдёт. Если ей больше 7 дней, она удалится при следующем открытии экрана, где вы её записали;</li>
       <li>отреставрированное фото, которое пришло, когда вы уже ушли с экрана. Оно ждёт, пока вы снова откроете это фото. Если ему больше 30 дней, приложение удалит его при следующей проверке пришедших реставраций;</li>
       <li>настройки, ваши решения о согласиях и номер приложения (раздел 4).</li>
     </ul>
     <p>На iPhone и iPad приложение помечает свою папку данных, чтобы она не попадала в резервные копии iCloud и компьютера. На Android приложение отказывается от автоматического облачного резервного копирования Android.</p>
-    <p>Если приложение упадёт, короткий технический журнал запишется в файл только на устройстве, и приложение никуда его не отправляет. Своего сервиса отчётов о сбоях в приложении нет. Если вы в настройках телефона разрешили делиться диагностикой с разработчиками приложений, Apple или Google могут передать нам отчёты о сбоях по своим условиям.</p>
+    <p>Если приложение упадёт, короткий технический журнал запишется в файл только на устройстве, и приложение никуда его не отправляет. Своего сервиса отчётов о сбоях в приложении нет. На Android встроенный в приложение компонент Google Maps сам отправляет Google свои данные о сбоях и диагностику (раздел 3). Если вы в настройках телефона разрешили делиться диагностикой с разработчиками приложений, Apple или Google могут передать нам отчёты о сбоях по своим условиям.</p>
     <p>Дерево покидает устройство, только если вы сами его экспортируете или кому-то отправите. Экспортированные файлы (GEDCOM, LRV, SVG, PNG) попадают туда, куда вы их сохранили: например, в «Файлы», «Фото» или другое приложение. Оттуда этот сервис может копировать их дальше, например в «Фото iCloud». При удалении приложения с устройства удаляется всё, кроме файлов, которые вы сами экспортировали.</p>
     <p><strong>Разрешения:</strong></p>
     <ul>
@@ -1119,7 +1121,7 @@
         <tr><th>Когда вы…</th><th>Что уходит</th><th>Куда</th></tr>
       </thead>
       <tbody>
-        <tr><td>открываете карту</td><td>технические запросы карты: IP-адрес и какой участок карты нужен</td><td>Apple Maps (iPhone, iPad) или Google Maps (Android)</td></tr>
+        <tr><td>открываете карту</td><td>технические запросы карты: IP-адрес и какой участок карты нужен. На Android встроенный в приложение компонент Google Maps сам отправляет Google и свои данные: действия с картой (сдвиг и масштаб), трассировки и показатели сбоев, данные устройства (модель, марка, версия Android) и псевдонимный идентификатор компонента. Google использует их по своей политике конфиденциальности как самостоятельный контролёр</td><td>Apple Maps (iPhone, iPad) или Google (Android)</td></tr>
         <tr><td>ищете адрес на карте</td><td>введённый адрес</td><td>Apple или Google (поиск адресов системы телефона)</td></tr>
         <tr><td>снимаете могилу</td><td>место съёмки — чтобы показать его адрес</td><td>Apple или Google (поиск адресов системы телефона)</td></tr>
         <tr><td>пользуетесь справочником кладбищ</td><td>страна, язык, область и город, введённые названия или координаты, номер кладбища из справочника; без номера приложения</td><td>наш сервер (раздел 6)</td></tr>
@@ -1160,11 +1162,11 @@
     <h2>5. Функции ИИ («Капибара AI»)</h2>
     <p>Функции ИИ есть на iPhone, iPad и Android и входят в подписку myDynasty Premium. Без подписки приложение их не показывает.</p>
     <p>Прежде чем функция впервые что-то отправит, она показывает экран согласия. На нём перечислено, что уйдёт, и названы наш сервер «Капибара» и OpenAI. Пока вы не согласились, ни на наш сервер, ни в OpenAI ничего не уходит (раздел 8). Распознавание речи самим телефоном работает сразу, как только вы нажали микрофон, — см. ниже «Распознавание речи телефоном».</p>
-    <p><strong>5.1 «Рассказать о человеке».</strong> Вы рассказываете о родственнике. ИИ заполняет карточку, а у могилы может задать уточняющие вопросы вслух.</p>
+    <p><strong>5.1 «Рассказать о человеке».</strong> Вы рассказываете о родственнике. ИИ заполняет карточку и может задать уточняющие вопросы вслух.</p>
     <ul>
       <li>На iPhone и iPad приложение отправляет запись голоса (сжатый звук) и выбранный язык, чтобы распознать речь, а затем текст рассказа — распознанный из записи или, если не вышло, телефоном. После распознавания запись удаляется с телефона.</li>
       <li>На Android приложение не делает записи и никогда не отправляет звук на наш сервер. Оно отправляет текст рассказа в том виде, в каком его распознал телефон, и выбранный язык.</li>
-      <li><strong>Вопросы у могилы</strong> произносит голос OpenAI. Текст вопроса уходит в OpenAI, чтобы прозвучать.</li>
+      <li><strong>Уточняющие вопросы</strong> — у могилы и когда ИИ нужно узнать, кем человек приходится кому-то из вашего рассказа, — произносит голос OpenAI. Текст вопроса (в нём бывают названные вами имена) уходит в OpenAI, чтобы прозвучать.</li>
       <li>Человек появится в дереве только после того, как вы проверите карточку и нажмёте «Сохранить».</li>
     </ul>
     <p><strong>5.2 «Съёмка могилы».</strong></p>
@@ -1345,8 +1347,8 @@
     </div>
     <p>Каждый из них обрабатывает данные только по нашим указаниям в соответствии со своими условиями обработки данных и обязан защищать их не хуже, чем описано здесь.</p>
     <p>Копии базы данных нашего сервера хранит также сам ответственный за обработку — на своём компьютере и резервном диске. В этой базе — только записи из раздела 11: ни деревьев, ни рассказов, ни фотографий.</p>
-    <p>Apple, Google и OpenStreetMap Foundation оказывают вам свои услуги по своим условиям и политикам конфиденциальности. У Google это в том числе Google Play и Google Play Developer API, через который наш сервер проверяет подписку на Android (раздел 7).</p>
-    <p>Мы не используем сервисы аналитики, рекламы, отчётов о сбоях и отслеживания. Мы не продаём данные, не передаём их для рекламы и не составляем профили. Автоматических решений о вас мы не принимаем.</p>
+    <p>Apple, Google и OpenStreetMap Foundation оказывают вам свои услуги по своим условиям и политикам конфиденциальности. У Google это в том числе Google Play и Google Play Developer API, через который наш сервер проверяет подписку на Android (раздел 7), и компонент Google Maps в Android-приложении (раздел 3).</p>
+    <p>Мы не используем своих сервисов аналитики, рекламы, отчётов о сбоях и отслеживания (о компоненте Google Maps на Android — раздел 3). Мы не продаём данные, не передаём их для рекламы и не составляем профили. Автоматических решений о вас мы не принимаем.</p>
 
     <h2>10. Правовые основания</h2>
     <ul>
@@ -1409,7 +1411,7 @@
     <ul>
       <li><strong>На устройстве.</strong> Вы можете смотреть, исправлять, удалять и экспортировать данные в приложении (GEDCOM, LRV, SVG, PNG). Удаление приложения удаляет всё.</li>
       <li><strong>На нашем сервере.</strong> У вас есть права на доступ, исправление, удаление, ограничение обработки, переносимость и возражение. Согласие можно отозвать в любой момент (раздел 8).</li>
-      <li><strong>Как найти ваши записи.</strong> Мы не знаем, кто вы, поэтому найти ваши записи можем только по номеру приложения. Его можно посмотреть и скопировать в Настройках → «Капибара AI» → «Номер приложения». Пришлите его на <a href="mailto:mydynastyapp.team@gmail.com">mydynastyapp.team@gmail.com</a> — мы ответим в течение месяца.</li>
+      <li><strong>Как найти ваши записи.</strong> Мы не знаем, кто вы, поэтому найти ваши записи можем только по номеру приложения — на Android ещё и по номеру заказа Google Play (раздел 7). Его можно посмотреть и скопировать в Настройках → «Капибара AI» → «Номер приложения». Пришлите его на <a href="mailto:mydynastyapp.team@gmail.com">mydynastyapp.team@gmail.com</a> — мы ответим в течение месяца.</li>
       <li><strong>Жалобы:</strong>
         <ul>
           <li>ЕС/ЕЭЗ — орган по защите данных вашей страны (список: <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en">https://edpb.europa.eu/about-edpb/about-edpb/members_en</a>);</li>
@@ -1431,10 +1433,11 @@
     <ol>
       <li><strong>На телефоне.</strong> Удалите человека, фото или всё дерево в приложении — или удалите myDynasty: всё, что хранится на телефоне, удалится вместе с ним. Копии у нас нет.</li>
       <li><strong>Больше ничего не отправлять.</strong> Настройки → «Капибара AI» → «Отозвать согласия» (раздел 8).</li>
-      <li><strong>Записи на нашем сервере.</strong> В Настройках → «Капибара AI» скопируйте номер приложения и пришлите его на <a href="mailto:mydynastyapp.team@gmail.com">mydynastyapp.team@gmail.com</a> со словами «Удалите мои данные». Мы удалим всё, что связано с этим номером, — номер приложения, записи согласий, счётчики, записи о подписке и жалобы — и подтвердим в течение месяца. Сделайте это до удаления приложения: потом номер уже не показать.</li>
-      <li><strong>Без запроса.</strong> Сервер сам удаляет номер приложения и всё связанное с ним через 12 месяцев после последнего использования, жалобы — через 90 дней, согласия — по окончании их срока (раздел 11).</li>
+      <li><strong>Записи на нашем сервере.</strong> В Настройках → «Капибара AI» скопируйте номер приложения. Если у вас Premium: пока подписка действует и приложение установлено, при следующей проверке оно снова свяжет подписку с нашим сервером — поэтому удалите приложение, скопировав номер, или напишите нам после окончания подписки. Пришлите номер на <a href="mailto:mydynastyapp.team@gmail.com">mydynastyapp.team@gmail.com</a> со словами «Удалите мои данные». Мы удалим всё, что связано с этим номером, — номер приложения, записи согласий, счётчики, записи о подписке и жалобы — и подтвердим в течение месяца. Номер потерялся после переустановки? На Android пришлите вместо него номер заказа Google Play (начинается с GPA.) из письма Google о покупке.</li>
+      <li><strong>Без запроса.</strong> Сервер сам удаляет номер приложения и всё связанное с ним через 12 месяцев после последнего использования, номер, связанный с подпиской, — через 12 месяцев после окончания подписки, жалобы — через 90 дней, согласия — по окончании их срока (раздел 11).</li>
       <li><strong>Подписка.</strong> Отмените её в настройках аккаунта Apple или в Google Play. Apple и Google хранят свои записи об оплате по своим правилам.</li>
     </ol>
+    <p><strong>Что ещё какое-то время остаётся после удаления:</strong> копии в резервных копиях сервера и технических журналах — до 30 дней; то, что уже ушло в OpenAI, — до 30 дней, по словам OpenAI; ваши письма нам — до 24 месяцев; записи об оплате у Apple и Google — по их собственным правилам.</p>
 
     <h2>16. Сайт mydynasty.app</h2>
     <p>Сайт существует отдельно от приложения.</p>
@@ -1469,7 +1472,7 @@
         <li><strong>Функції ШІ входять до підписки myDynasty Premium на iPhone, iPad та Android</strong>. Те, що ви вирішили надіслати, потрапляє на наш сервер «Капібара» в Німеччині, а звідти — до OpenAI, який обробляє це на наше доручення. Наш сервер передає дані далі й не зберігає їх. OpenAI не навчає на них свої моделі. OpenAI може зберігати їх до 30 днів, щоб виявляти зловживання. Версії застосунку без функцій ШІ, зокрема попередні версії для Android, до нашого сервера не звертаються.</li>
         <li><strong>Застосунок використовує випадковий номер, а не вашу особу.</strong> Щоб знати, на якому встановленні доступний ШІ і скільки ще лишилося його запасу, застосунок використовує випадковий номер, який створює сам. Це не ваше ім'я, не e-mail і не акаунт Apple чи Google. Номер видно в Налаштуваннях.</li>
         <li><strong>Оплату приймають Apple і Google.</strong> Ми ніколи не бачимо вашої картки, імені чи e-mail. Наш сервер отримує лише запис про покупку, підписаний Apple, або, на Android, токен покупки Google Play, який він перевіряє в Google Play.</li>
-        <li>У застосунку немає реклами, власних сервісів аналітики та звітів про збої і немає відстеження. Дані ми не продаємо.</li>
+        <li>У застосунку немає реклами, власних сервісів аналітики та звітів про збої і немає відстеження. Дані ми не продаємо. На Android карти малює вбудований у застосунок компонент Google Maps — він сам надсилає Google свої технічні дані (розділ 3).</li>
       </ul>
     </div>
 
@@ -1494,12 +1497,12 @@
       <li>фотографії, документи та інші файли архіву;</li>
       <li>місця й координати народження, проживання та поховання;</li>
       <li>чернетки функцій ШІ: те, що ви надиктували, отримані відповіді та знімки могил;</li>
-      <li>запис голосу, який ще не вдалося надіслати. Він видаляється, щойно його надіслано. Якщо він старший за 7 днів, то видалиться, коли ви наступного разу відкриєте екран, де його записали;</li>
+      <li>запис голосу, який ще не вдалося надіслати (iPhone і iPad). Він видаляється, щойно його надіслано. Якщо він старший за 7 днів, то видалиться, коли ви наступного разу відкриєте екран, де його записали;</li>
       <li>відреставроване фото, яке надійшло, коли ви вже пішли з екрана. Воно чекає, поки ви знову відкриєте це фото. Якщо йому більше 30 днів, застосунок видалить його під час наступної перевірки реставрацій, що надійшли;</li>
       <li>налаштування, ваші рішення щодо згод і номер застосунку (розділ 4).</li>
     </ul>
     <p>На iPhone і iPad застосунок позначає свою теку даних, щоб вона не потрапляла до резервних копій iCloud і комп'ютера. На Android застосунок відмовляється від автоматичного хмарного резервного копіювання Android.</p>
-    <p>Якщо застосунок аварійно закриється, короткий технічний журнал запишеться у файл лише на пристрої, і застосунок нікуди його не надсилає. Власного сервісу звітів про збої в застосунку немає. Якщо ви в налаштуваннях телефона дозволили ділитися діагностикою з розробниками застосунків, Apple або Google можуть передати нам звіти про збої за своїми умовами.</p>
+    <p>Якщо застосунок аварійно закриється, короткий технічний журнал запишеться у файл лише на пристрої, і застосунок нікуди його не надсилає. Власного сервісу звітів про збої в застосунку немає. На Android вбудований у застосунок компонент Google Maps сам надсилає Google свої дані про збої та діагностику (розділ 3). Якщо ви в налаштуваннях телефона дозволили ділитися діагностикою з розробниками застосунків, Apple або Google можуть передати нам звіти про збої за своїми умовами.</p>
     <p>Дерево залишає пристрій, лише якщо ви самі його експортуєте або комусь надішлете. Експортовані файли (GEDCOM, LRV, SVG, PNG) потрапляють туди, куди ви їх зберегли: наприклад, у «Файли», «Фото» чи інший застосунок. Звідти цей сервіс може копіювати їх далі, наприклад у «Фото iCloud». Коли ви видаляєте застосунок із пристрою, видаляється все, крім файлів, які ви самі експортували.</p>
     <p><strong>Дозволи:</strong></p>
     <ul>
@@ -1517,7 +1520,7 @@
         <tr><th>Коли ви…</th><th>Що надсилається</th><th>Куди</th></tr>
       </thead>
       <tbody>
-        <tr><td>відкриваєте карту</td><td>технічні запити карти: IP-адреса і яка ділянка карти потрібна</td><td>Apple Maps (iPhone, iPad) або Google Maps (Android)</td></tr>
+        <tr><td>відкриваєте карту</td><td>технічні запити карти: IP-адреса і яка ділянка карти потрібна. На Android вбудований у застосунок компонент Google Maps сам надсилає Google і свої дані: дії з картою (зсув і масштаб), трасування та показники збоїв, дані пристрою (модель, марка, версія Android) і псевдонімний ідентифікатор компонента. Google використовує їх за власною політикою конфіденційності як самостійний контролер</td><td>Apple Maps (iPhone, iPad) або Google (Android)</td></tr>
         <tr><td>шукаєте адресу на карті</td><td>введена адреса</td><td>Apple або Google (пошук адрес системи телефона)</td></tr>
         <tr><td>знімаєте могилу</td><td>місце зйомки — щоб показати його адресу</td><td>Apple або Google (пошук адрес системи телефона)</td></tr>
         <tr><td>користуєтеся довідником кладовищ</td><td>країна, мова, область і місто, введені назви або координати, номер кладовища з довідника; без номера застосунку</td><td>наш сервер (розділ 6)</td></tr>
@@ -1558,11 +1561,11 @@
     <h2>5. Функції ШІ («Капібара AI»)</h2>
     <p>Функції ШІ є на iPhone, iPad і Android і входять до підписки myDynasty Premium. Без підписки застосунок їх не показує.</p>
     <p>Перш ніж функція вперше щось надішле, вона показує екран згоди. На ньому перелічено, що буде надіслано, і названо наш сервер «Капібара» та OpenAI. Поки ви не погодилися, нічого не надсилається ні на наш сервер, ні до OpenAI (розділ 8). Розпізнавання мовлення самим телефоном працює одразу, щойно ви натиснули мікрофон, — див. нижче «Розпізнавання мовлення телефоном».</p>
-    <p><strong>5.1 «Розповісти про людину».</strong> Ви розповідаєте про родича. ШІ заповнює картку, а біля могили може поставити уточнювальні запитання вголос.</p>
+    <p><strong>5.1 «Розповісти про людину».</strong> Ви розповідаєте про родича. ШІ заповнює картку й може поставити уточнювальні запитання вголос.</p>
     <ul>
       <li>На iPhone і iPad застосунок надсилає запис голосу (стиснутий звук) і обрану мову, щоб розпізнати мовлення, а потім текст розповіді — розпізнаний із запису або, якщо не вийшло, телефоном. Після розпізнавання запис видаляється з телефона.</li>
       <li>На Android застосунок не робить запису й ніколи не надсилає звук на наш сервер. Він надсилає текст розповіді в тому вигляді, у якому його розпізнав телефон, і обрану мову.</li>
-      <li><strong>Запитання біля могили</strong> промовляє голос OpenAI. Текст запитання надсилається до OpenAI, щоб його озвучити.</li>
+      <li><strong>Уточнювальні запитання</strong> — біля могили і коли ШІ треба дізнатися, ким людина доводиться комусь із вашої розповіді, — промовляє голос OpenAI. Текст запитання (у ньому бувають названі вами імена) надсилається до OpenAI, щоб його озвучити.</li>
       <li>Людина з'явиться в дереві лише після того, як ви перевірите картку й натиснете «Зберегти».</li>
     </ul>
     <p><strong>5.2 «Зйомка могили».</strong></p>
@@ -1743,8 +1746,8 @@
     </div>
     <p>Кожен із них обробляє дані лише за нашими вказівками відповідно до своїх умов обробки даних і мусить захищати їх не гірше, ніж описано тут.</p>
     <p>Копії бази даних нашого сервера зберігає також сам володілець — на своєму комп'ютері й резервному диску. У цій базі — лише записи з розділу 11: ні дерев, ні розповідей, ні фотографій.</p>
-    <p>Apple, Google та OpenStreetMap Foundation надають вам свої послуги за власними умовами й політиками конфіденційності. У Google це зокрема Google Play і Google Play Developer API, через який наш сервер перевіряє підписку на Android (розділ 7).</p>
-    <p>Ми не використовуємо сервісів аналітики, реклами, звітів про збої та відстеження. Ми не продаємо дані, не передаємо їх для реклами й не складаємо профілів. Автоматизованих рішень щодо вас ми не ухвалюємо.</p>
+    <p>Apple, Google та OpenStreetMap Foundation надають вам свої послуги за власними умовами й політиками конфіденційності. У Google це зокрема Google Play і Google Play Developer API, через який наш сервер перевіряє підписку на Android (розділ 7), і компонент Google Maps в Android-застосунку (розділ 3).</p>
+    <p>Ми не використовуємо власних сервісів аналітики, реклами, звітів про збої та відстеження (про компонент Google Maps на Android — розділ 3). Ми не продаємо дані, не передаємо їх для реклами й не складаємо профілів. Автоматизованих рішень щодо вас ми не ухвалюємо.</p>
 
     <h2>10. Правові підстави</h2>
     <ul>
@@ -1807,7 +1810,7 @@
     <ul>
       <li><strong>На пристрої.</strong> Ви можете переглядати, виправляти, видаляти й експортувати дані в застосунку (GEDCOM, LRV, SVG, PNG). Видалення застосунку видаляє все.</li>
       <li><strong>На нашому сервері.</strong> У вас є права на доступ, виправлення, видалення, обмеження обробки, перенесення даних і заперечення. Згоду можна відкликати будь-коли (розділ 8).</li>
-      <li><strong>Як знайти ваші записи.</strong> Ми не знаємо, хто ви, тому знайти ваші записи можемо лише за номером застосунку. Його можна переглянути й скопіювати в Налаштуваннях → «Капібара AI» → «Номер застосунку». Надішліть його на <a href="mailto:mydynastyapp.team@gmail.com">mydynastyapp.team@gmail.com</a> — ми відповімо протягом місяця.</li>
+      <li><strong>Як знайти ваші записи.</strong> Ми не знаємо, хто ви, тому знайти ваші записи можемо лише за номером застосунку — на Android ще й за номером замовлення Google Play (розділ 7). Його можна переглянути й скопіювати в Налаштуваннях → «Капібара AI» → «Номер застосунку». Надішліть його на <a href="mailto:mydynastyapp.team@gmail.com">mydynastyapp.team@gmail.com</a> — ми відповімо протягом місяця.</li>
       <li><strong>Скарги:</strong>
         <ul>
           <li>ЄС/ЄЕЗ — орган із захисту даних вашої країни (перелік: <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en">https://edpb.europa.eu/about-edpb/about-edpb/members_en</a>);</li>
@@ -1829,10 +1832,11 @@
     <ol>
       <li><strong>На телефоні.</strong> Видаліть людину, фото чи все дерево в застосунку — або видаліть myDynasty: усе, що зберігається на телефоні, видалиться разом із ним. Копії в нас немає.</li>
       <li><strong>Більше нічого не надсилати.</strong> Налаштування → «Капібара AI» → «Відкликати згоди» (розділ 8).</li>
-      <li><strong>Записи на нашому сервері.</strong> У Налаштуваннях → «Капібара AI» скопіюйте номер застосунку й надішліть його на <a href="mailto:mydynastyapp.team@gmail.com">mydynastyapp.team@gmail.com</a> зі словами «Видаліть мої дані». Ми видалимо все, що пов'язано з цим номером, — номер застосунку, записи згод, лічильники, записи про підписку та скарги — і підтвердимо протягом місяця. Зробіть це до видалення застосунку: потім номер уже не показати.</li>
-      <li><strong>Без запиту.</strong> Сервер сам видаляє номер застосунку й усе пов'язане з ним через 12 місяців після останнього використання, скарги — через 90 днів, згоди — після закінчення їхнього строку (розділ 11).</li>
+      <li><strong>Записи на нашому сервері.</strong> У Налаштуваннях → «Капібара AI» скопіюйте номер застосунку. Якщо у вас Premium: поки підписка діє і застосунок встановлено, під час наступної перевірки він знову пов'яже підписку з нашим сервером — тож видаліть застосунок, скопіювавши номер, або напишіть нам після закінчення підписки. Надішліть номер на <a href="mailto:mydynastyapp.team@gmail.com">mydynastyapp.team@gmail.com</a> зі словами «Видаліть мої дані». Ми видалимо все, що пов'язано з цим номером, — номер застосунку, записи згод, лічильники, записи про підписку та скарги — і підтвердимо протягом місяця. Номер загубився після перевстановлення? На Android надішліть натомість номер замовлення Google Play (починається з GPA.) з листа Google про покупку.</li>
+      <li><strong>Без запиту.</strong> Сервер сам видаляє номер застосунку й усе пов'язане з ним через 12 місяців після останнього використання, номер, пов'язаний із підпискою, — через 12 місяців після закінчення підписки, скарги — через 90 днів, згоди — після закінчення їхнього строку (розділ 11).</li>
       <li><strong>Підписка.</strong> Скасуйте її в налаштуваннях акаунта Apple або в Google Play. Apple і Google зберігають свої записи про оплату за власними правилами.</li>
     </ol>
+    <p><strong>Що ще певний час лишається після видалення:</strong> копії в резервних копіях сервера й технічних журналах — до 30 днів; те, що вже надійшло до OpenAI, — до 30 днів, за словами OpenAI; ваші листи нам — до 24 місяців; записи про оплату в Apple і Google — за їхніми власними правилами.</p>
 
     <h2>16. Сайт mydynasty.app</h2>
     <p>Сайт існує окремо від застосунку.</p>

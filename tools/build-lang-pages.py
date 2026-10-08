@@ -115,6 +115,9 @@ def build(html, dicts, lang):
     out = re.sub(r'<meta name="twitter:title" content="[^"]*">', f'<meta name="twitter:title" content="{esc(d["meta.title"])}">', out, count=1)
     out = re.sub(r'<meta name="twitter:description" content="[^"]*">', f'<meta name="twitter:description" content="{esc(DESC[lang])}">', out, count=1)
     out = re.sub(r'<script type="application/ld\+json">.*?</script>', lambda m: json_ld(lang), out, count=1, flags=re.S)
+    # Значок языка в меню и отмеченный пункт — сразу свои (до скрипта).
+    code = {"en": "EN", "es": "ES", "fr": "FR", "de": "DE", "ru": "RU", "uk": "UA"}[lang]
+    out = out.replace('<span class="lang-dd-code">EN</span>', f'<span class="lang-dd-code">{code}</span>', 1)
     # Снимки — сразу своего языка; относительные пути — от корня (страница лежит в /xx/).
     out = re.sub(r'(data-shot="([^"]+)" src=")screens/en/', lambda m: m.group(1) + f"screens/{lang}/", out)
     out = re.sub(r'((?:src|href)=")(?!https?:|#|/|mailto:|data:)', r"\1/", out)

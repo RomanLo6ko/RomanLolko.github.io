@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Datenschutzerklärung von myDynasty</title>
+<meta name="description" content="Datenschutzerklärung der Stammbaum-App myDynasty für iPhone, iPad und Android: Ihr Stammbaum bleibt auf Ihrem Gerät, und KI-Funktionen fragen nach Ihrer Einwilligung, bevor sie etwas senden.">
+<link rel="canonical" href="https://mydynasty.app/de/privacy">
+<link rel="alternate" hreflang="en" href="https://mydynasty.app/privacy">
+<link rel="alternate" hreflang="uk" href="https://mydynasty.app/uk/privacy">
+<link rel="alternate" hreflang="ru" href="https://mydynasty.app/ru/privacy">
+<link rel="alternate" hreflang="de" href="https://mydynasty.app/de/privacy">
+<link rel="alternate" hreflang="es" href="https://mydynasty.app/es/privacy">
+<link rel="alternate" hreflang="fr" href="https://mydynasty.app/fr/privacy">
+<link rel="alternate" hreflang="x-default" href="https://mydynasty.app/privacy">
+<meta name="robots" content="index,follow">
+<meta name="theme-color" content="#fff8f0">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://mydynasty.app/de/privacy"><meta property="og:locale" content="de_DE">
+<meta property="og:title" content="Datenschutzerklärung von myDynasty">
+<meta property="og:description" content="Datenschutzerklärung der Stammbaum-App myDynasty für iPhone, iPad und Android: Ihr Stammbaum bleibt auf Ihrem Gerät, und KI-Funktionen fragen nach Ihrer Einwilligung, bevor sie etwas senden.">
+<meta property="og:image" content="https://mydynasty.app/logo.png">
+
+<link rel="icon" type="image/png" href="/logo.png">
+<link rel="apple-touch-icon" href="/logo.png">
+
+<style>
+  :root {
+    --bg: #fff8f0;
+    --ink: #2a221d;
+    --ink-soft: #5a4a3f;
+    --accent: #b8722a;
+    --accent-soft: #e9c69a;
+    --line: #ebd9c4;
+    --card: #fffbf5;
+    --shadow: 0 4px 24px rgba(80, 50, 20, 0.06);
+    --radius: 14px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 36px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--ink);
+  }
+
+  .brand img {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+  }
+
+  .brand-name {
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: -0.01em;
+  }
+
+  .lang-switch {
+    display: inline-flex;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    overflow: hidden;
+    background: var(--card);
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .lang-switch button {
+    border: 0;
+    background: transparent;
+    color: var(--ink-soft);
+    padding: 8px 16px;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .lang-switch button.is-active {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  h1 {
+    font-size: clamp(28px, 5vw, 38px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin: 0 0 8px;
+  }
+
+  .meta {
+    color: var(--ink-soft);
+    font-size: 14px;
+    margin: 0 0 32px;
+  }
+
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 40px 0 12px;
+    letter-spacing: -0.01em;
+  }
+
+  h3 {
+    font-size: 17px;
+    font-weight: 700;
+    margin: 24px 0 8px;
+    color: var(--ink);
+  }
+
+  p, li {
+    font-size: 16px;
+    color: var(--ink);
+  }
+
+  ul {
+    padding-left: 22px;
+  }
+
+  ul li {
+    margin-bottom: 6px;
+  }
+
+  strong {
+    font-weight: 700;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  a:hover {
+    color: #8a4f10;
+  }
+
+  .summary {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    box-shadow: var(--shadow);
+    margin: 0 0 32px;
+  }
+
+  .summary p:first-child { margin-top: 0; }
+  .summary p:last-child  { margin-bottom: 0; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 24px;
+    font-size: 15px;
+    background: var(--card);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+
+  th, td {
+    text-align: left;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+
+  th {
+    background: #f6e9d5;
+    font-weight: 700;
+    color: var(--ink);
+    font-size: 14px;
+  }
+
+  tr:last-child td { border-bottom: 0; }
+
+  td code {
+    font-family: 'SF Mono', 'Menlo', 'Consolas', monospace;
+    font-size: 13px;
+    background: #f5e7d0;
+    color: #6a3e10;
+    padding: 1px 6px;
+    border-radius: 4px;
+  }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    color: var(--ink-soft);
+    font-size: 13px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .lang-content { display: none; }
+  .lang-content.is-active { display: block; }
+
+  .summary h2 { margin-top: 0; }
+  .summary ul:last-child { margin-bottom: 0; }
+  .lang-content { overflow-wrap: break-word; }
+  .table-wrap { overflow-x: auto; margin: 16px 0 24px; border-radius: var(--radius); box-shadow: var(--shadow); }
+  .table-wrap table { margin: 0; box-shadow: none; }
+  th, td { -webkit-hyphens: auto; hyphens: auto; }
+
+  @media (max-width: 560px) {
+    .page { padding: 24px 16px 60px; }
+    table { font-size: 14px; }
+    th, td { padding: 10px 10px; }
+    header { flex-wrap: wrap; }
+    .lang-switch { flex-shrink: 0; }
+    .lang-switch button { padding: 8px 10px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="page">
+
+  <header>
+    <a class="brand" href="/">
+      <img src="/logo.png" alt="myDynasty">
+      <span class="brand-name">myDynasty</span>
+    </a>
+    <div class="lang-switch" role="tablist" aria-label="Language">
+      <button type="button" role="tab" data-lang="en" aria-selected="false">EN</button>
+      <button type="button" role="tab" data-lang="uk" aria-selected="false">UA</button>
+      <button type="button" role="tab" data-lang="ru" aria-selected="false">RU</button>
+      <button type="button" role="tab" data-lang="de" class="is-active" aria-selected="true">DE</button>
+      <button type="button" role="tab" data-lang="es" aria-selected="false">ES</button>
+      <button type="button" role="tab" data-lang="fr" aria-selected="false">FR</button>
+    </div>
+  </header>
+
+  <!-- ============== ENGLISH ============== -->
+  <section class="lang-content is-active" data-lang="de" lang="de">
+
+    <h1>Datenschutzerklärung von myDynasty</h1>
+    <p class="meta">Gültig ab 22.&nbsp;Oktober&nbsp;2026 · Zuletzt aktualisiert 22.&nbsp;Oktober&nbsp;2026 · Version 2.2<br>Gilt für die App myDynasty für iPhone, iPad und Android (com.mydynasty.app) und für die Website mydynasty.app.</p>
+
+    <div class="summary">
+      <h2>Kurzfassung</h2>
+      <ul>
+        <li><strong>Ihr Stammbaum bleibt auf Ihrem Gerät.</strong> Namen, Daten, Fotos, Orte, Erzählungen und Dokumente werden nur in der App auf Ihrem Telefon oder Tablet gespeichert. Wir haben keine Kopie. Es gibt weder Konten noch eine Registrierung.</li>
+        <li><strong>Aus Ihrem Stammbaum verlässt nichts das Gerät, solange Sie nichts nutzen, das das Internet braucht:</strong> eine Karte, das Friedhofsverzeichnis oder eine KI-Funktion. Bevor eine KI-Funktion etwas an unseren Server sendet, zeigt Ihnen die App, was gesendet wird und an wen, und wartet auf Ihre Einwilligung.</li>
+        <li><strong>KI-Funktionen gehören auf iPhone, iPad und Android zum Abonnement myDynasty Premium</strong>. Was Sie senden möchten, geht an unseren Server „Capybara“ in Deutschland und von dort an OpenAI, das es in unserem Auftrag verarbeitet. Unser Server leitet es weiter und speichert es nicht. OpenAI nutzt es nicht zum Training seiner Modelle. OpenAI kann es bis zu 30 Tage aufbewahren, um Missbrauch zu erkennen. Versionen der App ohne KI-Funktionen, auch frühere Android-Versionen, verbinden sich nicht mit unserem Server.</li>
+        <li><strong>Die App nutzt eine Zufallsnummer, nicht Ihre Identität.</strong> Um zu wissen, welche Installation KI nutzen darf und wie viel von ihrem Kontingent noch übrig ist, verwendet die App eine Zufallsnummer, die sie selbst erzeugt. Sie ist weder Ihr Name noch Ihre E-Mail-Adresse noch Ihr Apple- oder Google-Konto. Die App zeigt sie nicht an, und Sie müssen sie nie senden: Unser Server erkennt Ihr Telefon daran, wenn Sie uns aus der App schreiben oder Ihre Daten löschen.</li>
+        <li><strong>Die Zahlung wickeln Apple und Google ab.</strong> Wir sehen nie Ihre Karte, Ihren Namen oder Ihre E-Mail-Adresse. Unser Server erhält nur einen von Apple signierten Kaufnachweis oder, unter Android, ein Kauftoken von Google Play, das er bei Google Play prüft.</li>
+        <li>Die App enthält keine Werbung, keine eigenen Analyse- oder Absturzberichtsdienste und kein Tracking. Wir verkaufen keine Daten. Auf Android zeichnet eine in die App eingebaute Google-Maps-Komponente die Karten; sie sendet Google ihre eigenen technischen Daten (Abschnitt 3).</li>
+      </ul>
+    </div>
+
+      <h2>1. Wer verantwortlich ist</h2>
+    <ul>
+      <li><strong>Verantwortlicher:</strong> Roman Lobko, Privatperson mit Wohnsitz in der Ukraine. Er ist der Verkäufer von myDynasty im App Store und bei Google Play.</li>
+      <li><strong>Kontakt für alle Anliegen, auch zum Datenschutz:</strong> <a href="mailto:mydynastyapp.team@gmail.com">mydynastyapp.team@gmail.com</a></li>
+      <li><strong>Website:</strong> <a href="https://mydynasty.app">https://mydynasty.app</a> · diese Erklärung: <a href="https://mydynasty.app/privacy">https://mydynasty.app/privacy</a></li>
+    </ul>
+    <p>Versionen der App ohne KI-Funktionen senden nichts an unseren Server.</p>
+    <p>Wer wofür verantwortlich ist:</p>
+    <ul>
+      <li><strong>Ihr Stammbaum auf Ihrem Gerät.</strong> Sie verarbeiten ihn selbst, für persönliche und familiäre Zwecke, und wir haben keinen Zugriff darauf. Das Datenschutzrecht nennt das die Haushaltsausnahme (Art. 2 Abs. 2 lit. c DSGVO).</li>
+      <li><strong>Was die App an unseren Server sendet.</strong> Das sind die App-Nummer, Einwilligungsnachweise, Abonnementdaten, Abfragen des verbleibenden KI-Kontingents, Anfragen an das Friedhofsverzeichnis, die Inhalte, die Sie an KI-Funktionen senden, Ihre Meldungen zu KI-Ergebnissen und Ihre Nachrichten an uns. Dafür sind wir verantwortlich. Hetzner, Cloudflare und OpenAI verarbeiten diese Daten als Auftragsverarbeiter für uns, nach ihren Bedingungen zur Auftragsverarbeitung (Abschnitt 9).</li>
+      <li><strong>Apple und Google.</strong> Sie sind nach ihren eigenen Datenschutzerklärungen für ihre eigenen Dienste verantwortlich: App Store, Google Play, Karten, Adresssuche und Spracherkennung.</li>
+    </ul>
+
+    <h2>2. Was auf Ihrem Gerät bleibt</h2>
+    <p>Nur im privaten Speicherbereich der App auf Ihrem Gerät liegen:</p>
+    <ul>
+      <li>Personen, Daten, Verwandtschaftsbeziehungen, Biografien und Notizen;</li>
+      <li>Fotos, Dokumente und andere Dateien im Archiv;</li>
+      <li>Orte und Koordinaten von Geburt, Wohnort und Bestattung;</li>
+      <li>Entwürfe der KI-Funktionen: was Sie diktiert haben, die zurückgekommenen Antworten und Grabfotos;</li>
+      <li>eine Sprachaufnahme, die noch nicht gesendet wurde (iPhone und iPad). Sie wird gelöscht, sobald sie gesendet ist. Ist sie älter als 7 Tage, wird sie gelöscht, wenn Sie den Bildschirm, auf dem Sie sie aufgenommen haben, das nächste Mal öffnen;</li>
+      <li>ein restauriertes Foto, das angekommen ist, nachdem Sie den Bildschirm verlassen haben. Es wartet, bis Sie dieses Foto wieder öffnen. Ist es älter als 30 Tage, löscht die App es bei der nächsten Prüfung auf restaurierte Fotos;</li>
+      <li>Einstellungen, Ihre Einwilligungsentscheidungen und die App-Nummer (Abschnitt 4).</li>
+    </ul>
+    <p>Auf iPhone und iPad markiert die App ihren Datenordner so, dass er von iCloud- und Computer-Backups ausgenommen ist. Unter Android nimmt die App nicht an der automatischen Cloud-Sicherung von Android teil.</p>
+    <p>Stürzt die App ab, wird ein kurzes technisches Protokoll nur in eine Datei auf dem Gerät geschrieben, und die App selbst lädt nichts hoch. Die App hat keinen eigenen Absturzberichtsdienst. Auf Android sendet die in die App eingebaute Google-Maps-Komponente Google ihre eigenen Absturz- und Diagnosedaten (Abschnitt 3). Wenn Sie in den Einstellungen Ihres Telefons zugestimmt haben, Diagnosedaten mit App-Entwicklern zu teilen, können Apple oder Google uns Absturzberichte nach ihren eigenen Bedingungen weitergeben.</p>
+    <p>Ihr Stammbaum verlässt das Gerät nur, wenn Sie ihn selbst exportieren oder teilen. Exportierte Dateien (GEDCOM, LRV, SVG, PNG) gehen dorthin, wo Sie es wählen, zum Beispiel in „Dateien“, „Fotos“ oder eine andere App. Von dort kann dieser Dienst sie weiterkopieren, zum Beispiel in iCloud-Fotos. Wenn Sie die App deinstallieren, wird alles vom Gerät gelöscht, außer Dateien, die Sie selbst exportiert haben.</p>
+    <p><strong>Berechtigungen:</strong></p>
+    <ul>
+      <li><strong>Standort</strong>, nur während Sie die App nutzen: für Karten und für die Koordinaten von Gräbern.</li>
+      <li><strong>Kamera und Fotos:</strong> um Bilder aufzunehmen und anzuhängen.</li>
+      <li><strong>Mikrofon und Spracherkennung</strong>, nur in Versionen mit KI-Funktionen: um per Stimme von einer Person zu erzählen.</li>
+      <li><strong>Mitteilungen:</strong> nur lokale Erinnerungen, ohne Push-Dienst.</li>
+    </ul>
+    <p>Jede davon können Sie in den Einstellungen Ihres Telefons abschalten.</p>
+
+    <h2>3. Wann etwas Ihr Gerät verlässt</h2>
+    <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Wenn Sie …</th><th>Was gesendet wird</th><th>An wen</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>eine Karte öffnen (auf Android auch einfach die App nutzen: ihre Google-Maps-Komponente kann mit ihr starten)</td><td>technische Kartenanfragen: IP-Adresse und welcher Kartenausschnitt nötig ist. Auf Android sendet die in die App eingebaute Google-Maps-Komponente Google außerdem ihre eigenen Daten: Karteninteraktionen (Verschieben und Zoomen), Absturzprotokolle und -kennzahlen, Gerätedaten (Modell, Marke, Android-Version) und eine pseudonyme Kennung der Komponente. Google nutzt sie nach seiner eigenen Datenschutzerklärung, als eigenständiger Verantwortlicher</td><td>Apple Karten (iPhone, iPad) oder Google (Android)</td></tr>
+        <tr><td>auf der Karte eine Adresse suchen</td><td>die eingegebene Adresse</td><td>Apple oder Google (Adresssuche des Telefons)</td></tr>
+        <tr><td>Grabfotos aufnehmen</td><td>den Ort, an dem Sie sie aufgenommen haben, um seine Adresse anzuzeigen</td><td>Apple oder Google (Adresssuche des Telefons)</td></tr>
+        <tr><td>das Friedhofsverzeichnis nutzen</td><td>Land, Sprache, Region und Ort, eingegebene Namen oder Koordinaten, die Verzeichnisnummer eines Friedhofs; ohne die App-Nummer</td><td>unser Server (Abschnitt 6)</td></tr>
+        <tr><td>die Friedhofskarte oder die kleine Karte in einem Grabeintrag ansehen</td><td>welche Kartenkacheln nötig sind sowie Ihre IP-Adresse</td><td>OpenStreetMap Foundation</td></tr>
+        <tr><td>nach Ihrer Einwilligung eine KI-Funktion nutzen</td><td>was der Einwilligungsbildschirm nennt, sowie die App-Nummer</td><td>unser Server, dann OpenAI (Abschnitt 5)</td></tr>
+        <tr><td>mit „Schreiben Sie uns“ eine Nachricht senden</td><td>Ihren Text, eine E-Mail-Adresse für unsere Antwort (wenn Sie eine angeben), Sprache und Version der App, die Plattform und die App-Nummer</td><td>unser Server (Abschnitt 4)</td></tr>
+        <tr><td>auf „Meine Daten vom Server löschen“ tippen</td><td>nur die App-Nummer, damit der Server weiß, welche Einträge er löschen soll</td><td>unser Server (Abschnitt 15)</td></tr>
+        <tr><td>mit „Ergebnis melden“ eine Meldung senden</td><td>die Funktion, den Grund, Ihren Kommentar (falls vorhanden) und die App-Nummer; nicht das Foto und nicht den Text der KI</td><td>unser Server (Abschnitt 5)</td></tr>
+        <tr><td>Premium haben und die Einstellungen oder eine Personenkarte öffnen oder ein Foto restaurieren</td><td>nur die App-Nummer, um anzuzeigen, wie viel KI-Kontingent noch übrig ist</td><td>unser Server (Abschnitt 4)</td></tr>
+        <tr><td>per Stimme diktieren</td><td>kann Ihr Telefon Sprache nicht auf dem Gerät erkennen, geht der Ton auch an seinen Spracherkennungsdienst</td><td>Apple oder Google (Spracherkennungsdienst des Telefons)</td></tr>
+        <tr><td>das Abonnement kaufen oder wiederherstellen</td><td>den Kauf selbst, danach einen von Apple signierten Kaufnachweis oder ein Kauftoken von Google Play</td><td>Apple oder Google Play, danach unser Server (Abschnitt 7)</td></tr>
+        <tr><td>einen Link oder eine Schaltfläche antippen (E-Mail, Store-Seite, „Koordinaten teilen“, „Route planen“)</td><td>was dieser Link öffnet; bei einer Route die Koordinaten des Ortes und der Name der Person als Beschriftung</td><td>die App oder Website Ihrer Wahl; bei einer Route die Karten-App</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Versionen der App ohne KI-Funktionen, auch frühere Android-Versionen, verbinden sich überhaupt nicht mit unserem Server.</p>
+
+    <h2>4. Unser Server „Capybara“ und die App-Nummer</h2>
+    <p><strong>Wo er läuft.</strong> Unser Server läuft bei der Hetzner Online GmbH in Nürnberg (Deutschland, EU). Die App erreicht ihn unter api.mydynasty.app über Cloudflare, das die verschlüsselte Verbindung überträgt.</p>
+    <p><strong>Die App-Nummer.</strong></p>
+    <ul>
+      <li><strong>Was sie ist.</strong> Eine Zufallsnummer (UUID), die die App erzeugt, wenn sie sie zum ersten Mal braucht, und in ihren Einstellungen speichert. Das kann sein, wenn Sie das Abonnement kaufen, eine KI-Funktion nutzen oder mit Premium die Einstellungen oder eine Personenkarte öffnen. Die Nummer ist nicht von Ihrem Gerät abgeleitet und keine Werbe-ID.</li>
+      <li><strong>Wann sie gesendet wird.</strong> Die App sendet sie mit jeder Anfrage an unseren Server, außer bei Abfragen des Friedhofsverzeichnisses (Abschnitt 6).</li>
+      <li><strong>Warum wir sie als personenbezogenes Datum behandeln.</strong> Die Nummer verrät uns nicht, wer Sie sind. Da sie aber mit Ihren Einwilligungsnachweisen und Abonnementdaten verbunden ist, behandeln wir sie als personenbezogenes Datum (pseudonyme Kennung).</li>
+      <li><strong>Auch Apple sieht sie.</strong> Wenn Sie das Abonnement auf iPhone oder iPad kaufen, übergibt die App Apple dieselbe Nummer mit dem Kauf, als „App Account Token“. So lässt sich der Kauf dieser Installation zuordnen. Apple sieht die Nummer daher zusammen mit Ihrem Apple Account.</li>
+      <li><strong>Auch Google sieht sie.</strong> Wenn Sie das Abonnement unter Android kaufen, übergibt die App Google Play dieselbe Nummer mit dem Kauf, als Kontokennung (Google nennt sie „obfuscatedAccountId“). Google sieht die Nummer daher zusammen mit Ihrem Google-Konto.</li>
+      <li><strong>Sie brauchen sie nie.</strong> Die App zeigt die Nummer nicht an. Wenn Sie uns aus der App schreiben oder Ihre Daten von unserem Server löschen (Abschnitt 15), sendet die App die Nummer von selbst mit, und so finden wir Ihre Einträge.</li>
+      <li><strong>Wann sie sich ändert.</strong> Eine Neuinstallation der App erzeugt eine neue Nummer. Ebenso das Löschen Ihrer Daten von unserem Server: Die App beginnt dann neu mit einer neuen Nummer. Der Widerruf von Einwilligungen ändert sie nicht.</li>
+    </ul>
+    <p><strong>Anfragen ohne Ihre Inhalte.</strong> In der Version mit KI-Funktionen verbindet sich die App auch von selbst mit unserem Server. Keine dieser Anfragen enthält Ihre Erzählungen, Fotos oder sonst etwas aus Ihrem Stammbaum:</p>
+    <ul>
+      <li><strong>Verbleibendes Kontingent.</strong> Wenn Sie mit Premium die Einstellungen oder eine Personenkarte öffnen oder ein Foto restaurieren, fragt die App, wie viel von Ihrem KI-Kontingent noch übrig ist. Ohne Premium fragt sie nicht. Nur die App-Nummer wird gesendet. Unser Server speichert aus dieser Anfrage nichts Neues. Bei einer App-Nummer, die er schon kennt, vermerkt er höchstens einmal am Tag, dass die Nummer noch genutzt wird.</li>
+      <li><strong>Abonnement.</strong> Bei aktivem Abonnement sendet die App den von Apple signierten Kaufnachweis beim Start, nach Kauf, Wiederherstellung oder Verlängerung und dann, wenn unser Server Ihr Abonnement bei einer KI-Anfrage noch nicht kennt. Unter Android sendet sie stattdessen das Kauftoken von Google Play: nach dem Kauf, beim Start, solange Sie abonniert haben, und dann, wenn unser Server Ihr Abonnement bei einer KI-Anfrage noch nicht kennt (Abschnitt 7).</li>
+      <li><strong>Fotorestaurierung.</strong> Nachdem Sie eine Restaurierung gestartet haben, fragt das Telefon bis zu 15 Minuten lang bei unserem Server nach dem Ergebnis, auch wenn Sie den Bildschirm verlassen. Danach bittet es den Server, das Ergebnis zu löschen. Gesendet werden nur die Auftragsnummer und die App-Nummer.</li>
+    </ul>
+    <p><strong>„Schreiben Sie uns“.</strong> Unter Einstellungen → „Capybara AI“ können Sie uns aus der App eine Nachricht senden. Unser Server erhält:</p>
+    <ul>
+      <li>Ihren Text;</li>
+      <li>eine E-Mail-Adresse für unsere Antwort, wenn Sie eine angeben (freiwillig);</li>
+      <li>Sprache und Version der App sowie die Plattform (Android oder iOS);</li>
+      <li>die App-Nummer, damit wir Ihre Einträge finden können, wenn Sie danach fragen.</li>
+    </ul>
+    <p>Nur der Entwickler (der Verantwortliche, Abschnitt 1) liest die Nachrichten. Wir nutzen sie nur, um Ihnen zu antworten und zu beheben, was Sie melden, niemals für Werbung. Haben Sie eine E-Mail-Adresse angegeben, antworten wir von mydynastyapp.team@gmail.com. Die Protokolle des Servers speichern nur die Länge der Nachricht und ob eine E-Mail-Adresse angegeben wurde, nicht den Text oder die Adresse. Eine Nachricht wird 12 Monate aufbewahrt und dann gelöscht. Sie können bis zu 5 Nachrichten pro Tag senden. Der Bereich „Capybara AI“ erscheint in Versionen der App mit KI-Funktionen. In anderen Versionen schreiben Sie uns per E-Mail (Einstellungen → „Über die App“ → „Team kontaktieren“).</p>
+    <p>Die App fragt das Friedhofsverzeichnis <strong>nicht</strong> von selbst, wenn Sie einen Grabeintrag oder eine Personenkarte öffnen. Sie fragt nur, wenn Sie tippen (Abschnitt 6).</p>
+    <p><strong>Was unser Server speichert</strong>, steht in Abschnitt 11. Kurz: die App-Nummer mit dem Datum ihrer ersten und letzten Nutzung, Einwilligungsnachweise, Nutzungszähler, Abonnementdaten, Meldungen zu KI-Ergebnissen und Ihre Nachrichten an uns.</p>
+    <p>Unser Server speichert <strong>nicht</strong> Ihre Texte, Aufnahmen, Fotos, Koordinaten oder Suchanfragen, und er speichert keine IP-Adressen. Die einzigen Texte, die er speichert, sind die, die Sie uns selbst schreiben: der Kommentar, den Sie einer Meldung zu einem KI-Ergebnis hinzufügen können (Abschnitt 5), und Nachrichten, die Sie mit „Schreiben Sie uns“ senden (oben). Seine technischen Protokolle sind so eingerichtet, dass Ihre Inhalte und Koordinaten nicht darin landen. Sie können interne Datensatznummern, bei seltenen Datenbankfehlern die App-Nummer und, wenn eine Prüfung bei Google Play fehlschlägt, die ersten Zeichen des Kauftokens (höchstens 8) enthalten. Sie werden spätestens nach 30 Tagen gelöscht.</p>
+
+    <h2>5. KI-Funktionen („Capybara AI“)</h2>
+    <p>KI-Funktionen gibt es auf iPhone, iPad und Android mit dem Abonnement myDynasty Premium. Ohne das Abonnement zeigt die App sie nicht an.</p>
+    <p>Bevor eine Funktion zum ersten Mal etwas sendet, zeigt sie einen Einwilligungsbildschirm. Er nennt, was gesendet wird, sowie unseren Server „Capybara“ und OpenAI. Bis Sie zustimmen, wird weder an unseren Server noch an OpenAI etwas gesendet (Abschnitt 8). Die Spracherkennung Ihres Telefons arbeitet, sobald Sie auf das Mikrofon tippen; siehe unten „Spracherkennung durch Ihr Telefon“.</p>
+    <p><strong>5.1 „Von einer Person erzählen“.</strong> Sie erzählen von einem Angehörigen. Die KI füllt die Karte aus und kann laut Rückfragen stellen.</p>
+    <ul>
+      <li>Auf iPhone und iPad sendet die App die Sprachaufnahme (komprimierter Ton) und die gewählte Sprache, damit die Sprache erkannt wird, und danach den Text der Erzählung — aus der Aufnahme erkannt oder, wenn das nicht gelingt, vom Telefon. Nach der Erkennung wird die Aufnahme vom Telefon gelöscht.</li>
+      <li>Unter Android macht die App keine Aufnahme und sendet nie Ton an unseren Server. Sie sendet den Text der Erzählung, so wie Ihr Telefon ihn erkannt hat, und die gewählte Sprache.</li>
+      <li><strong>Rückfragen</strong> — am Grab und wenn die KI wissen muss, wie die Person mit jemandem aus Ihrer Erzählung verwandt ist — liest eine Stimme von OpenAI vor. Der Text der Frage, der von Ihnen genannte Namen enthalten kann, wird an OpenAI gesendet, damit er in Sprache umgewandelt wird.</li>
+      <li>Die Person erscheint erst im Stammbaum, nachdem Sie die Karte geprüft und auf „Speichern“ getippt haben.</li>
+    </ul>
+    <p><strong>5.2 „Grabfotos“.</strong></p>
+    <ul>
+      <li>Das Foto der Inschrift auf dem Grabstein geht an OpenAI, damit die Inschrift gelesen werden kann.</li>
+      <li>Der Ort, an dem Sie die Fotos aufgenommen haben, geht nur an unseren Server, um den Friedhof im Verzeichnis zu finden, ohne die App-Nummer (Abschnitt 6), und nur, wenn Sie zugestimmt haben. An OpenAI geht er nicht.</li>
+      <li>Die Adresse dieses Ortes ermittelt das System Ihres Telefons selbst (Apple oder Google). Das geschieht auch, wenn Sie der KI nicht zugestimmt haben.</li>
+      <li>Die Gesamtaufnahme bleibt auf dem Telefon. Das Porträt vom Grabstein geht nur mit der gesonderten Einwilligung zur Fotorestaurierung zur Restaurierung (5.3).</li>
+    </ul>
+    <p><strong>5.3 „Fotorestaurierung“.</strong></p>
+    <ul>
+      <li><strong>Was an OpenAI geht:</strong>
+        <ul>
+          <li>das Foto: das ganze Bild oder das am Grab aufgenommene Porträt;</li>
+          <li>der Gesichtsbereich des Avatars der Person;</li>
+          <li>die gewählte Augen- und Haarfarbe.</li>
+        </ul>
+      </li>
+      <li>Unser Server erhält außerdem die Bildgröße und die Angabe, ob es ein Porträt von einem Grab ist. Damit legt er die Größe des Ergebnisses und die Anweisungen für OpenAI fest.</li>
+      <li><strong>Was Sie zurückbekommen.</strong> Das Ergebnis ist ein von KI erzeugtes Bild. Es kann davon abweichen, wie die Person wirklich aussah.
+        <ul>
+          <li>Auf der Seite einer Person ersetzt es das alte Foto nur, wenn Sie auf „Speichern“ tippen. Das alte Foto bleibt im Archiv.</li>
+          <li>Ein restauriertes Porträt vom Grabstein wird automatisch zum Avatar der neuen Person. Das Grabsteinfoto bleibt beim Grabeintrag.</li>
+        </ul>
+      </li>
+      <li><strong>Auf unserem Server.</strong> Das Foto wird nicht auf die Festplatte geschrieben. Es liegt im Arbeitsspeicher, solange die Restaurierung läuft. Das fertige Bild wird aufbewahrt, bis die App es abholt, höchstens 10 Minuten, nachdem es fertig ist. Ein nicht abgeschlossener Auftrag wird nach 15 Minuten verworfen.</li>
+    </ul>
+    <p><strong>5.4 „Biografie mit KI“.</strong> Die KI stellt Fragen und bringt das Gesagte in eine Ordnung.</p>
+    <ul>
+      <li><strong>Als Text gesendet:</strong>
+        <ul>
+          <li>was Sie sagen, so wie das Telefon es erkannt hat;</li>
+          <li>die bereits gestellten Fragen und die bereits geschriebene Biografie;</li>
+          <li>der vollständige Name der Person (Vorname, Vatersname, Nachname) sowie Geburts- und Sterbedatum;</li>
+          <li>die vollständigen Namen (Vorname, Vatersname, Nachname) von Ehepartner, Eltern, Kindern und Geschwistern aus dem Stammbaum, mit dem Verwandtschaftsverhältnis.</li>
+        </ul>
+      </li>
+      <li>Es werden keine Aufnahme, keine Fotos und kein Standort gesendet.</li>
+      <li><strong>Die Fragen</strong> liest eine Stimme von OpenAI vor: Der Text der Frage wird an OpenAI gesendet, damit er in Sprache umgewandelt wird. Ohne Verbindung liest sie die Stimme Ihres Telefons.</li>
+    </ul>
+    <p><strong>Für alle KI-Funktionen:</strong></p>
+    <ul>
+      <li><strong>Fotos werden vor dem Senden neu kodiert.</strong> Dadurch werden versteckte Metadaten wie der Aufnahmeort der Kamera entfernt.</li>
+      <li><strong>Sonst wird nichts gesendet:</strong> keine anderen Fotos, nicht Ihr Stammbaum und keine Gerätedaten. Unser Server gibt weder die App-Nummer noch eine andere Kennung an OpenAI weiter.</li>
+      <li><strong>Unser Server speichert die Inhalte nicht</strong>. Er leitet sie an OpenAI weiter und gibt die Antwort an Ihr Telefon zurück.</li>
+      <li><strong>OpenAI verarbeitet die Inhalte in unserem Auftrag</strong>, nach seinen Bedingungen zur Auftragsverarbeitung. Nach Angaben von OpenAI:
+        <ul>
+          <li>werden über seine API gesendete Daten nicht zum Training seiner Modelle genutzt;</li>
+          <li>können die Daten bis zu 30 Tage zur Missbrauchserkennung aufbewahrt werden und werden danach gelöscht, sofern das Gesetz keine längere Aufbewahrung verlangt.</li>
+        </ul>
+      </li>
+      <li><strong>Bricht die Verbindung ab</strong>, warten Erzählungen, Aufnahmen oder Grabfotos, deren Versand Sie bereits zugestimmt haben, auf dem Telefon. Solange Ihre Einwilligung besteht, werden sie automatisch gesendet, sobald die Verbindung zurück ist, während dieser Bildschirm offen ist, oder wenn Sie den Bildschirm wieder öffnen. Haben Sie die Einwilligung widerrufen, wird nichts Wartendes gesendet: Es bleibt auf dem Telefon, bis Sie auf „Erneut versuchen“ tippen und erneut zustimmen.</li>
+      <li><strong>KI macht Fehler.</strong> Prüfen Sie das Ergebnis, bevor Sie es speichern.</li>
+      <li><strong>Erzählungen und Fotos betreffen meist andere Menschen.</strong> Senden Sie nur, was Sie teilen dürfen. Seien Sie besonders vorsichtig mit Angaben über lebende Angehörige, vor allem über Kinder.</li>
+    </ul>
+    <p><strong>Spracherkennung durch Ihr Telefon.</strong> Während Sie sprechen, stammt der Text auf dem Bildschirm vom System Ihres Telefons. Kann es Sprache nicht auf dem Gerät erkennen, geht der Ton auch an den Spracherkennungsdienst des Telefons — auf iPhone und iPad an den von Apple, unter Android meist an den von Google —, nach der Datenschutzrichtlinie dieses Unternehmens. Die App weist Sie vorher darauf hin.</p>
+    <p><strong>Ergebnis melden.</strong> Auf dem Bildschirm der Fotorestaurierung und in „Biografie mit KI“ auf den Bildschirmen, auf denen Sie den Text prüfen oder zusammenführen, können Sie auf „Ergebnis melden“ tippen. Sie wählen einen Grund: beleidigend oder unangemessen; unwahr über die Person (Biografie); das Foto ist verzerrt (Restaurierung); oder Sonstiges. Sie können einen Kommentar mit bis zu 500 Zeichen hinzufügen. Vor dem Senden zeigt die App, was gesendet wird: die Funktion, der Grund und Ihr Kommentar. Das Foto und der Text der KI werden nicht gesendet. Unser Server erhält die Funktion, den Grund, den Kommentar (falls vorhanden) und die App-Nummer. Er bewahrt die Meldung 90 Tage auf und löscht sie dann. Wir nutzen Meldungen nur, um Beschwerden zu prüfen und die Filterung der KI-Funktionen zu verbessern.</p>
+
+    <h2>6. Friedhofsverzeichnis</h2>
+    <p>Das Friedhofsverzeichnis gehört zu den Versionen mit KI-Funktionen, auf iPhone, iPad und Android. Es ist kostenlos und braucht kein Abonnement.</p>
+    <p><strong>Die App kontaktiert unseren Server nur, wenn Sie etwas tun:</strong></p>
+    <ul>
+      <li>Sie wählen ein Land (die App lädt dann die Orte dieses Landes) oder tippen auf das Ortsfeld;</li>
+      <li>Sie geben den Namen eines Ortes oder Friedhofs ein;</li>
+      <li>Sie öffnen die Friedhofskarte oder suchen Friedhöfe in der Nähe eines Punktes;</li>
+      <li>Sie tippen auf die kleine Karte in einem Grabeintrag oder auf den Bestattungsort in einer Personenkarte, um ihn auf der Karte zu sehen;</li>
+      <li>Sie nehmen nach Ihrer Einwilligung in die KI Grabfotos auf (5.2).</li>
+    </ul>
+    <p>Das Öffnen eines Grabeintrags oder einer Personenkarte kontaktiert das Verzeichnis nicht.</p>
+    <p><strong>Was gesendet wird:</strong> nur das, was die Suche braucht, ohne die App-Nummer:</p>
+    <ul>
+      <li>Land und Sprache sowie Region und Ort;</li>
+      <li>die eingegebenen Namen;</li>
+      <li>die Verzeichnisnummer eines Friedhofs, der im Eintrag schon gewählt ist; oder</li>
+      <li>Koordinaten: ein Punkt auf der Karte oder der gespeicherte Ort eines Grabes, mit einem Suchradius. Bei Grabfotos außerdem die GPS-Genauigkeit und ob es das Grab eines Haustiers ist.</li>
+    </ul>
+    <p>Ihre IP-Adresse speichert unser Server nicht: Er nutzt sie nur im Arbeitsspeicher, um zu begrenzen, wie oft Anfragen kommen können.</p>
+    <p><strong>Wie unser Server antwortet.</strong> Er nutzt sein eigenes Verzeichnis, das aus OpenStreetMap-Daten erstellt ist. Ihre Suchanfragen und Koordinaten speichert er nicht. Nichts aus Ihrem Stammbaum gelangt in das Verzeichnis.</p>
+    <p><strong>Kartenbilder.</strong> Die Friedhofskarte und die kleine Karte im Grabeintrag laden Kartenbilder direkt von Servern der OpenStreetMap Foundation (Vereinigtes Königreich). Diese Server erhalten Ihre IP-Adresse, Name und Version der App und welche Kartenkacheln nötig sind. Die Bilder werden auf Ihrem Telefon gespeichert, damit sie nicht erneut geladen werden müssen.</p>
+
+    <h2>7. Abonnement und Zahlung</h2>
+    <p><strong>iPhone und iPad.</strong> Die Zahlung wickelt Apple ab. Wir erhalten nie Ihre Kartendaten, Ihren Namen, Ihre E-Mail-Adresse oder Ihren Apple Account.</p>
+    <p><em>Wie Ihr Kauf zu unserem Server gelangt:</em></p>
+    <ul>
+      <li>Nachdem Sie das Abonnement gekauft oder wiederhergestellt haben, und bei jeder Verlängerung übergibt Apple der App einen von Apple signierten Kaufnachweis.</li>
+      <li>Die App sendet diesen Nachweis zusammen mit den Verlängerungsangaben an unseren Server. Der Server prüft Apples Signatur und schaltet die KI-Funktionen für diese Installation frei.</li>
+      <li>Die App sendet den Nachweis auch beim Start, wenn ein Abonnement aktiv ist. Kennt unser Server Ihr Abonnement bei einer KI-Anfrage noch nicht, sendet die App den Nachweis erneut und wiederholt die Anfrage einmal.</li>
+    </ul>
+    <p><em>Was der signierte Nachweis enthält:</em> unter anderem die Kaufnummern, das Produkt, Kauf- und Ablaufdatum, das Store-Land, Preis und Währung sowie die App-Nummer der Installation, auf der gekauft wurde. Er kann auch einen technischen Wert enthalten, mit dem Apple prüft, dass der Nachweis zum Gerät gehört. Er enthält keinen Namen, keine E-Mail-Adresse, keinen Apple Account und keine Zahlungsdaten. Unser Server speichert nur, was unten aufgeführt ist.</p>
+    <p><em>Was unser Server speichert:</em></p>
+    <ul>
+      <li>die ursprüngliche Kaufnummer und das Produkt;</li>
+      <li>die Umgebung (echter Kauf oder Testkauf);</li>
+      <li>das Bezahlt-bis-Datum und das Ende der Nachfrist;</li>
+      <li>das Erstattungsdatum, falls es eine Erstattung gab;</li>
+      <li>ob sich das Abonnement automatisch verlängert;</li>
+      <li>die Zeitpunkte der Signaturen, das Datum, an dem Ihr Kontingentzeitraum begonnen hat, und einen internen Schlüssel für das gemeinsame KI-Kontingent;</li>
+      <li>wann der Datensatz angelegt und zuletzt aktualisiert wurde;</li>
+      <li>welche App-Nummern dieses Abonnement nutzen; zu jeder das Datum, an dem sie hinzukam, und das Datum, an dem sie zuletzt gesehen wurde (höchstens einmal am Tag aktualisiert).</li>
+    </ul>
+    <p><em>Benachrichtigungen von Apple:</em> Apple informiert unseren Server außerdem direkt über Verlängerungen, Zahlungsprobleme, Erstattungen und Ablauf. Unser Server aktualisiert den Abonnementdatensatz anhand dieser Benachrichtigungen. Von den Benachrichtigungen selbst speichern wir nur die Nummer der Benachrichtigung, ihren Typ und Untertyp und den Eingangszeitpunkt.</p>
+    <p><em>Ihre Geräte:</em></p>
+    <ul>
+      <li>Ein Abonnement gilt auf allen Ihren Geräten. Nutzen Sie auf einem neuen Gerät oder nach einer Neuinstallation „Käufe wiederherstellen“.</li>
+      <li>Das KI-Kontingent teilen sich alle Geräte eines Abonnements.</li>
+    </ul>
+    <p><em>Verwalten, Erstattungen und Kündigung:</em></p>
+    <ul>
+      <li>Verwalten oder kündigen können Sie das Abonnement in den Einstellungen Ihres Apple Accounts oder über „Abonnement verwalten“ in der App.</li>
+      <li>Erstattungen wickelt Apple ab.</li>
+      <li>Preis und Abrechnungszeitraum werden vor dem Kauf in der App und im App Store angezeigt. Es gilt Apples Standard-Lizenzvertrag für Endnutzer (EULA).</li>
+      <li>Kündigen Sie, wird nichts gelöscht. Projekte über den kostenlosen Grenzen sind bis zu einem erneuten Abonnement nur lesbar, und die KI-Funktionen enden.</li>
+    </ul>
+    <p><strong>Android.</strong> Kauf und Zahlung wickelt Google Play ab. Wir erhalten nie Ihre Kartendaten, Ihren Namen, Ihre E-Mail-Adresse oder Ihr Google-Konto.</p>
+    <p><em>Wie Ihr Kauf zu unserem Server gelangt:</em></p>
+    <ul>
+      <li>Wenn Sie das Abonnement kaufen, übergibt die App Google Play die App-Nummer als Kontokennung (Abschnitt 4).</li>
+      <li>Nach dem Kauf und beim Start, solange Sie abonniert haben, sendet die App unserem Server das Kauftoken, das Google Play ihr gegeben hat. Kennt unser Server Ihr Abonnement bei einer KI-Anfrage nicht, sendet die App das Token und wiederholt die Anfrage einmal.</li>
+      <li>Unser Server fragt Google Play (Google Play Developer API), ob das Abonnement aktiv ist, und schaltet, wenn ja, die KI-Funktionen für diese Installation frei. Er nutzt das Token nur für diese Prüfung und speichert es nicht.</li>
+    </ul>
+    <p><em>Was unser Server speichert:</em></p>
+    <ul>
+      <li>die Bestellnummer (die Bestell-ID von Google Play ohne die Endung, die Google bei jeder Verlängerung anhängt) und das Produkt;</li>
+      <li>ob es ein echter Kauf oder ein Testkauf ist;</li>
+      <li>wann das Abonnement begonnen hat (damit beginnt auch Ihr Kontingentzeitraum) und wann der bezahlte Zeitraum endet;</li>
+      <li>während einer Nachfrist, solange Google eine fehlgeschlagene Zahlung noch einzuziehen versucht: einen Zeitpunkt einen Tag nach der Prüfung, bis zu dem der Zugang offen bleibt;</li>
+      <li>meldet Google Play, dass das Abonnement vor dem Ende des bezahlten Zeitraums geendet hat (zum Beispiel nach einer Erstattung), den Zeitpunkt, zu dem es endete;</li>
+      <li>ob sich das Abonnement automatisch verlängert;</li>
+      <li>wann unser Server zuletzt bei Google Play nachgefragt hat, einen internen Schlüssel für das gemeinsame KI-Kontingent sowie wann der Datensatz angelegt und zuletzt aktualisiert wurde;</li>
+      <li>welche App-Nummern dieses Abonnement nutzen, mit denselben Daten wie beim App Store.</li>
+    </ul>
+    <p><em>Keine Benachrichtigungen von Google:</em> Echtzeit-Benachrichtigungen von Google Play nutzt unser Server nicht. Von Verlängerungen, Kündigungen und Erstattungen erfährt er erst, wenn die App das Token erneut sendet.</p>
+    <p><em>Ihre Geräte, Verwalten und Erstattungen:</em> Wie auf iPhone und iPad gilt ein Abonnement auf allen Ihren Geräten mit demselben Google-Konto, und sie teilen sich ein KI-Kontingent. Verwalten oder kündigen können Sie das Abonnement in Google Play oder über „Abonnement verwalten“ in der App. Erstattungen wickelt Google ab. Preis und Abrechnungszeitraum werden vor dem Kauf in der App und bei Google Play angezeigt. Kündigen Sie, wird nichts gelöscht, wie oben beschrieben.</p>
+
+    <h2 id="choices-de">8. Einwilligung und Widerruf</h2>
+    <ul>
+      <li><strong>Es gibt drei Einwilligungen:</strong>
+        <ul>
+          <li>„Von einer Person erzählen“ zusammen mit „Grabfotos“;</li>
+          <li>„Fotorestaurierung“;</li>
+          <li>„Biografie mit KI“.</li>
+        </ul>
+      </li>
+      <li>Jeder Einwilligungsbildschirm nennt, was gesendet wird. Ändert sich der Text, fragt die App erneut.</li>
+      <li><strong>Wenn eine Funktion nach Ihrer Zustimmung zum ersten Mal etwas sendet, registriert die App Ihre Einwilligung bei unserem Server.</strong> Der Nachweis enthält:
+        <ul>
+          <li>die App-Nummer und die Funktion;</li>
+          <li>die Ihnen gezeigten Datenkategorien;</li>
+          <li>den genannten Anbieter („OpenAI via Capybara“);</li>
+          <li>die App-Version, die Version des Textes und die Uhrzeit.</li>
+        </ul>
+      </li>
+      <li>Jeder Nachweis gilt 30 Tage. Ist er abgelaufen, registriert die App bei der nächsten Nutzung dieser Funktion einen neuen, ohne erneut zu fragen, bis Sie die Einwilligung widerrufen. Abgelaufene Nachweise werden automatisch innerhalb von etwa einer Stunde gelöscht.</li>
+      <li><strong>Widerruf jederzeit:</strong> Einstellungen → „Capybara AI“ → „Einwilligungen widerrufen“.
+        <ul>
+          <li>Das Telefon vergisst sofort alle KI-Einwilligungen. Keine KI-Funktion sendet etwas, bis Sie erneut zustimmen. Das gilt auch für Erzählungen, Aufnahmen und Grabfotos, die auf den Versand warteten: Sie bleiben auf Ihrem Telefon und werden nicht gesendet, bis Sie auf „Erneut versuchen“ tippen und erneut zustimmen.</li>
+          <li>Der Nachweis auf unserem Server wird in diesem Moment nicht gelöscht. Er wird nicht mehr genutzt und läuft innerhalb von 30 Tagen ab.</li>
+          <li>Was bereits in Ihrem Stammbaum ist, bleibt.</li>
+          <li>Der Widerruf kündigt nicht das Abonnement. Das kündigen Sie im Store.</li>
+        </ul>
+      </li>
+      <li>Die übrigen Vorteile des Abonnements (mehr Stammbäume, Personen und Dateien) hängen nicht von einer Einwilligung in die KI ab.</li>
+      <li>Den Zugriff von myDynasty auf Mikrofon, Kamera, Fotos und Standort können Sie außerdem in den Einstellungen Ihres Telefons abschalten.</li>
+    </ul>
+
+    <h2>9. Wer Daten in unserem Auftrag verarbeitet</h2>
+    <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Auftragsverarbeiter</th><th>Aufgabe</th><th>Ort</th><th>Was er sieht</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Hetzner Online GmbH (Deutschland)</td><td>betreibt unseren Server, seine Datenbank und die Backups seiner Festplatte</td><td>Nürnberg, Deutschland (EU)</td><td>alles, was unser Server erhält und speichert</td></tr>
+        <tr><td>Cloudflare, Inc. (USA)</td><td>überträgt die verschlüsselte Verbindung zwischen der App und unserem Server</td><td>weltweites Netz; Unternehmen mit Sitz in den USA</td><td>die IP-Adresse und die Anfrageadressen, einschließlich der Koordinaten und Suchbegriffe darin; während der Weiterleitung die Anfragen selbst, einschließlich der App-Nummer (Verzeichnisabfragen enthalten keine)</td></tr>
+        <tr><td>OpenAI OpCo, LLC (USA)</td><td>KI-Verarbeitung</td><td>USA sowie die von OpenAI aufgeführten Unterauftragsverarbeiter</td><td>nur die Inhalte, die Sie an KI-Funktionen senden, ohne die App-Nummer</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Jeder von ihnen verarbeitet die Daten nur nach unseren Weisungen gemäß seinen Bedingungen zur Auftragsverarbeitung und muss sie mindestens so gut schützen wie hier beschrieben.</p>
+    <p>Der Verantwortliche bewahrt außerdem Kopien unserer Serverdatenbank auf seinem eigenen Computer und seinem Backup-Laufwerk auf. Die Datenbank enthält nur die in Abschnitt 11 aufgeführten Einträge: keine Stammbäume, Erzählungen oder Fotos.</p>
+    <p>Apple, Google und die OpenStreetMap Foundation erbringen ihre Dienste Ihnen gegenüber nach ihren eigenen Bedingungen und Datenschutzerklärungen. Bei Google gehören dazu auch Google Play und die Google Play Developer API, über die unser Server ein Android-Abonnement prüft (Abschnitt 7), sowie die Google-Maps-Komponente in der Android-App (Abschnitt 3).</p>
+    <p>Wir nutzen keine eigenen Analyse-, Werbe-, Absturzberichts- oder Tracking-Dienste (zur Google-Maps-Komponente auf Android siehe Abschnitt 3). Wir verkaufen keine Daten, geben sie nicht für Werbung weiter und erstellen keine Profile. Wir treffen keine automatisierten Entscheidungen über Sie.</p>
+
+    <h2>10. Rechtsgrundlagen</h2>
+    <ul>
+      <li><strong>Einwilligung.</strong> Art. 6 Abs. 1 lit. a DSGVO; Art. 9 Abs. 2 lit. a DSGVO für sensible Angaben über Sie selbst, die Sie aufnehmen möchten; Art. 11 des ukrainischen Gesetzes „Über den Schutz personenbezogener Daten“. Darauf beruht das Senden von Inhalten an KI-Funktionen, einschließlich ihrer Übermittlung an OpenAI in den USA.</li>
+      <li><strong>Vertrag.</strong> Art. 6 Abs. 1 lit. b DSGVO. Darauf beruhen die Prüfung Ihres Abonnements, die App-Nummer und die Kontingentzähler sowie die Verzeichnissuchen, die Sie durchführen.</li>
+      <li><strong>Berechtigte Interessen.</strong> Art. 6 Abs. 1 lit. f DSGVO. Darauf beruhen der Schutz vor Missbrauch (Anfragelimits; bei Verzeichnisabfragen anhand der IP-Adresse, nur im Arbeitsspeicher), die Prüfung von Meldungen zu KI-Ergebnissen, die Beantwortung Ihrer Nachrichten an uns, Backups, technische Protokolle und die Namen von Angehörigen, die Sie in Gesendetes aufnehmen, beschränkt auf das, was die Funktion braucht. Sie können widersprechen, indem Sie uns schreiben.</li>
+      <li><strong>Daten auf Ihrem Gerät:</strong> die Haushaltsausnahme (Abschnitt 1).</li>
+      <li><strong>Angaben über Verstorbene.</strong> Die DSGVO gilt für sie nicht (Erwägungsgrund 27), manche Länder schützen sie aber durch nationales Recht. Wir gehen damit genauso sorgfältig um.</li>
+    </ul>
+
+    <h2>11. Speicherdauer</h2>
+    <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>Daten</th><th>Wo</th><th>Wie lange</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Inhalte für KI-Funktionen: Texte, Aufnahmen, Fotos, Fragetexte</td><td>unser Server</td><td>nicht gespeichert; nur während der Anfrage im Arbeitsspeicher</td></tr>
+        <tr><td>Restauriertes Foto</td><td>Arbeitsspeicher unseres Servers</td><td>bis die App es abholt, höchstens 10 Minuten nach Fertigstellung; ein nicht abgeschlossener Auftrag wird nach 15 Minuten verworfen</td></tr>
+        <tr><td>Dieselben Inhalte</td><td>OpenAI</td><td>bis zu 30 Tage (Missbrauchserkennung), nach Angaben von OpenAI</td></tr>
+        <tr><td>Koordinaten, Verzeichnissuchen, Kontingentabfragen, IP-Adressen, Kauftokens von Google Play</td><td>unser Server</td><td>nicht gespeichert</td></tr>
+        <tr><td>App-Nummer mit dem Datum der ersten und letzten Nutzung (eine Einwilligung, eine KI-Anfrage oder eine Kontingentabfrage)</td><td>unser Server</td><td>12 Monate nach der letzten Nutzung</td></tr>
+        <tr><td>Einwilligungsnachweise</td><td>unser Server</td><td>je 30 Tage, danach innerhalb von etwa einer Stunde gelöscht; früher, wenn die App-Nummer gelöscht wird</td></tr>
+        <tr><td>Nutzungseinträge: App-Nummer, Funktion, Zeit und Umfang in Zeichen, ohne Inhalt</td><td>unser Server</td><td>3 Tage</td></tr>
+        <tr><td>Monatliche KI-Kostensummen: App-Nummer oder Abonnement, Monat, Betrag</td><td>unser Server</td><td>31 Tage ab Beginn des jeweiligen Monatszeitraums (bis zu 3 Tage nach seinem Ende)</td></tr>
+        <tr><td>Monatliche Zähler der Fotorestaurierung</td><td>unser Server</td><td>alle Zähler einer App-Nummer oder eines Abonnements werden zusammen gelöscht, spätestens 12 Monate nach der letzten Restaurierung</td></tr>
+        <tr><td>Abonnementdaten (App Store und Google Play) und die damit verknüpften App-Nummern</td><td>unser Server</td><td>12 Monate nach Ende des Abonnements (Ablauf nach der Nachfrist oder ein früheres Ende, zum Beispiel eine Erstattung)</td></tr>
+        <tr><td>Apple-Benachrichtigungen: Nummer, Typ und Untertyp, Zeitpunkt</td><td>unser Server</td><td>12 Monate</td></tr>
+        <tr><td>Meldungen zu KI-Ergebnissen: Funktion, Grund, Ihr Kommentar, App-Nummer</td><td>unser Server</td><td>90 Tage, danach gelöscht</td></tr>
+        <tr><td>Nachrichten aus „Schreiben Sie uns“: Text, E-Mail-Adresse für eine Antwort (falls angegeben), Sprache und Version der App, Plattform, App-Nummer</td><td>unser Server</td><td>12 Monate, danach gelöscht; früher, wenn Sie Ihre Daten vom Server löschen</td></tr>
+        <tr><td>Technische Protokolle des Servers, ohne Inhalte</td><td>unser Server</td><td>bis zu 30 Tage</td></tr>
+        <tr><td>Backups der Serverdatenbank</td><td>unser Server, der Backup-Dienst von Hetzner, eigener Computer und eigenes Backup-Laufwerk des Verantwortlichen</td><td>bis zu 30 Tage</td></tr>
+        <tr><td>Ihre E-Mails an uns</td><td>Postfach</td><td>bis zu 24 Monate; länger nur für einen offenen Vorgang oder wenn das Gesetz es verlangt</td></tr>
+        <tr><td>Alles in der App</td><td>Ihr Gerät</td><td>bis Sie es löschen oder die App deinstallieren; eine wartende Aufnahme (iPhone und iPad) wird gelöscht, sobald sie älter als 7 Tage ist, beim nächsten Öffnen ihres Bildschirms; ein restauriertes Foto, das ohne geöffneten Bildschirm angekommen ist, wird gelöscht, sobald es älter als 30 Tage ist, bei der nächsten Prüfung auf restaurierte Fotos</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p>Backups enthalten Kopien der oben genannten Servereinträge. Ein aus der Datenbank gelöschter Eintrag kann daher noch bis zu 30 Tage in einem Backup verbleiben.</p>
+    <p>Betriebsstatistiken ohne App-Nummer (Dauer und Ergebnis von KI-Aufrufen, Tagesgesamtkosten) sind keine personenbezogenen Daten.</p>
+
+    <h2>12. Übermittlungen außerhalb der EU</h2>
+    <ul>
+      <li>Unser Server steht in der EU (Deutschland).</li>
+      <li>OpenAI und Cloudflare sind US-Unternehmen. Ihre Bedingungen zur Auftragsverarbeitung enthalten die EU-Standardvertragsklauseln für Übermittlungen außerhalb der EU. Nach ukrainischem Recht beruht die Übermittlung von KI-Inhalten an OpenAI auf Ihrer Einwilligung.</li>
+      <li>Der Verantwortliche hat seinen Wohnsitz in der Ukraine, für die kein Angemessenheitsbeschluss der EU besteht. Er verwaltet den Server und bewahrt die Backups auf.</li>
+      <li>Apple und Google nutzen eigene Übermittlungsmechanismen.</li>
+    </ul>
+
+    <h2>13. Kinder</h2>
+    <p>Die App richtet sich nicht an Kinder. KI-Funktionen und das Abonnement sind für Personen ab 13 Jahren. In manchen Ländern legt das Recht ein höheres Alter für die Einwilligung in Online-Dienste fest, in einigen EU-Ländern bis 16. Wer jünger ist, braucht die Erlaubnis eines Elternteils oder Vormunds.</p>
+    <p>Wir erheben wissentlich keine Daten von Kindern unterhalb dieser Altersgrenzen. Wenn Sie glauben, dass ein Kind KI-Funktionen ohne Erlaubnis genutzt hat, schreiben Sie uns. Wir löschen dann die Einträge dieser App-Nummer.</p>
+
+    <h2>14. Sicherheit</h2>
+    <ul>
+      <li><strong>Auf dem Gerät.</strong> Die Daten liegen im privaten Speicherbereich der App. Wenn eine Bildschirmsperre eingerichtet ist, schützt sie die Verschlüsselung des Systems. Eine zusätzliche eigene Verschlüsselung ihrer Datenbank fügt die App nicht hinzu. Schützen Sie Ihr Gerät mit einem Code oder biometrisch.</li>
+      <li><strong>Verbindungen zu unserem Server sind verschlüsselt:</strong> vom Gerät zu Cloudflare und von Cloudflare zu unserem Server über einen verschlüsselten Tunnel. Anfragen der App nimmt unser Server nur über diesen Tunnel an. Seine Datenbank und seine Verwaltungsfunktionen sind aus dem Internet nicht erreichbar.</li>
+      <li><strong>Was unser Server enthält.</strong> Nur die Einträge aus Abschnitt 11: keine Stammbäume oder Erzählungen und keine Namen, außer Sie schreiben sie in den Kommentar einer Meldung.</li>
+    </ul>
+
+    <h2>15. Ihre Rechte</h2>
+    <ul>
+      <li><strong>Auf Ihrem Gerät.</strong> Sie können Ihre Daten in der App ansehen, berichtigen, löschen und exportieren (GEDCOM, LRV, SVG, PNG). Das Deinstallieren der App löscht alles.</li>
+      <li><strong>Auf unserem Server.</strong> Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Einwilligungen können Sie jederzeit widerrufen (Abschnitt 8).</li>
+      <li><strong>Wie wir Ihre Einträge finden.</strong> Wir wissen nicht, wer Sie sind, und finden Ihre Einträge daher nur über die App-Nummer — auf Android auch über die Google-Play-Bestellnummer (Abschnitt 7). Die Nummer müssen Sie nicht kennen: Löschen Sie Ihre Einträge mit der Schaltfläche in der App, oder bitten Sie mit „Schreiben Sie uns“ um Auskunft oder Berichtigung (geben Sie eine E-Mail-Adresse an, damit wir antworten können) — die App-Nummer wird dabei von selbst mitgesendet (Abschnitt 4). Sie können auch an <a href="mailto:mydynastyapp.team@gmail.com">mydynastyapp.team@gmail.com</a> schreiben. Wir antworten innerhalb eines Monats.</li>
+      <li><strong>Beschwerden:</strong>
+        <ul>
+          <li>EU/EWR: die Datenschutzaufsichtsbehörde Ihres Landes (Liste: <a href="https://edpb.europa.eu/about-edpb/about-edpb/members_en">https://edpb.europa.eu/about-edpb/about-edpb/members_en</a>);</li>
+          <li>Vereinigtes Königreich: das ICO (<a href="https://ico.org.uk/make-a-complaint/">https://ico.org.uk/make-a-complaint/</a>);</li>
+          <li>Ukraine: der Menschenrechtsbeauftragte des ukrainischen Parlaments (<a href="https://ombudsman.gov.ua/">https://ombudsman.gov.ua/</a>).</li>
+        </ul>
+      </li>
+      <li><strong>Kalifornien.</strong> Wir verkaufen oder teilen keine personenbezogenen Informationen und nutzen sie nicht für Werbung. Die Kategorien sind:
+        <ul>
+          <li>Kennungen: die App-Nummer und Ihre E-Mail-Adresse, wenn Sie sie in „Schreiben Sie uns“ angeben;</li>
+          <li>kommerzielle Informationen: Abonnementdaten;</li>
+          <li>Audio-, Bild- und sonstige Inhalte: verarbeitet wie in Abschnitt 5 beschrieben und bei uns nicht gespeichert, außer dem Kommentar einer Meldung zu einem KI-Ergebnis (90 Tage) und den mit „Schreiben Sie uns“ gesendeten Nachrichten (12 Monate).</li>
+        </ul>
+        <p>Für Auskunft, Löschung oder Berichtigung schreiben Sie uns.</p>
+      </li>
+    </ul>
+
+    <h3 id="delete-de">So löschen Sie Ihre Daten</h3>
+    <ol>
+      <li><strong>Auf Ihrem Telefon.</strong> Löschen Sie eine Person, ein Foto oder einen ganzen Stammbaum in der App oder deinstallieren Sie myDynasty: Alles, was auf dem Telefon gespeichert ist, wird mitgelöscht. Wir haben keine Kopie.</li>
+      <li><strong>Nichts mehr senden.</strong> Einstellungen → „Capybara AI“ → „Einwilligungen widerrufen“ (Abschnitt 8).</li>
+      <li><strong>Datensätze auf unserem Server.</strong> Einstellungen → „Capybara AI“ → „Meine Daten vom Server löschen“. Unser Server löscht sofort alles, was mit dieser App verknüpft ist: die App-Nummer, Einwilligungsdatensätze, KI-Zähler, Meldungen zu KI-Ergebnissen, Ihre Nachrichten an uns und die Verknüpfung dieses Telefons mit dem Abonnement. Die App erhält danach eine neue Nummer. Ihr Abonnementdatensatz und sein monatliches KI-Kontingent bleiben erhalten: Sie gehören zum Kauf im Store, nicht zur App, und ihre Löschung würde das Kontingent vernichten, für das Sie bezahlt haben. Die App verknüpft das Abonnement von selbst wieder. Der Abonnementdatensatz wird 12 Monate nach dem Ende des Abonnements gelöscht. Sie sehen die Schaltfläche nicht (eine Version ohne KI-Funktionen, oder die App wurde neu installiert)? Schreiben Sie mit den Worten „Meine Daten löschen“ an <a href="mailto:mydynastyapp.team@gmail.com">mydynastyapp.team@gmail.com</a>; auf Android fügen Sie die Google-Play-Bestellnummer (sie beginnt mit GPA.) aus der Kaufbestätigung von Google hinzu. Wir löschen und bestätigen es innerhalb eines Monats.</li>
+      <li><strong>Ohne Anfrage.</strong> Der Server löscht die App-Nummer und alles damit Verknüpfte 12 Monate nach der letzten Nutzung, eine mit einem Abonnement verknüpfte App-Nummer 12 Monate nach dem Ende des Abonnements, Meldungen nach 90 Tagen, Nachrichten an uns nach 12 Monaten, Einwilligungen mit ihrem Ablauf (Abschnitt 11).</li>
+      <li><strong>Abonnement.</strong> Kündigen Sie es in den Einstellungen Ihres Apple-Accounts oder in Google Play. Apple und Google bewahren ihre eigenen Zahlungsdaten nach ihren eigenen Regeln auf.</li>
+    </ol>
+    <p><strong>Was nach dem Löschen noch eine Weile bleibt:</strong> Kopien in Server-Backups und technischen Protokollen bis zu 30 Tage; bereits an OpenAI gesendete Inhalte bis zu 30 Tage, laut OpenAI; Ihre E-Mails an uns bis zu 24 Monate; Zahlungsdaten bei Apple und Google nach deren eigenen Regeln.</p>
+
+    <h2>16. Die Website mydynasty.app</h2>
+    <p>Die Website ist von der App getrennt.</p>
+    <ul>
+      <li><strong>Hosting.</strong> Die Website wird auf GitHub Pages (GitHub, Inc., USA) gehostet. GitHub erhält Ihre IP-Adresse und technische Anfragedaten, wenn Sie eine Seite öffnen.</li>
+      <li><strong>Schriften.</strong> Die Seiten laden ihre Schrift von Google Fonts. Ihr Browser sendet deshalb beim Öffnen einer Seite Ihre IP-Adresse an Google.</li>
+      <li><strong>Analyse.</strong> Google Analytics 4 läuft nur, wenn Sie Analyse-Cookies im Banner erlauben. Ein Global-Privacy-Control-Signal Ihres Browsers gilt als Ablehnung. Ihre Wahl wird in Ihrem Browser gespeichert.</li>
+    </ul>
+    <p>Die App enthält kein Google Analytics.</p>
+
+    <h2>17. Änderungen dieser Erklärung</h2>
+    <p>Ändert sich diese Erklärung, aktualisieren wir das Datum oben. Würden durch eine Änderung mehr oder andere Daten Ihr Gerät verlassen, zeigt die betroffene KI-Funktion ihren Einwilligungsbildschirm erneut, bevor sie etwas sendet.</p>
+
+    <h2>18. Kontakt</h2>
+    <p><a href="mailto:mydynastyapp.team@gmail.com">mydynastyapp.team@gmail.com</a> · <a href="https://mydynasty.app">https://mydynasty.app</a> · <a href="https://mydynasty.app/privacy">https://mydynasty.app/privacy</a></p>
+
+    <p class="meta">Frühere Fassung: <a href="/privacy-2026-10-06.html">Datenschutzerklärung vom 6.&nbsp;Oktober&nbsp;2026</a></p>
+
+  </section>
+
+  <footer>
+    <div>&copy; 2026 myDynasty</div>
+    <div><a href="/">mydynasty.app</a> · <a href="mailto:mydynastyapp.team@gmail.com">mydynastyapp.team@gmail.com</a></div>
+  </footer>
+</div>
+
+<script>
+  (function () {
+    document.querySelectorAll('.lang-switch button').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        try { localStorage.setItem('mydynasty.privacy.lang', btn.dataset.lang); } catch (e) {}
+        location.href = btn.dataset.lang === 'en' ? '/privacy' : '/' + btn.dataset.lang + '/privacy';
+      });
+    });
+    var lang = document.documentElement.getAttribute('lang');
+    function openChoices() {
+      var m = /^#(choices|delete)(?:-\w+)?$/.exec(location.hash);
+      if (!m) return;
+      var target = document.getElementById(lang === 'en' ? m[1] : m[1] + '-' + lang);
+      if (target) target.scrollIntoView();
+    }
+    openChoices();
+    window.addEventListener('hashchange', openChoices);
+  })();
+</script>
+
+</body>
+</html>

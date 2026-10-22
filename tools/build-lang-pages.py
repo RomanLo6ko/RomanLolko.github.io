@@ -108,7 +108,9 @@ def build(html, dicts, lang):
     # Шапка: язык, описание, OG, canonical, hreflang, JSON-LD.
     out = re.sub(r'<html lang="[^"]*">', f'<html lang="{lang}">', out, count=1)
     out = re.sub(r'<meta name="description" content="[^"]*">', f'<meta name="description" content="{esc(DESC[lang])}">', out, count=1)
-    out = re.sub(r'<link rel="canonical" href="[^"]*">', f'<link rel="canonical" href="{page_url(lang)}">' + alternates(), out, count=1)
+    # 🔑 Вместе с прежними hreflang: иначе каждый запуск дописывал корню ещё один набор (найдено 23.10.2026 — на сайте их было три).
+    out = re.sub(r'<link rel="canonical" href="[^"]*">(?:<link rel="alternate"[^>]*>)*',
+                 lambda m: f'<link rel="canonical" href="{page_url(lang)}">' + alternates(), out, count=1)
     out = re.sub(r'<meta property="og:url" content="[^"]*">', f'<meta property="og:url" content="{page_url(lang)}"><meta property="og:locale" content="{OG_LOCALE[lang]}">', out, count=1)
     out = re.sub(r'<meta property="og:title" content="[^"]*">', f'<meta property="og:title" content="{esc(d["meta.title"])}">', out, count=1)
     out = re.sub(r'<meta property="og:description" content="[^"]*">', f'<meta property="og:description" content="{esc(DESC[lang])}">', out, count=1)
@@ -121,6 +123,8 @@ def build(html, dicts, lang):
     # Снимки — сразу своего языка; относительные пути — от корня (страница лежит в /xx/).
     out = re.sub(r'(data-shot="([^"]+)" src=")screens/en/', lambda m: m.group(1) + f"screens/{lang}/", out)
     out = re.sub(r'((?:src|href)=")(?!https?:|#|/|mailto:|data:)', r"\1/", out)
+    # Политика — на языке страницы (tools/build-privacy-pages.py, 23.10.2026).
+    out = out.replace('href="/privacy.html"', f'href="/{lang}/privacy"')
     # Язык страницы — скрипту (меню ведёт на адрес языка, а не переводит на месте).
     out = re.sub(r"<script>window\.MD_PAGE_LANG='\w+';</script>\n", "", out)
     out = out.replace("</head>", f"<script>window.MD_PAGE_LANG='{lang}';</script>\n</head>", 1)

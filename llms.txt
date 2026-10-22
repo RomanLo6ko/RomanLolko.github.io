@@ -38,7 +38,7 @@
   consent can be withdrawn in Settings.
 
 ## Privacy
-- [Privacy Policy (6 languages)](https://mydynasty.app/privacy)
+- [Privacy Policy (all 6 languages on one page)](https://mydynasty.app/privacy) — the same policy one language per page: [Español](https://mydynasty.app/es/privacy), [Français](https://mydynasty.app/fr/privacy), [Deutsch](https://mydynasty.app/de/privacy), [Русский](https://mydynasty.app/ru/privacy), [Українська](https://mydynasty.app/uk/privacy)
 - [Terms of Use](https://mydynasty.app/terms.html)
 - Contact: mydynastyapp.team@gmail.com
 

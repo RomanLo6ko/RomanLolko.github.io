@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Политика конфиденциальности — 24:15</title>
+<meta name="description" content="Политика конфиденциальности приложения 24:15 — архива работ исполнителя по уходу за могилами.">
+<link rel="canonical" href="https://mydynasty.app/2415/privacy">
+<meta name="robots" content="index,follow">
+<link rel="icon" type="image/png" href="../logo.png">
+<style>
+  :root {
+    --bg: #fff8f0;
+    --ink: #2a221d;
+    --ink-soft: #5a4a3f;
+    --accent: #b8722a;
+    --accent-soft: #e9c69a;
+    --line: #ebd9c4;
+    --card: #fffbf5;
+    --shadow: 0 4px 24px rgba(80, 50, 20, 0.06);
+    --radius: 14px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 40px 24px 80px;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 36px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--ink);
+  }
+
+  .brand img {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+  }
+
+  .brand-name {
+    font-weight: 800;
+    font-size: 20px;
+    letter-spacing: -0.01em;
+  }
+
+  .lang-switch {
+    display: inline-flex;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    overflow: hidden;
+    background: var(--card);
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .lang-switch button {
+    border: 0;
+    background: transparent;
+    color: var(--ink-soft);
+    padding: 8px 16px;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .lang-switch button.is-active {
+    background: var(--accent);
+    color: #fff;
+  }
+
+  h1 {
+    font-size: clamp(28px, 5vw, 38px);
+    font-weight: 800;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin: 0 0 8px;
+  }
+
+  .meta {
+    color: var(--ink-soft);
+    font-size: 14px;
+    margin: 0 0 32px;
+  }
+
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    margin: 40px 0 12px;
+    letter-spacing: -0.01em;
+  }
+
+  h3 {
+    font-size: 17px;
+    font-weight: 700;
+    margin: 24px 0 8px;
+    color: var(--ink);
+  }
+
+  p, li {
+    font-size: 16px;
+    color: var(--ink);
+  }
+
+  ul {
+    padding-left: 22px;
+  }
+
+  ul li {
+    margin-bottom: 6px;
+  }
+
+  strong {
+    font-weight: 700;
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  a:hover {
+    color: #8a4f10;
+  }
+
+  .summary {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    box-shadow: var(--shadow);
+    margin: 0 0 32px;
+  }
+
+  .summary p:first-child { margin-top: 0; }
+  .summary p:last-child  { margin-bottom: 0; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 24px;
+    font-size: 15px;
+    background: var(--card);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+
+  th, td {
+    text-align: left;
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+  }
+
+  th {
+    background: #f6e9d5;
+    font-weight: 700;
+    color: var(--ink);
+    font-size: 14px;
+  }
+
+  tr:last-child td { border-bottom: 0; }
+
+  td code {
+    font-family: 'SF Mono', 'Menlo', 'Consolas', monospace;
+    font-size: 13px;
+    background: #f5e7d0;
+    color: #6a3e10;
+    padding: 1px 6px;
+    border-radius: 4px;
+  }
+
+  footer {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    color: var(--ink-soft);
+    font-size: 13px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .lang-content { display: none; }
+  .lang-content.is-active { display: block; }
+
+  .summary h2 { margin-top: 0; }
+  .summary ul:last-child { margin-bottom: 0; }
+  .lang-content { overflow-wrap: break-word; }
+  .table-wrap { overflow-x: auto; margin: 16px 0 24px; border-radius: var(--radius); box-shadow: var(--shadow); }
+  .table-wrap table { margin: 0; box-shadow: none; }
+  th, td { -webkit-hyphens: auto; hyphens: auto; }
+
+  @media (max-width: 560px) {
+    .page { padding: 24px 16px 60px; }
+    table { font-size: 14px; }
+    th, td { padding: 10px 10px; }
+    header { flex-wrap: wrap; }
+    .lang-switch { flex-shrink: 0; }
+    .lang-switch button { padding: 8px 10px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+<section lang="ru">
+<h1>Политика конфиденциальности приложения 24:15</h1>
+<p class="meta">Действует с 24&nbsp;октября&nbsp;2026 · Версия 1.0<br>Относится к приложению 24:15 для iPhone (app.mydynasty.acts2415) — архиву работ исполнителя по уходу за могилами.</p>
+
+<div class="summary">
+<p><strong>Коротко.</strong> 24:15 — ваш архив работ: снимки могилы «до» и «после», комментарий и место на карте. Всё это хранится на нашем сервере, чтобы архив не пропал вместе с телефоном. Вы входите через свой Apple ID; имя и почту мы не запрашиваем. Рекламы, аналитики и слежки нет, данные мы не продаём. Аккаунт и все работы можно удалить в самом приложении.</p>
+</div>
+
+<h2>1. Кто отвечает</h2>
+<p>Оператор данных — Роман Лобко, частное лицо, Украина. Связь по любым вопросам, в том числе о данных: <a href="mailto:mydynastyapp.team@gmail.com">mydynastyapp.team@gmail.com</a>.</p>
+
+<h2>2. Какие данные и зачем</h2>
+<div class="table-wrap"><table>
+<tr><th>Данные</th><th>Откуда</th><th>Зачем</th></tr>
+<tr><td>Номер пользователя Apple (случайный идентификатор, который Apple выдаёт для нашего приложения)</td><td>«Войти с Apple»</td><td>Узнать вас при следующем входе. Имя и электронную почту мы у Apple не запрашиваем.</td></tr>
+<tr><td>Страна телефона (двухбуквенный код региона)</td><td>Настройки телефона</td><td>Отметить, в какой стране вы работаете.</td></tr>
+<tr><td>Псевдоним и фото профиля — по желанию</td><td>Вы сами</td><td>Подпись к вашим работам для других исполнителей и владельца сервиса.</td></tr>
+<tr><td>Снимки работы «до» и «после», время и координаты каждого снимка, комментарий</td><td>Камера и геолокация телефона в момент съёмки</td><td>Ваш архив и метка работы на карте. Время и место нужны, чтобы проверить, что снимок сделан у могилы, а не взят откуда-то ещё.</td></tr>
+<tr><td>Технический ключ входа и сессии</td><td>Приложение и сервер</td><td>Чтобы не входить заново при каждом запуске. Хранится в связке ключей iPhone.</td></tr>
+</table></div>
+<p>Геолокация используется только в момент снимка и когда вы сами нажимаете «моё местоположение». В фоне приложение за вами не следит. Снимки работ делаются только камерой; галерея нужна лишь для фото профиля и своих обоев.</p>
+
+<h2>3. Кто видит ваши работы</h2>
+<p>Свои работы видите вы и владелец сервиса — он проверяет новые профили. После проверки ваши опубликованные работы с псевдонимом видят на карте другие проверенные исполнители 24:15. Черновики не видит никто, кроме вас и владельца. Публично в интернете работы не публикуются.</p>
+
+<h2>4. Где хранятся данные</h2>
+<p>На нашем сервере «Capybara» в дата-центре Hetzner в Германии; соединение идёт через сеть Cloudflare по HTTPS. Обработчики действуют по нашему поручению на условиях своих соглашений об обработке данных. Искусственный интеллект в 24:15 не используется, данные третьим лицам не передаются и не продаются.</p>
+
+<h2>5. Сколько храним и как удалить</h2>
+<p>Работы хранятся, пока вы их не удалите. Отдельную работу можно удалить на её странице. В профиле есть кнопка «Удалить аккаунт»: она удаляет все ваши работы, снимки, фото профиля и псевдоним, а номер Apple стирается. Из резервных копий базы данные исчезают не позднее чем через 30 дней. Можно также написать нам на почту — удалим вручную.</p>
+
+<h2>6. Ваши права</h2>
+<p>Вы можете узнать, какие данные о вас хранятся, исправить их, получить копию, ограничить обработку или удалить их, а также пожаловаться в надзорный орган по защите данных своей страны. Пишите на <a href="mailto:mydynastyapp.team@gmail.com">mydynastyapp.team@gmail.com</a>.</p>
+
+<h2>7. Возраст</h2>
+<p>24:15 предназначено для взрослых исполнителей работ и не рассчитано на детей младше 16 лет.</p>
+
+<h2>8. Изменения</h2>
+<p>Если политика изменится, новая версия появится на этой странице с новой датой, а прежняя останется доступна по ссылке.</p>
+</section>
+
+<hr>
+
+<section lang="en">
+<h1>24:15 Privacy Policy</h1>
+<p class="meta">Effective 24&nbsp;October&nbsp;2026 · Version 1.0<br>Applies to the 24:15 app for iPhone (app.mydynasty.acts2415), a work archive for grave-care providers.</p>
+<div class="summary"><p><strong>In short.</strong> 24:15 keeps your work archive: "before" and "after" photos of a grave, a comment and a place on the map, stored on our server so the archive survives a lost phone. You sign in with your Apple ID; we do not request your name or e-mail. No ads, no analytics, no tracking, no sale of data. You can delete your account and all your work inside the app.</p></div>
+<h2>1. Who is responsible</h2><p>Controller: Roman Lobko, a private individual resident in Ukraine. Contact: <a href="mailto:mydynastyapp.team@gmail.com">mydynastyapp.team@gmail.com</a>.</p>
+<h2>2. What we process and why</h2>
+<p>Your Apple user identifier (a random ID Apple issues for our app) to recognise you; your phone's region code; an optional nickname and profile photo shown with your work; "before"/"after" photos with the time and coordinates of each photo and your comment, for your archive and the map pin and to check that a photo was taken at the grave; a technical sign-in key kept in the iPhone keychain. Location is used only when you take a photo or tap "my location"; never in the background. Work photos come from the camera only.</p>
+<h2>3. Who sees your work</h2><p>You and the service owner, who reviews new profiles. After review, your published work with your nickname is visible on the map to other reviewed 24:15 providers. Nothing is published on the open internet.</p>
+<h2>4. Where data is stored</h2><p>On our server "Capybara" at Hetzner in Germany, reached over HTTPS through Cloudflare, both acting for us under their data processing terms. 24:15 uses no AI; data is not shared with or sold to third parties.</p>
+<h2>5. Retention and deletion</h2><p>Kept until you delete it. Delete a single work on its page, or use "Delete account" in your profile to remove all your work, photos, profile photo and nickname and erase your Apple identifier. Database backups drop deleted data within 30 days. You can also e-mail us.</p>
+<h2>6. Your rights</h2><p>Access, correction, copy, restriction, deletion, and complaint to your data-protection authority. Write to <a href="mailto:mydynastyapp.team@gmail.com">mydynastyapp.team@gmail.com</a>.</p>
+<h2>7. Age</h2><p>24:15 is for adult providers and is not intended for children under 16.</p>
+<h2>8. Changes</h2><p>A new version will appear on this page with a new date; the previous one stays available by link.</p>
+</section>
+
+</div>
+</body>
+</html>

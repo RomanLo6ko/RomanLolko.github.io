@@ -309,7 +309,7 @@
       <li>les photos, documents et autres fichiers des Archives ;</li>
       <li>les lieux et coordonnées de naissance, de résidence et de sépulture ;</li>
       <li>les brouillons des fonctions d’IA : ce que vous avez dicté, les réponses reçues et les photos de tombes ;</li>
-      <li>un enregistrement vocal qui n’a pas encore été envoyé (iPhone et iPad). Il est supprimé dès qu’il a été envoyé. S’il date de plus de 7 jours, il est supprimé la prochaine fois que vous ouvrez l’écran où vous l’avez enregistré ;</li>
+      <li>un enregistrement vocal qui n’a pas encore été envoyé. Il est supprimé dès qu’il a été envoyé. S’il date de plus de 7 jours, il est supprimé la prochaine fois que vous ouvrez l’écran où vous l’avez enregistré ;</li>
       <li>une photo restaurée arrivée après que vous avez quitté l’écran. Elle attend que vous ouvriez à nouveau cette photo. Une fois qu’elle date de plus de 30 jours, l’application la supprime lors de sa prochaine vérification des photos restaurées ;</li>
       <li>les réglages, vos choix en matière de consentement et le numéro d’application (section 4).</li>
     </ul>
@@ -382,11 +382,11 @@
 
     <h2>5. Fonctions d’IA (« Capybara AI »)</h2>
     <p>Les fonctions d’IA sont disponibles sur iPhone, iPad et Android avec l’abonnement myDynasty Premium. Sans l’abonnement, l’application ne les affiche pas.</p>
-    <p>Avant qu’une fonction n’envoie quoi que ce soit pour la première fois, elle affiche un écran de consentement. Cet écran énumère ce qui sera envoyé et nomme notre serveur « Capybara » et OpenAI. Rien n’est envoyé à notre serveur ni à OpenAI tant que vous n’avez pas donné votre accord (section 8). La reconnaissance vocale propre à votre téléphone fonctionne dès que vous touchez le micro ; voir « Reconnaissance vocale par votre téléphone » ci-dessous.</p>
+    <p>Avant qu’une fonction n’envoie quoi que ce soit pour la première fois, elle affiche un écran de consentement. Cet écran énumère ce qui sera envoyé et nomme notre serveur « Capybara » et OpenAI. Rien n’est envoyé à notre serveur ni à OpenAI tant que vous n’avez pas donné votre accord (section 8). Sur iPhone et iPad, et sur Android dans « Biographie avec l’IA », la reconnaissance vocale propre à votre téléphone fonctionne dès que vous touchez le micro ; voir « Reconnaissance vocale par votre téléphone » ci-dessous.</p>
     <p><strong>5.1 Parler d’une personne.</strong> Vous parlez d’un proche. L’IA remplit la fiche et peut poser des questions complémentaires à voix haute.</p>
     <ul>
       <li>Sur iPhone et iPad, l’application envoie l’enregistrement vocal (audio compressé) et la langue que vous avez choisie, pour reconnaître la parole, puis le texte du récit — reconnu à partir de l’enregistrement ou, en cas d’échec, par votre téléphone. Après la reconnaissance, l’enregistrement est supprimé du téléphone.</li>
-      <li>Sur Android, l’application ne fait aucun enregistrement et n’envoie jamais d’audio à notre serveur. Elle envoie le texte du récit tel que votre téléphone l’a reconnu, ainsi que la langue que vous avez choisie.</li>
+      <li>Sur Android, l’application envoie l’enregistrement vocal (audio compressé) et la langue que vous avez choisie, pour reconnaître la parole, puis le texte du récit reconnu à partir de l’enregistrement. Le téléphone lui-même ne reconnaît pas le récit, il n’y a donc pas de texte du téléphone en secours : si la reconnaissance échoue, l’enregistrement attend sur le téléphone jusqu’à 7 jours ou jusqu’à ce que vous touchiez « Réessayer ». Après la reconnaissance, l’enregistrement est supprimé du téléphone.</li>
       <li><strong>Les questions complémentaires</strong> — devant une tombe, et lorsque l’IA a besoin de savoir quel est le lien de parenté entre la personne et quelqu’un de votre récit — sont lues à voix haute par une voix d’OpenAI. Le texte de la question, qui peut contenir des noms que vous avez mentionnés, est envoyé à OpenAI pour être converti en parole.</li>
       <li>La personne n’apparaît dans votre arbre qu’après que vous avez vérifié la fiche et touché « Enregistrer ».</li>
     </ul>
@@ -443,7 +443,7 @@
       <li><strong>L’IA fait des erreurs.</strong> Vérifiez le résultat avant de l’enregistrer.</li>
       <li><strong>Les récits et les photos concernent généralement d’autres personnes.</strong> N’envoyez que ce que vous êtes en droit de partager. Faites particulièrement attention aux informations concernant des proches vivants, en particulier des enfants.</li>
     </ul>
-    <p><strong>Reconnaissance vocale par votre téléphone.</strong> Pendant que vous parlez, le texte à l’écran est produit par le système propre à votre téléphone. S’il ne peut pas reconnaître la parole sur l’appareil, le son est aussi envoyé au service de reconnaissance vocale du téléphone — celui d’Apple sur iPhone et iPad, généralement celui de Google sur Android — conformément à la politique de confidentialité de cette entreprise. L’application vous en avertit au préalable.</p>
+    <p><strong>Reconnaissance vocale par votre téléphone.</strong> Pendant que vous parlez, le texte à l’écran est produit par le système propre à votre téléphone. S’il ne peut pas reconnaître la parole sur l’appareil, le son est aussi envoyé au service de reconnaissance vocale du téléphone — celui d’Apple sur iPhone et iPad, généralement celui de Google sur Android — conformément à la politique de confidentialité de cette entreprise. L’application vous en avertit au préalable. Sur Android, cela ne concerne que « Biographie avec l’IA » : lorsque vous parlez d’une personne, le téléphone ne fait qu’enregistrer le son.</p>
     <p><strong>Signaler un résultat.</strong> Sur l’écran de restauration de photos, ainsi que dans « Biographie avec l’IA » sur les écrans où vous vérifiez ou fusionnez le texte, vous pouvez toucher « Signaler ce résultat ». Vous choisissez un motif : offensant ou inapproprié ; faux à propos de la personne (biographie) ; la photo est déformée (restauration) ; ou autre. Vous pouvez ajouter un commentaire de 500 caractères au maximum. Avant l’envoi, l’application vous indique ce qui est envoyé : la fonction, le motif et votre commentaire. La photo et le texte de l’IA ne sont pas envoyés. Notre serveur reçoit la fonction, le motif, le commentaire (le cas échéant) et le numéro d’application. Il conserve le signalement pendant 90 jours, puis le supprime. Nous utilisons les signalements uniquement pour examiner les réclamations et améliorer le filtrage des fonctions d’IA.</p>
 
     <h2>6. Annuaire des cimetières</h2>
@@ -603,7 +603,7 @@
         <tr><td>Journaux techniques du serveur, sans contenu</td><td>notre serveur</td><td>jusqu’à 30 jours</td></tr>
         <tr><td>Sauvegardes de la base de données du serveur</td><td>notre serveur, le service de sauvegarde de Hetzner, l’ordinateur et le disque de sauvegarde propres au responsable du traitement</td><td>jusqu’à 30 jours</td></tr>
         <tr><td>Les e-mails que vous nous envoyez</td><td>boîte aux lettres électronique</td><td>jusqu’à 24 mois ; plus longtemps uniquement pour une affaire en cours ou lorsque la loi l’exige</td></tr>
-        <tr><td>Tout ce qui se trouve dans l’application</td><td>votre appareil</td><td>jusqu’à ce que vous le supprimiez ou désinstalliez l’application ; un enregistrement vocal en attente (iPhone et iPad) est supprimé une fois qu’il date de plus de 7 jours, la prochaine fois que vous ouvrez son écran ; une photo restaurée arrivée alors que l’écran n’était pas ouvert est supprimée une fois qu’elle date de plus de 30 jours, la prochaine fois que l’application vérifie les photos restaurées</td></tr>
+        <tr><td>Tout ce qui se trouve dans l’application</td><td>votre appareil</td><td>jusqu’à ce que vous le supprimiez ou désinstalliez l’application ; un enregistrement vocal en attente est supprimé une fois qu’il date de plus de 7 jours, la prochaine fois que vous ouvrez son écran ; une photo restaurée arrivée alors que l’écran n’était pas ouvert est supprimée une fois qu’elle date de plus de 30 jours, la prochaine fois que l’application vérifie les photos restaurées</td></tr>
       </tbody>
     </table>
     </div>
